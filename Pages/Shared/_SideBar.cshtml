@@ -1,0 +1,87 @@
+﻿@using Accounting_System.Services
+@using Accounting_System.Models
+@inject DataAccessService dataAccessService
+@{
+
+    string activePage = System.IO.Path.GetFileNameWithoutExtension(ViewContext.ActionDescriptor.DisplayName);
+    Func<string, string, string> ActiveClass = (string activePage, string page) =>
+    {
+        return (activePage == page) ? "active" : "";
+    };
+    IList<TSysCommand> menuLevel1 = dataAccessService.GetUserMenuByLevel(null, 1);
+}
+
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="width: 200px">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center"
+       asp-action="Index" asp-controller="Home" asp-area="">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Account System</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Heading -->
+    <div class="sidebar-heading mt-2">
+        Chức năng
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    @foreach (var item1 in menuLevel1)
+    {
+        var menuTagId = "collapse" + item1.PkId;
+        var menuTagHeading = "heading" + item1.PkId;
+        var menuDataTarget = "#" + menuTagId;
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="@menuDataTarget" aria-expanded="true" aria-controls="@menuTagId">
+                <span>@Html.DisplayFor(modelItem => item1.CMenu)</span>
+            </a>
+            <div id="@menuTagId" class="collapse" aria-labelledby="@menuTagHeading" data-parent="#accordionSidebar">
+                @{
+                    var menuLevel2 = dataAccessService.GetUserMenuByLevel(item1.CMenu, 2);
+                    @if (menuLevel2.Count != 0)
+                    {
+                        @foreach (var item2 in menuLevel2)
+                        {
+                            var menuTagId2 = "collapse" + item2.PkId;
+                            var menuTagHeading2 = "heading" + item2.PkId;
+                            var menuDataTarget2 = "#" + menuTagId2;
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="@menuDataTarget2" aria-expanded="true" aria-controls="@menuTagId2">
+                                <span>@Html.DisplayFor(modelItem => item2.CMenu)</span>
+                            </a>
+                            <div id="@menuTagId2" class="collapse" aria-labelledby="@menuTagHeading2" data-parent="@menuDataTarget">
+
+                                @{
+                                    var menuLevel3 = dataAccessService.GetUserMenuByLevel(item2.CMenu, 3);
+                                    @if (menuLevel3.Count != 0)
+                                    {
+                                        <div class="bg-white py-3 collapse-inner rounded">
+                                            @foreach (var item3 in menuLevel3)
+                                            {
+                                                <a class="collapse-item">@Html.DisplayFor(modelItem => item3.CMenu)</a>
+                                            }
+                                        </div>
+                                    }
+                                }
+
+                            </div>
+                        }
+                    }
+                }
+            </div>
+        </li>
+    }
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+</ul>
+<!-- End of Sidebar -->
