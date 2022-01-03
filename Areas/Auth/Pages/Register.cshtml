@@ -1,0 +1,55 @@
+﻿@page "/register"
+@model Accounting_System.Areas.Auth.Pages.RegisterModel
+@{
+    ViewBag.Title = "Đăng ký";
+}
+<div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+<div class="col-lg-7">
+    <div class="p-5">
+        <div class="text-center">
+            <h1 class="h4 text-gray-900 mb-4">@ViewBag.Title !</h1>
+        </div>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <form class="user" method="post">
+            @*User Full Name*@
+            @*<div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                           placeholder="First Name">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="exampleLastName"
+                           placeholder="Last Name">
+                </div>
+            </div>*@
+            <div class="form-group">
+                <input asp-for="Input.Email" type="email" class="form-control form-control-user" id="exampleInputEmail"
+                       placeholder="Nhập email">
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input asp-for="Input.Password" type="password" class="form-control form-control-user"
+                           id="exampleInputPassword" placeholder="Nhập mật khẩu">
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Input.ConfirmPassword" type="password" class="form-control form-control-user"
+                           id="exampleRepeatPassword" placeholder="Nhập lại mật khẩu">
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-user btn-block">
+                Đăng ký ngay
+            </button>
+        </form>
+        <hr>
+        <div class="text-center">
+            <a id="forgot-password" asp-area="Auth" asp-page="/ForgotPassword" class="small">Quên mật khẩu</a>
+        </div>
+        <div class="text-center">
+            @*<a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl" class="small">Đã có tài khoản? Đăng nhập ngay!</a>*@
+            <a asp-area="Auth" asp-page="/Login" class="small">Đã có tài khoản? Đăng nhập ngay!</a>
+        </div>
+    </div>
+</div>

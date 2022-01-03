@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Accounting_System.Pages
+namespace Accounting_System.Areas.Auth.Pages
 {
-    public class LoginModel : PageModel
+    public class ForgotPasswordModel : PageModel
     {
         public void OnGet()
         {
