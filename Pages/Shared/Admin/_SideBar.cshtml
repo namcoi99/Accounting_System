@@ -1,6 +1,7 @@
 ﻿@using Accounting_System.Services
 @using Accounting_System.Models
 @inject DataAccessService dataAccessService
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 @{
 
     string activePage = System.IO.Path.GetFileNameWithoutExtension(ViewContext.ActionDescriptor.DisplayName);

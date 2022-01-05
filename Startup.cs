@@ -1,8 +1,10 @@
 using Accounting_System.Interfaces;
 using Accounting_System.Models;
 using Accounting_System.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -31,6 +33,9 @@ namespace Accounting_System
             services.AddDbContext<Cafe1Context>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Cafe1Context")));
             services.AddTransient<DataAccessService>();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +57,7 @@ namespace Accounting_System
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

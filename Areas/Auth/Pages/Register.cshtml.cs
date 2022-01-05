@@ -14,12 +14,12 @@ namespace Accounting_System.Areas.Auth.Pages
         public InputModel Input { get; set; }
         public class InputModel
         {
-            [Required]
+            [Required(ErrorMessage = "Email không được để trống.")]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Mật khẩu không được để trống.")]
             [StringLength(100, ErrorMessage = "{0} phải có ít nhất {2} và nhiều nhất {1} ký tự.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Mật khẩu")]

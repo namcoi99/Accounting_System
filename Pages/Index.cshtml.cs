@@ -22,9 +22,15 @@ namespace Accounting_System.Pages
             _context = context;
         }
         public IList<TSysCommand> CommandList { get; set; }
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync()
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                // Redirect to home page if the user is authenticated.
+                return RedirectToPage("/login", new { area = "Auth" });
+            }
             CommandList = await _context.TSysCommand.ToListAsync();
+            return Page();
         }
     }
 }
