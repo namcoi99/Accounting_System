@@ -26,7 +26,7 @@ namespace Accounting_System.Pages
         {
             if (!User.Identity.IsAuthenticated)
             {
-                // Redirect to home page if the user is authenticated.
+                // Redirect to home page if the user is not authenticated.
                 return RedirectToPage("/login", new { area = "Auth" });
             }
             CommandList = await _context.TSysCommand.ToListAsync();

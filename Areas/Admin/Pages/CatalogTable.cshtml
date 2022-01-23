@@ -3,28 +3,33 @@
 @{
     ViewBag.Title = "Bảng danh mục";
 }
-<ul id="myUL">
-    <li>
-        <span class="caret">Beverages</span>
-        <ul class="nested">
-            <li>Water</li>
-            <li>Coffee</li>
+
+@{
+    void GetTreeMenus(IEnumerable<Accounting_System.Models.TSysList> catalogList, string catalogParent = null)
+    {
+        foreach (var catalog in catalogList.Where(catalogItem => catalogItem.CParent == catalogParent))
+        {
             <li>
-                <span class="caret">Tea</span>
-                <ul class="nested">
-                    <li>Black Tea</li>
-                    <li>White Tea</li>
-                    <li>
-                        <span class="caret">Green Tea</span>
-                        <ul class="nested">
-                            <li>Sencha</li>
-                            <li>Gyokuro</li>
-                            <li>Matcha</li>
-                            <li>Pi Lo Chun</li>
-                        </ul>
-                    </li>
-                </ul>
+                @if (catalog.CIsgroup == true)
+                {
+                    <span class="caret caret--group">@catalog.CVietnamese</span>
+                    <ul class="nested">
+                     @{
+                         GetTreeMenus(catalogList, catalog.CTable);
+                     }
+                    </ul>
+                }
+                else
+                {
+                    <span class="caret caret--single"> @catalog.CVietnamese</span>
+                }
             </li>
-        </ul>
-    </li>
+        }
+    }
+}
+
+<ul id="syslist">
+    @{
+        GetTreeMenus(Model.CatalogList);
+    }
 </ul>
