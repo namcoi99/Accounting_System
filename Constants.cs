@@ -7,6 +7,6 @@ namespace Accounting_System
 {
     public class Constants
     {
-        public const string FDM = "CatalogTable";
+        public const string FDM = "CatalogPage";
     }
 }

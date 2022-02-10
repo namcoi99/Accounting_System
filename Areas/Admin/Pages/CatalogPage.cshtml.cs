@@ -14,30 +14,33 @@ namespace Accounting_System.Areas.Admin.Pages
     {
         private readonly ILogger<CatalogTableModel> _logger;
         private readonly Cafe1Context _context;
-
-
         public CatalogTableModel(ILogger<CatalogTableModel> logger, Cafe1Context context)
         {
             _logger = logger;
             _context = context;
         }
         public IList<TSysList> CatalogList { get; set; }
-        public async Task<IActionResult> OnGetAsync()
+        public IList<TSysListdetail> CatalogListDetail { get; set; }
+        public TSysList CurrentCatalog { get; set; }
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (!User.Identity.IsAuthenticated)
             {
                 // Redirect to home page if the user is not authenticated.
                 return RedirectToPage("/login", new { area = "Auth" });
             }
+            if(id == null)
+            {
+                id = 21;
+            }
+            CurrentCatalog = _context.TSysList
+                    .Where(item => item.PkId == id)
+                    .FirstOrDefault();
+            CatalogListDetail = _context.TSysListdetail
+                .Where(item => item.FkList == id)
+                .ToList();
             CatalogList = await _context.TSysList.ToListAsync();
             return Page();
-        }
-        public List<TSysList> GetCatalogChildren(string parent)
-        {
-            var children = _context.TSysList
-                .Where(child => child.CParent == parent)
-                .ToList();
-            return children;
         }
     }
 }
