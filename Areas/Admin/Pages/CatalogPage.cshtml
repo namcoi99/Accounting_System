@@ -14,13 +14,18 @@
                     <span class="caret caret--group">@catalog.CVietnamese</span>
                     <ul class="nested">
                         @{
-                            GetTreeMenus(catalogList, catalog.CTable);
+                            await GetTreeMenus(catalogList, catalog.CTable);
                         }
                     </ul>
                 }
                 else
                 {
-                    <a asp-area="Admin" asp-page="/CatalogPage" asp-route-id="@catalog.PkId" class="caret caret--single"> @catalog.CVietnamese</a>
+                    <a asp-area="Admin"
+                       asp-page="/CatalogPage"
+                       asp-route-id="@catalog.PkId"
+                       class="caret caret--single">
+                        @catalog.CVietnamese
+                    </a>
                 }
             </li>
         }
@@ -48,12 +53,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        @foreach (var item in Model.CatalogListDetail)
-                        {
-                            <td>Mark</td>
-                        }
-                    </tr>
+                    @for (int i = 0; i < Model.rowsCount; i++)
+                    {
+                        <tr>
+                            @foreach (var columnName in Model.TableData.Keys)
+                            {
+                                <td>@Model.TableData[columnName][i]</td>
+                            }
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
