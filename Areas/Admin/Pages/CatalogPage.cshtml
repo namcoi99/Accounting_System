@@ -33,7 +33,6 @@
 }
 <div class="row">
     <div class="col-2">
-
         <ul id="syslist">
             @{
                 await GetTreeMenus(Model.CatalogList);
@@ -55,12 +54,17 @@
                 <tbody>
                     @for (int i = 0; i < Model.rowsCount; i++)
                     {
+                        <form method="post">
                         <tr>
                             @foreach (var columnName in Model.TableData.Keys)
                             {
-                                <td>@Model.TableData[columnName][i]</td>
+                                <td>
+                                    <input type="text" class="form-control" name="@columnName" value="@Model.TableData[columnName][i]" readonly="@(string.Equals(@columnName, "PK_ID")|string.Equals(@columnName, "C_MA"))">
+                                </td>
                             }
+                            <td><input type="submit" class="btn btn-primary" /></td>
                         </tr>
+                        </form>
                     }
                 </tbody>
             </table>

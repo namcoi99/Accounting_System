@@ -24,6 +24,7 @@ namespace Accounting_System.Areas.Admin.Pages
         public IList<TSysListdetail> CatalogListDetail { get; set; }
         public TSysList CurrentCatalog { get; set; }
         public IList<string> CurrentColumnNames { get; set; }
+        [BindProperty]
         public Dictionary<string, List<object>> TableData { get; set; }
         public int rowsCount { get; set; }
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -54,6 +55,16 @@ namespace Accounting_System.Areas.Admin.Pages
             return Page();
         }
 
+        public async Task<IActionResult> OnPostAsync()
+        {
+            foreach (KeyValuePair<string, List<object>> entry in TableData)
+            {
+                Console.WriteLine(entry.Key);
+                Console.WriteLine(Request.Form[entry.Key]);
+            }
+            return RedirectToPage();
+        }
+
         private void GetCurrentTableData()
         {
             TableData = new Dictionary<string, List<object>>();
@@ -80,7 +91,6 @@ namespace Accounting_System.Areas.Admin.Pages
                         {
                             TableData[CurrentColumnNames[i]].Add(reader[i]);
                         }
-
                     }
                 }
                 finally
