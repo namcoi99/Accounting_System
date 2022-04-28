@@ -9,9 +9,12 @@ namespace Accounting_System.Helpers
     {
         public static string GetPageName(string menuCommand)
         {
-            switch(menuCommand) {
+            switch (menuCommand)
+            {
                 case "FDM":
                     return Constants.FDM;
+                case "FKH":
+                    return Constants.FKH;
                 default:
                     return "";
             }
