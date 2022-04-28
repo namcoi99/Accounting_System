@@ -1,0 +1,60 @@
+﻿@page
+@model Accounting_System.Areas.Admin.Pages.RegionPage.IndexModel
+
+@{
+    ViewData["Title"] = "Danh mục vùng";
+}
+
+<h1>Danh mục vùng</h1>
+
+<p>
+    <a asp-page="Create">Tạo mới</a>
+</p>
+<table class="table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TDmVung[0].FkDvcs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDmVung[0].CCap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDmVung[0].CMa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDmVung[0].CMota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDmVung[0].CLastexport)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TDmVung) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FkDvcs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CCap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CMa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CMota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CLastexport)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PkId">Sửa</a> |
+                <a asp-page="./Details" asp-route-id="@item.PkId">Chi tiết</a> |
+                @*<a asp-page="./Delete" asp-route-id="@item.PkId">Xóa</a>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

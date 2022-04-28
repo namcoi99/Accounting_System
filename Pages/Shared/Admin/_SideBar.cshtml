@@ -79,7 +79,7 @@
                                             @foreach (var item3 in menuLevel3)
                                             {
                                                 <a asp-area="Admin" 
-                                                   asp-page="@Utils.GetPageName(item3.CCommand)" 
+                                                   asp-page="/@Utils.GetPageName(item3.CCommand)/Index" 
                                                    class="collapse-item @ActiveClass(activePage, @Utils.GetPageName(item3.CCommand))"
                                                    >
                                                     @Html.DisplayFor(modelItem => item3.CMenu)
