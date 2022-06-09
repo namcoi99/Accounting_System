@@ -8,42 +8,30 @@
 <h1>Details</h1>
 
 <div>
-    <h4>TDmVung</h4>
+    <h4>TDondathangdk</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TDmVung.FkDvcs)
+            @Html.DisplayNameFor(model => model.TDondathangdk.CStt)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TDmVung.FkDvcs)
+            @Html.DisplayFor(model => model.TDondathangdk.CStt)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TDmVung.CCap)
+            @Html.DisplayNameFor(model => model.TDondathangdk.FkDkbg)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TDmVung.CCap)
+            @Html.DisplayFor(model => model.TDondathangdk.FkDkbg)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TDmVung.CMa)
+            @Html.DisplayNameFor(model => model.TDondathangdk.FkDondathangNavigation)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TDmVung.CMa)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TDmVung.CMota)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TDmVung.CMota)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TDmVung.CLastexport)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TDmVung.CLastexport)
+            @Html.DisplayFor(model => model.TDondathangdk.FkDondathangNavigation.CSophieu)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.TDmVung.PkId">Edit</a> |
+    <a asp-page="./Edit" asp-route-id="@Model.TDondathangdk.PkId">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>

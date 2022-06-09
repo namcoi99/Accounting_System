@@ -1,0 +1,119 @@
+﻿@page
+@model Accounting_System.Areas.Admin.Pages.SalesOrderDetail.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TDondathangct</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.FkDondathang" class="control-label"></label>
+                <input asp-for="TDondathangct.FkDondathang" class="form-control" />
+                <span asp-validation-for="TDondathangct.FkDondathang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.CStt" class="control-label"></label>
+                <input asp-for="TDondathangct.CStt" class="form-control" />
+                <span asp-validation-for="TDondathangct.CStt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.FkVthh" class="control-label"></label>
+                <input asp-for="TDondathangct.FkVthh" class="form-control" />
+                <span asp-validation-for="TDondathangct.FkVthh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.CNgaynhan" class="control-label"></label>
+                <input asp-for="TDondathangct.CNgaynhan" class="form-control" />
+                <span asp-validation-for="TDondathangct.CNgaynhan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.CSoluong" class="control-label"></label>
+                <input asp-for="TDondathangct.CSoluong" class="form-control" />
+                <span asp-validation-for="TDondathangct.CSoluong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.FkDvban" class="control-label"></label>
+                <input asp-for="TDondathangct.FkDvban" class="form-control" />
+                <span asp-validation-for="TDondathangct.FkDvban" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.CDongia" class="control-label"></label>
+                <input asp-for="TDondathangct.CDongia" class="form-control" />
+                <span asp-validation-for="TDondathangct.CDongia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.CPheduyet" class="control-label"></label>
+                <input asp-for="TDondathangct.CPheduyet" class="form-control" />
+                <span asp-validation-for="TDondathangct.CPheduyet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.FkNguoipd" class="control-label"></label>
+                <input asp-for="TDondathangct.FkNguoipd" class="form-control" />
+                <span asp-validation-for="TDondathangct.FkNguoipd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.FkTrangthai" class="control-label"></label>
+                <input asp-for="TDondathangct.FkTrangthai" class="form-control" />
+                <span asp-validation-for="TDondathangct.FkTrangthai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.CDongia2" class="control-label"></label>
+                <input asp-for="TDondathangct.CDongia2" class="form-control" />
+                <span asp-validation-for="TDondathangct.CDongia2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.CKhuyenmai" class="control-label"></label>
+                <input asp-for="TDondathangct.CKhuyenmai" class="form-control" />
+                <span asp-validation-for="TDondathangct.CKhuyenmai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.FkNguoncc" class="control-label"></label>
+                <input asp-for="TDondathangct.FkNguoncc" class="form-control" />
+                <span asp-validation-for="TDondathangct.FkNguoncc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.CNgaydukien" class="control-label"></label>
+                <input asp-for="TDondathangct.CNgaydukien" class="form-control" />
+                <span asp-validation-for="TDondathangct.CNgaydukien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.CDongiatc" class="control-label"></label>
+                <input asp-for="TDondathangct.CDongiatc" class="form-control" />
+                <span asp-validation-for="TDondathangct.CDongiatc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.CDaban" class="control-label"></label>
+                <input asp-for="TDondathangct.CDaban" class="form-control" />
+                <span asp-validation-for="TDondathangct.CDaban" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.CTinhthue" class="control-label"></label>
+                <input asp-for="TDondathangct.CTinhthue" class="form-control" />
+                <span asp-validation-for="TDondathangct.CTinhthue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TDondathangct.CStopRemind" class="control-label"></label>
+                <input asp-for="TDondathangct.CStopRemind" class="form-control" />
+                <span asp-validation-for="TDondathangct.CStopRemind" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

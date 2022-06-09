@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Accounting_System.Models;
 
-namespace Accounting_System.Areas.Admin.Pages.RegionPage
+namespace Accounting_System.Areas.Admin.Pages.SalesOrderDetail
 {
     public class IndexModel : PageModel
     {
@@ -18,12 +18,11 @@ namespace Accounting_System.Areas.Admin.Pages.RegionPage
             _context = context;
         }
 
-        public IList<TDondathangdk> TDondathangdk { get;set; }
+        public IList<TDondathangct> TDondathangct { get;set; }
 
         public async Task OnGetAsync()
         {
-            TDondathangdk = await _context.TDondathangdk
-                .Include(t => t.FkDondathangNavigation).ToListAsync();
+            TDondathangct = await _context.TDondathangct.ToListAsync();
         }
     }
 }

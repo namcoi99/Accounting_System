@@ -1,0 +1,250 @@
+﻿@page
+@model Accounting_System.Areas.Admin.Pages.SalesOrderPage.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TDondathang</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkDvcs)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkDvcs)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CSophieu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CSophieu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CNgaylap)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CNgaylap)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CNgaynhan)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CNgaynhan)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CNgayhethan)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CNgayhethan)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkKhachhang)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkKhachhang)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkNguoilh)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkNguoilh)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkLoaitien)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkLoaitien)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CTigia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CTigia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CDiengiai)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CDiengiai)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkVuviec)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkVuviec)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkPhongban)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkPhongban)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkPhanxuong)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkPhanxuong)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkDtcp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkDtcp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkKmp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkKmp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CKhdk)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CKhdk)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CKhdkdc)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CKhdkdc)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CKhdkdt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CKhdkdt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CKhdkemail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CKhdkemail)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CKhdknlh)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CKhdknlh)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CKhdkfax)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CKhdkfax)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkUser)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkUser)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CDatetime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CDatetime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkDdct)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkDdct)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CDaban)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CDaban)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CVat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CVat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkLoaibg)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkLoaibg)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkPpvc)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkPpvc)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkDondathang)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkDondathang)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkSoxe)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkSoxe)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkCuocvanchuyen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkCuocvanchuyen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkSochuyen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkSochuyen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkHangvanchuyen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkHangvanchuyen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CNguoivanchuyen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CNguoivanchuyen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CField1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CField1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.CField2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.CField2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkModifyuser)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkModifyuser)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TDondathang.FkPttt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TDondathang.FkPttt)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="TDondathang.PkId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

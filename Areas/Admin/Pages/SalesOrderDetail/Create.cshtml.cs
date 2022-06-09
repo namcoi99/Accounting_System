@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Accounting_System.Models;
 
-namespace Accounting_System.Areas.Admin.Pages.RegionPage
+namespace Accounting_System.Areas.Admin.Pages.SalesOrderDetail
 {
     public class CreateModel : PageModel
     {
@@ -20,12 +20,11 @@ namespace Accounting_System.Areas.Admin.Pages.RegionPage
 
         public IActionResult OnGet()
         {
-        ViewData["FkDondathang"] = new SelectList(_context.TDondathang, "PkId", "CSophieu");
             return Page();
         }
 
         [BindProperty]
-        public TDondathangdk TDondathangdk { get; set; }
+        public TDondathangct TDondathangct { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -36,7 +35,7 @@ namespace Accounting_System.Areas.Admin.Pages.RegionPage
                 return Page();
             }
 
-            _context.TDondathangdk.Add(TDondathangdk);
+            _context.TDondathangct.Add(TDondathangct);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

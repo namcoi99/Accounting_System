@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Accounting_System.Models;
 
-namespace Accounting_System.Areas.Admin.Pages.RegionPage
+namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
 {
     public class DeleteModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace Accounting_System.Areas.Admin.Pages.RegionPage
         }
 
         [BindProperty]
-        public TDondathangdk TDondathangdk { get; set; }
+        public TDondathang TDondathang { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,10 +28,9 @@ namespace Accounting_System.Areas.Admin.Pages.RegionPage
                 return NotFound();
             }
 
-            TDondathangdk = await _context.TDondathangdk
-                .Include(t => t.FkDondathangNavigation).FirstOrDefaultAsync(m => m.PkId == id);
+            TDondathang = await _context.TDondathang.FirstOrDefaultAsync(m => m.PkId == id);
 
-            if (TDondathangdk == null)
+            if (TDondathang == null)
             {
                 return NotFound();
             }
@@ -45,11 +44,11 @@ namespace Accounting_System.Areas.Admin.Pages.RegionPage
                 return NotFound();
             }
 
-            TDondathangdk = await _context.TDondathangdk.FindAsync(id);
+            TDondathang = await _context.TDondathang.FindAsync(id);
 
-            if (TDondathangdk != null)
+            if (TDondathang != null)
             {
-                _context.TDondathangdk.Remove(TDondathangdk);
+                _context.TDondathang.Remove(TDondathang);
                 await _context.SaveChangesAsync();
             }
 

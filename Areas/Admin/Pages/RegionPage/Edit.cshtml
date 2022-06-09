@@ -7,37 +7,27 @@
 
 <h1>Edit</h1>
 
-<h4>TDmVung</h4>
+<h4>TDondathangdk</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="TDmVung.PkId" />
+            <input type="hidden" asp-for="TDondathangdk.PkId" />
             <div class="form-group">
-                <label asp-for="TDmVung.FkDvcs" class="control-label"></label>
-                <input asp-for="TDmVung.FkDvcs" class="form-control" />
-                <span asp-validation-for="TDmVung.FkDvcs" class="text-danger"></span>
+                <label asp-for="TDondathangdk.CStt" class="control-label"></label>
+                <input asp-for="TDondathangdk.CStt" class="form-control" />
+                <span asp-validation-for="TDondathangdk.CStt" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TDmVung.CCap" class="control-label"></label>
-                <input asp-for="TDmVung.CCap" class="form-control" />
-                <span asp-validation-for="TDmVung.CCap" class="text-danger"></span>
+                <label asp-for="TDondathangdk.FkDondathang" class="control-label"></label>
+                <select asp-for="TDondathangdk.FkDondathang" class="form-control" asp-items="ViewBag.FkDondathang"></select>
+                <span asp-validation-for="TDondathangdk.FkDondathang" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TDmVung.CMa" class="control-label"></label>
-                <input asp-for="TDmVung.CMa" class="form-control" />
-                <span asp-validation-for="TDmVung.CMa" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TDmVung.CMota" class="control-label"></label>
-                <input asp-for="TDmVung.CMota" class="form-control" />
-                <span asp-validation-for="TDmVung.CMota" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TDmVung.CLastexport" class="control-label"></label>
-                <input asp-for="TDmVung.CLastexport" class="form-control" />
-                <span asp-validation-for="TDmVung.CLastexport" class="text-danger"></span>
+                <label asp-for="TDondathangdk.FkDkbg" class="control-label"></label>
+                <input asp-for="TDondathangdk.FkDkbg" class="form-control" />
+                <span asp-validation-for="TDondathangdk.FkDkbg" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

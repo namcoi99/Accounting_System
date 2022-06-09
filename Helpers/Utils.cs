@@ -15,6 +15,8 @@ namespace Accounting_System.Helpers
                     return Constants.FDM;
                 case "FKH":
                     return Constants.FKH;
+                case "FGDH2":
+                    return Constants.FGDH2;
                 default:
                     return "";
             }

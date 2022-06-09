@@ -10,7 +10,7 @@
 <p>
     <a asp-page="Create">Tạo mới</a>
 </p>
-<table class="table overflow-auto">
+<table class="table">
     <thead>
         <tr>
             <th>
@@ -526,7 +526,7 @@
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.PkId">Chỉnh sửa</a> |
                 <a asp-page="./Details" asp-route-id="@item.PkId">Chi tiết</a> |
-                @*<a asp-page="./Delete" asp-route-id="@item.PkId">Xóa</a>*@
+                <a asp-page="./Delete" asp-route-id="@item.PkId">Xóa</a>
             </td>
         </tr>
 }
