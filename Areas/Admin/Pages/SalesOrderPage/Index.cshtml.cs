@@ -6,8 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Accounting_System.Models;
+using Microsoft.Data.SqlClient;
 
-namespace Accounting_System.Areas.Admin.Pages.RegionPage
+namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
 {
     public class IndexModel : PageModel
     {
@@ -18,12 +19,11 @@ namespace Accounting_System.Areas.Admin.Pages.RegionPage
             _context = context;
         }
 
-        public IList<TDondathangdk> TDondathangdk { get;set; }
+        public IList<TDondathang> TDondathang { get;set; }
 
         public async Task OnGetAsync()
         {
-            TDondathangdk = await _context.TDondathangdk
-                .Include(t => t.FkDondathangNavigation).ToListAsync();
+            TDondathang = await _context.TDondathang.ToListAsync();
         }
     }
 }

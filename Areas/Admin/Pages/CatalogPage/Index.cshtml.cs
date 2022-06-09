@@ -20,7 +20,7 @@ namespace Accounting_System.Areas.Admin.Pages.CatalogPage
             _logger = logger;
             _context = context;
         }
-        public int? CurrentCatalogId {get; set ;}
+        public int? CurrentCatalogId { get; set; }
         public IList<TSysList> CatalogList { get; set; }
         public IList<TSysListdetail> CatalogListDetail { get; set; }
         [BindProperty]
@@ -42,40 +42,46 @@ namespace Accounting_System.Areas.Admin.Pages.CatalogPage
             CurrentCatalogId = id;
             if (CurrentCatalogId != null)
             {
-            CurrentCatalog = await _context.TSysList
-                    .Where(item => item.PkId == CurrentCatalogId)
-                    .FirstOrDefaultAsync();
-            CatalogListDetail = await _context.TSysListdetail
-                .Where(item => item.FkList == CurrentCatalogId && item.CVisible == true)
-                .ToListAsync();
-            CurrentColumnNames = await _context.TSysListdetail
-                .Where(item => item.FkList == CurrentCatalogId && item.CVisible == true)
-                .Select(item => item.CName)
-                .ToListAsync();
-            GetCurrentTableData();
+                CurrentCatalog = await _context.TSysList
+                        .Where(item => item.PkId == CurrentCatalogId)
+                        .FirstOrDefaultAsync();
+                CatalogListDetail = await _context.TSysListdetail
+                    .Where(item => item.FkList == CurrentCatalogId && item.CVisible == true)
+                    .ToListAsync();
+                CurrentColumnNames = await _context.TSysListdetail
+                    .Where(item => item.FkList == CurrentCatalogId && item.CVisible == true)
+                    .Select(item => item.CName)
+                    .ToListAsync();
+                GetCurrentTableData();
             }
             return Page();
         }
 
         public IActionResult OnPost()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            Dictionary<string, List<object>> tempTableData = TableData;
+            tempTableData.Remove("__RequestVerificationToken");
+            tempTableData.Remove("C_TABLE");
             string keyString = "";
             string keyValue = "";
             string queryString = "UPDATE " + Request.Form["C_TABLE"] + " SET ";
             List<string> queryArray = new List<string>();
-            foreach (KeyValuePair<string, List<object>> entry in TableData)
+            foreach (KeyValuePair<string, List<object>> entry in tempTableData)
             {
                 if (string.Equals(entry.Key, "PK_ID") | string.Equals(entry.Key, "C_MA"))
                 {
                     keyString = entry.Key;
                     keyValue = Request.Form[entry.Key];
                 }
-                else if (!string.Equals(entry.Key, "C_TABLE"))
+                else
                 {
                     queryArray.Add(entry.Key + " = N'" + Request.Form[entry.Key] + "'");
                 }
             }
-            queryArray.RemoveAt(queryArray.Count - 1);
             queryString += string.Join(",", queryArray);
             if (string.Equals(keyString, "PK_ID"))
             {
@@ -85,6 +91,39 @@ namespace Accounting_System.Areas.Admin.Pages.CatalogPage
             {
                 queryString += " WHERE " + keyString + " = '" + keyValue + "'";
             }
+            string connectionString = Constants.CONNECTION_STRING;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+            return RedirectToPage();
+
+        }
+
+        public IActionResult OnPostCreateData()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            Dictionary<string, List<object>> tempTableData = TableData;
+            tempTableData.Remove("__RequestVerificationToken");
+            tempTableData.Remove("PK_ID");
+            tempTableData.Remove("C_TABLE");
+            string queryString = "INSERT INTO " + Request.Form["C_TABLE"] + " (";
+            queryString += string.Join(',', tempTableData.Keys);
+            queryString += ")";
+            queryString += " VALUES (";
+            List<string> queryArray = new List<string>();
+            foreach (KeyValuePair<string, List<object>> entry in tempTableData)
+            {
+                queryArray.Add("N'" + Request.Form[entry.Key] + "'");
+            }
+            queryString += string.Join(",", queryArray);
+            queryString += ")";
             string connectionString = Constants.CONNECTION_STRING;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

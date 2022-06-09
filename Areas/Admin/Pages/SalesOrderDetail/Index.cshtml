@@ -1,0 +1,138 @@
+﻿@page
+@model Accounting_System.Areas.Admin.Pages.SalesOrderDetail.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].FkDondathang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].CStt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].FkVthh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].CNgaynhan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].CSoluong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].FkDvban)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].CDongia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].CPheduyet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].FkNguoipd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].FkTrangthai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].CDongia2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].CKhuyenmai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].FkNguoncc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].CNgaydukien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].CDongiatc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].CDaban)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].CTinhthue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDondathangct[0].CStopRemind)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TDondathangct) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FkDondathang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CStt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FkVthh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CNgaynhan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CSoluong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FkDvban)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CDongia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPheduyet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FkNguoipd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FkTrangthai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CDongia2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CKhuyenmai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FkNguoncc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CNgaydukien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CDongiatc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CDaban)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CTinhthue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CStopRemind)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PkId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PkId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PkId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

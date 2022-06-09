@@ -38,13 +38,12 @@
         var menuTagHeading = "heading" + item1.PkId;
         var menuDataTarget = "#" + menuTagId;
         <li class="nav-item">
-            <a class="nav-link collapsed" 
-               href="#" data-toggle="collapse" 
-               data-target="@menuDataTarget" 
-               aria-expanded="true" 
-               aria-controls="@menuTagId"
-               >
-                <span>@Html.DisplayFor(modelItem => item1.CMenu)</span>
+            <a class="nav-link collapsed"
+               href="#" data-toggle="collapse"
+               data-target="@menuDataTarget"
+               aria-expanded="true"
+               aria-controls="@menuTagId">
+                @Html.DisplayFor(modelItem => item1.CMenu)
             </a>
             <div id="@menuTagId" class="collapse" aria-labelledby="@menuTagHeading" data-parent="#accordionSidebar">
                 @{
@@ -56,32 +55,41 @@
                             var menuTagId2 = "collapse" + item2.PkId;
                             var menuTagHeading2 = "heading" + item2.PkId;
                             var menuDataTarget2 = "#" + menuTagId2;
-                            <a class="nav-link collapsed" 
-                               href="#" 
-                               data-toggle="collapse" 
-                               data-target="@menuDataTarget2" 
-                               aria-expanded="true" 
-                               aria-controls="@menuTagId2"
-                               >
-                                <span>@Html.DisplayFor(modelItem => item2.CMenu)</span>
-                            </a>
-                            <div id="@menuTagId2" 
-                                 class="collapse" 
-                                 aria-labelledby="@menuTagHeading2" 
-                                 data-parent="@menuDataTarget"
-                                 >
+                            var menuLevel3 = dataAccessService.GetUserMenuByLevel(item2.CMenu, 3);
+                            if (menuLevel3.Count != 0)
+                            {
+                                <a class="nav-link collapsed"
+                                   href="#"
+                                   data-toggle="collapse"
+                                   data-target="@menuDataTarget2"
+                                   aria-expanded="true"
+                                   aria-controls="@menuTagId2">
+                                    @Html.DisplayFor(modelItem => item2.CMenu)
+                                </a>
+                            }
+                            else
+                            {
+                                <a asp-area="Admin"
+                                   asp-page="/@Utils.GetPageName(item2.CCommand)/Index"
+                                   class="nav-link @ActiveClass(activePage, @Utils.GetPageName(item2.CCommand))">
+                                    @Html.DisplayFor(modelItem => item2.CMenu)
+                                    @item2.CCommand
+                                </a>
+                            }
+                            <div id="@menuTagId2"
+                                 class="collapse"
+                                 aria-labelledby="@menuTagHeading2"
+                                 data-parent="@menuDataTarget">
 
                                 @{
-                                    var menuLevel3 = dataAccessService.GetUserMenuByLevel(item2.CMenu, 3);
                                     @if (menuLevel3.Count != 0)
                                     {
                                         <div class="bg-white py-3 collapse-inner rounded">
                                             @foreach (var item3 in menuLevel3)
                                             {
-                                                <a asp-area="Admin" 
-                                                   asp-page="/@Utils.GetPageName(item3.CCommand)/Index" 
-                                                   class="collapse-item @ActiveClass(activePage, @Utils.GetPageName(item3.CCommand))"
-                                                   >
+                                                <a asp-area="Admin"
+                                                   asp-page="/@Utils.GetPageName(item3.CCommand)/Index"
+                                                   class="collapse-item @ActiveClass(activePage, @Utils.GetPageName(item3.CCommand))">
                                                     @Html.DisplayFor(modelItem => item3.CMenu)
                                                 </a>
                                             }

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Accounting_System.Models;
 
-namespace Accounting_System.Areas.Admin.Pages.RegionPage
+namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
 {
     public class EditModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace Accounting_System.Areas.Admin.Pages.RegionPage
         }
 
         [BindProperty]
-        public TDondathangdk TDondathangdk { get; set; }
+        public TDondathang TDondathang { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,14 +29,12 @@ namespace Accounting_System.Areas.Admin.Pages.RegionPage
                 return NotFound();
             }
 
-            TDondathangdk = await _context.TDondathangdk
-                .Include(t => t.FkDondathangNavigation).FirstOrDefaultAsync(m => m.PkId == id);
+            TDondathang = await _context.TDondathang.FirstOrDefaultAsync(m => m.PkId == id);
 
-            if (TDondathangdk == null)
+            if (TDondathang == null)
             {
                 return NotFound();
             }
-           ViewData["FkDondathang"] = new SelectList(_context.TDondathang, "PkId", "CSophieu");
             return Page();
         }
 
@@ -49,7 +47,7 @@ namespace Accounting_System.Areas.Admin.Pages.RegionPage
                 return Page();
             }
 
-            _context.Attach(TDondathangdk).State = EntityState.Modified;
+            _context.Attach(TDondathang).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +55,7 @@ namespace Accounting_System.Areas.Admin.Pages.RegionPage
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TDondathangdkExists(TDondathangdk.PkId))
+                if (!TDondathangExists(TDondathang.PkId))
                 {
                     return NotFound();
                 }
@@ -70,9 +68,9 @@ namespace Accounting_System.Areas.Admin.Pages.RegionPage
             return RedirectToPage("./Index");
         }
 
-        private bool TDondathangdkExists(int id)
+        private bool TDondathangExists(int id)
         {
-            return _context.TDondathangdk.Any(e => e.PkId == id);
+            return _context.TDondathang.Any(e => e.PkId == id);
         }
     }
 }

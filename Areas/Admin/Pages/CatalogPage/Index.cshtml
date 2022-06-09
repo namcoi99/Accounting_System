@@ -31,8 +31,8 @@
         }
     }
 }
-<div class="row">
-    <div class="col-2">
+<div class="d-flex">
+    <div style="flex: 0 0 248px;">
         <ul id="syslist">
             @{
                 await GetTreeMenus(Model.CatalogList);
@@ -41,36 +41,72 @@
     </div>
     @if (Model.CurrentCatalogId != null)
     {
-        <div class="col-10">
-            <h2>@Model.CurrentCatalog.CVietnamese</h2>
-            <div id="catalog-table">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            @foreach (var item in Model.CatalogListDetail)
-                            {
-                                <th scope="col">@item.CVietnamese</th>
-                            }
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @for (int i = 0; i < Model.RowsCount; i++)
-                        {
-                            <form method="post">
-                            <tr>
-                                <input type="text" value="@Model.CurrentCatalog.CTable" name="C_TABLE" hidden />
-                                @foreach (var columnName in Model.TableData.Keys)
+        <div class="w-100 overflow-auto">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">
+                Tạo mới
+            </button>
+            <div class="card shadow my-4 w-100">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">@Model.CurrentCatalog.CVietnamese</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    @foreach (var item in Model.CatalogListDetail)
+                                    {
+                                        <th scope="col">@item.CVietnamese</th>
+                                    }
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 0; i < Model.RowsCount; i++)
                                 {
-                                    <td>
-                                        <input type="text" class="form-control" name="@columnName" value="@Model.TableData[columnName][i]" readonly="@(string.Equals(@columnName, "PK_ID")|string.Equals(@columnName, "C_MA"))">
-                                    </td>
+                                    <form class="w-100" method="post">
+                                    <tr>
+                                        <input type="text" value="@Model.CurrentCatalog.CTable" name="C_TABLE" hidden />
+                                        @foreach (var columnName in Model.TableData.Keys)
+                                        {
+                                            <td>
+                                                <input type="text" class="form-control w-auto" name="@columnName" value="@Model.TableData[columnName][i]" readonly="@(string.Equals(@columnName, "PK_ID")|string.Equals(@columnName, "C_MA"))">
+                                            </td>
+                                        }
+                                        <td class="text-center"><button type="submit" class="btn btn-primary">Cập nhật</button></td>
+                                    </tr>
+                                    </form>
                                 }
-                                <td class="text-center"><button type="submit" class="btn btn-primary">Cập nhật</button></td>
-                            </tr>
-                            </form>
-                        }
-                    </tbody>
-                </table>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="createModalLabel">Tạo mới @Model.CurrentCatalog.CVietnamese</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form asp-page-handler="CreateData" method="post">
+                            <input type="text" value="@Model.CurrentCatalog.CTable" name="C_TABLE" hidden />
+                            @foreach (var columnName in Model.TableData.Keys)
+                            {
+                                <div class="form-group">
+                                    <label for="@columnName">@columnName</label>
+                                    <input type="text" class="form-control" name="@columnName" value="" readonly="@(string.Equals(@columnName, "PK_ID"))">
+                                </div>
+                            }
+                            <button type="submit" class="btn btn-primary float-right">Tạo mới</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     }

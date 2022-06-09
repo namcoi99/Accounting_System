@@ -2,57 +2,45 @@
 @model Accounting_System.Areas.Admin.Pages.RegionPage.IndexModel
 
 @{
-    ViewData["Title"] = "Danh mục vùng";
+    ViewData["Title"] = "Index";
 }
 
-<h1>Danh mục vùng</h1>
+<h1>Index</h1>
 
 <p>
-    <a asp-page="Create">Tạo mới</a>
+    <a asp-page="Create">Create New</a>
 </p>
-<table class="table>
+<table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.TDmVung[0].FkDvcs)
+                @Html.DisplayNameFor(model => model.TDondathangdk[0].CStt)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TDmVung[0].CCap)
+                @Html.DisplayNameFor(model => model.TDondathangdk[0].FkDkbg)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TDmVung[0].CMa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TDmVung[0].CMota)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TDmVung[0].CLastexport)
+                @Html.DisplayNameFor(model => model.TDondathangdk[0].FkDondathangNavigation)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.TDmVung) {
+@foreach (var item in Model.TDondathangdk) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.FkDvcs)
+                @Html.DisplayFor(modelItem => item.CStt)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CCap)
+                @Html.DisplayFor(modelItem => item.FkDkbg)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CMa)
+                @Html.DisplayFor(modelItem => item.FkDondathangNavigation.CSophieu)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CMota)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CLastexport)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.PkId">Sửa</a> |
-                <a asp-page="./Details" asp-route-id="@item.PkId">Chi tiết</a> |
-                @*<a asp-page="./Delete" asp-route-id="@item.PkId">Xóa</a>*@
+                <a asp-page="./Edit" asp-route-id="@item.PkId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PkId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PkId">Delete</a>
             </td>
         </tr>
 }
