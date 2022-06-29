@@ -1,0 +1,789 @@
+﻿@page
+@model Accounting_System.Areas.Admin.Pages.UpdateDocumentPage.CreateModel
+
+@{
+    ViewData["Title"] = "Tạo mới chứng từ";
+}
+
+<div>
+    <a asp-page="Index"><i class="fas fa-arrow-left mr-1"></i>Trờ về</a>
+</div>
+
+<h1>Tạo mới</h1>
+
+<h4>Cập nhật chứng từ</h4>
+<hr />
+<form method="post">
+    <div class="row">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkChungtu" class="control-label"></label>
+            <select asp-for="TXntc.FkChungtu" asp-items="Model.TDmChungtuSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkChungtu" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CSophieu" class="control-label"></label>
+            <input asp-for="TXntc.CSophieu" class="form-control" />
+            <span asp-validation-for="TXntc.CSophieu" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkDvcs" class="control-label"></label>
+            <select asp-for="TXntc.FkDvcs" asp-items="Model.TDmDvcsSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkDvcs" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.FkTruso" class="control-label"></label>
+                <input asp-for="TXntc.FkTruso" class="form-control" />
+                <span asp-validation-for="TXntc.FkTruso" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CNgaylap" class="control-label"></label>
+            <input asp-for="TXntc.CNgaylap" class="form-control" />
+            <span asp-validation-for="TXntc.CNgaylap" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CNgayct" class="control-label"></label>
+            <input asp-for="TXntc.CNgayct" class="form-control" />
+            <span asp-validation-for="TXntc.CNgayct" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.CSoct" class="control-label"></label>
+                <input asp-for="TXntc.CSoct" class="form-control" />
+                <span asp-validation-for="TXntc.CSoct" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkKhachhang" class="control-label"></label>
+            <select asp-for="TXntc.FkKhachhang" asp-items="Model.TDmKhSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkKhachhang" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkNguoilh" class="control-label"></label>
+            <select asp-for="TXntc.FkNguoilh" asp-items="Model.TDmNguoilhSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkNguoilh" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkLoaitien" class="control-label"></label>
+            <select asp-for="TXntc.FkLoaitien" asp-items="Model.TDmLoaitienSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkLoaitien" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CTigia" class="control-label"></label>
+            <input asp-for="TXntc.CTigia" class="form-control" />
+            <span asp-validation-for="TXntc.CTigia" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkPhongban" class="control-label"></label>
+            <input asp-for="TXntc.FkPhongban" class="form-control" />
+            <span asp-validation-for="TXntc.FkPhongban" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkTkno" class="control-label"></label>
+            <select asp-for="TXntc.FkTkno" asp-items="Model.TDmTaikhoanSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkTkno" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkTkco" class="control-label"></label>
+            <select asp-for="TXntc.FkTkco" asp-items="Model.TDmTaikhoanSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkTkco" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CPsno" class="control-label"></label>
+            <input asp-for="TXntc.CPsno" class="form-control" />
+            <span asp-validation-for="TXntc.CPsno" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CPsco" class="control-label"></label>
+            <input asp-for="TXntc.CPsco" class="form-control" />
+            <span asp-validation-for="TXntc.CPsco" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CDiengiai" class="control-label"></label>
+            <input asp-for="TXntc.CDiengiai" class="form-control" />
+            <span asp-validation-for="TXntc.CDiengiai" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CDgdong" class="control-label"></label>
+            <input asp-for="TXntc.CDgdong" class="form-control" />
+            <span asp-validation-for="TXntc.CDgdong" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.FkThutruong" class="control-label"></label>
+                <input asp-for="TXntc.FkThutruong" class="form-control" />
+                <span asp-validation-for="TXntc.FkThutruong" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkThuquy" class="control-label"></label>
+                <input asp-for="TXntc.FkThuquy" class="form-control" />
+                <span asp-validation-for="TXntc.FkThuquy" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkKetoan" class="control-label"></label>
+                <input asp-for="TXntc.FkKetoan" class="form-control" />
+                <span asp-validation-for="TXntc.FkKetoan" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkKttruong" class="control-label"></label>
+                <input asp-for="TXntc.FkKttruong" class="form-control" />
+                <span asp-validation-for="TXntc.FkKttruong" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkNguoilap" class="control-label"></label>
+                <input asp-for="TXntc.FkNguoilap" class="form-control" />
+                <span asp-validation-for="TXntc.FkNguoilap" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkThukho" class="control-label"></label>
+                <input asp-for="TXntc.FkThukho" class="form-control" />
+                <span asp-validation-for="TXntc.FkThukho" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkKhoxuat" class="control-label"></label>
+            <select asp-for="TXntc.FkKhoxuat" asp-items="Model.TDmKhohangSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkKhoxuat" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkKhonhap" class="control-label"></label>
+            <select asp-for="TXntc.FkKhonhap" asp-items="Model.TDmKhohangSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkKhonhap" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.FkNguoigiao" class="control-label"></label>
+                <input asp-for="TXntc.FkNguoigiao" class="form-control" />
+                <span asp-validation-for="TXntc.FkNguoigiao" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkVthh" class="control-label"></label>
+                <input asp-for="TXntc.FkVthh" class="form-control" />
+                <span asp-validation-for="TXntc.FkVthh" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkDvt" class="control-label"></label>
+                <input asp-for="TXntc.FkDvt" class="form-control" />
+                <span asp-validation-for="TXntc.FkDvt" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CSoluong" class="control-label"></label>
+                <input asp-for="TXntc.CSoluong" class="form-control" />
+                <span asp-validation-for="TXntc.CSoluong" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CDongia" class="control-label"></label>
+                <input asp-for="TXntc.CDongia" class="form-control" />
+                <span asp-validation-for="TXntc.CDongia" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CVat" class="control-label"></label>
+                <input asp-for="TXntc.CVat" class="form-control" />
+                <span asp-validation-for="TXntc.CVat" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkPttt" class="control-label"></label>
+            <input asp-for="TXntc.FkPttt" class="form-control" />
+            <span asp-validation-for="TXntc.FkPttt" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.CHantt" class="control-label"></label>
+                <input asp-for="TXntc.CHantt" class="form-control" />
+                <span asp-validation-for="TXntc.CHantt" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CHantt2" class="control-label"></label>
+                <input asp-for="TXntc.CHantt2" class="form-control" />
+                <span asp-validation-for="TXntc.CHantt2" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CLoaibt" class="control-label"></label>
+            <input asp-for="TXntc.CLoaibt" class="form-control" />
+            <span asp-validation-for="TXntc.CLoaibt" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.CCopy" class="control-label"></label>
+                <input asp-for="TXntc.CCopy" class="form-control" />
+                <span asp-validation-for="TXntc.CCopy" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CPosted" class="control-label"></label>
+                <input asp-for="TXntc.CPosted" class="form-control" />
+                <span asp-validation-for="TXntc.CPosted" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CPoster" class="control-label"></label>
+                <input asp-for="TXntc.CPoster" class="form-control" />
+                <span asp-validation-for="TXntc.CPoster" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkUser" class="control-label"></label>
+                <input asp-for="TXntc.FkUser" class="form-control" />
+                <span asp-validation-for="TXntc.FkUser" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CDatetime" class="control-label"></label>
+                <input asp-for="TXntc.CDatetime" class="form-control" />
+                <span asp-validation-for="TXntc.CDatetime" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CSoxe" class="control-label"></label>
+                <input asp-for="TXntc.CSoxe" class="form-control" />
+                <span asp-validation-for="TXntc.CSoxe" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CKm" class="control-label"></label>
+                <input asp-for="TXntc.CKm" class="form-control" />
+                <span asp-validation-for="TXntc.CKm" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CPromo" class="control-label"></label>
+                <input asp-for="TXntc.CPromo" class="form-control" />
+                <span asp-validation-for="TXntc.CPromo" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkOrder" class="control-label"></label>
+                <input asp-for="TXntc.FkOrder" class="form-control" />
+                <span asp-validation-for="TXntc.FkOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CTrong" class="control-label"></label>
+                <input asp-for="TXntc.CTrong" class="form-control" />
+                <span asp-validation-for="TXntc.CTrong" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CLoaixn" class="control-label"></label>
+            <input asp-for="TXntc.CLoaixn" class="form-control" />
+            <span asp-validation-for="TXntc.CLoaixn" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CLoaict" class="control-label"></label>
+            <input asp-for="TXntc.CLoaict" class="form-control" />
+            <span asp-validation-for="TXntc.CLoaict" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.FkKmp" class="control-label"></label>
+                <input asp-for="TXntc.FkKmp" class="form-control" />
+                <span asp-validation-for="TXntc.FkKmp" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkPhanxuong" class="control-label"></label>
+            <select asp-for="TXntc.FkPhanxuong" asp-items="Model.TDmPhanxuongSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkPhanxuong" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CHoadon" class="control-label"></label>
+            <input asp-for="TXntc.CHoadon" class="form-control" />
+            <span asp-validation-for="TXntc.CHoadon" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.FkLsx" class="control-label"></label>
+                <input asp-for="TXntc.FkLsx" class="form-control" />
+                <span asp-validation-for="TXntc.FkLsx" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkLsxct" class="control-label"></label>
+                <input asp-for="TXntc.FkLsxct" class="form-control" />
+                <span asp-validation-for="TXntc.FkLsxct" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CCpsx" class="control-label"></label>
+                <input asp-for="TXntc.CCpsx" class="form-control" />
+                <span asp-validation-for="TXntc.CCpsx" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CMst" class="control-label"></label>
+                <input asp-for="TXntc.CMst" class="form-control" />
+                <span asp-validation-for="TXntc.CMst" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CKhthue" class="control-label"></label>
+                <input asp-for="TXntc.CKhthue" class="form-control" />
+                <span asp-validation-for="TXntc.CKhthue" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CChatluong" class="control-label"></label>
+                <input asp-for="TXntc.CChatluong" class="form-control" />
+                <span asp-validation-for="TXntc.CChatluong" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CMrb" class="control-label"></label>
+                <input asp-for="TXntc.CMrb" class="form-control" />
+                <span asp-validation-for="TXntc.CMrb" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CSlkiemtra" class="control-label"></label>
+                <input asp-for="TXntc.CSlkiemtra" class="form-control" />
+                <span asp-validation-for="TXntc.CSlkiemtra" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkLdhh" class="control-label"></label>
+                <input asp-for="TXntc.FkLdhh" class="form-control" />
+                <span asp-validation-for="TXntc.FkLdhh" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkKhachhangco" class="control-label"></label>
+                <input asp-for="TXntc.FkKhachhangco" class="form-control" />
+                <span asp-validation-for="TXntc.FkKhachhangco" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkTscd" class="control-label"></label>
+                <input asp-for="TXntc.FkTscd" class="form-control" />
+                <span asp-validation-for="TXntc.FkTscd" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CSophieutralai" class="control-label"></label>
+                <input asp-for="TXntc.CSophieutralai" class="form-control" />
+                <span asp-validation-for="TXntc.CSophieutralai" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CNote" class="control-label"></label>
+                <input asp-for="TXntc.CNote" class="form-control" />
+                <span asp-validation-for="TXntc.CNote" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkNvkd" class="control-label"></label>
+                <input asp-for="TXntc.FkNvkd" class="form-control" />
+                <span asp-validation-for="TXntc.FkNvkd" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkKmpc" class="control-label"></label>
+            <input asp-for="TXntc.FkKmpc" class="form-control" />
+            <span asp-validation-for="TXntc.FkKmpc" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CTienthue" class="control-label"></label>
+            <input asp-for="TXntc.CTienthue" class="form-control" />
+            <span asp-validation-for="TXntc.CTienthue" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CSohdgtgt" class="control-label"></label>
+            <input asp-for="TXntc.CSohdgtgt" class="form-control" />
+            <span asp-validation-for="TXntc.CSohdgtgt" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CNguoilh" class="control-label"></label>
+            <input asp-for="TXntc.CNguoilh" class="form-control" />
+            <span asp-validation-for="TXntc.CNguoilh" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.FkModifyuser" class="control-label"></label>
+                <input asp-for="TXntc.FkModifyuser" class="form-control" />
+                <span asp-validation-for="TXntc.FkModifyuser" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CThanhtoan" class="control-label"></label>
+            <input asp-for="TXntc.CThanhtoan" class="form-control" />
+            <span asp-validation-for="TXntc.CThanhtoan" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.FkLdtg" class="control-label"></label>
+                <input asp-for="TXntc.FkLdtg" class="form-control" />
+                <span asp-validation-for="TXntc.FkLdtg" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkNguonvon" class="control-label"></label>
+                <input asp-for="TXntc.FkNguonvon" class="form-control" />
+                <span asp-validation-for="TXntc.FkNguonvon" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CLaphd" class="control-label"></label>
+                <input asp-for="TXntc.CLaphd" class="form-control" />
+                <span asp-validation-for="TXntc.CLaphd" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CChietkhau" class="control-label"></label>
+            <input asp-for="TXntc.CChietkhau" class="form-control" />
+            <span asp-validation-for="TXntc.CChietkhau" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkDondathang" class="control-label"></label>
+            <select asp-for="TXntc.FkDondathang" asp-items="Model.TDondathangSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkDondathang" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.CSlthung" class="control-label"></label>
+                <input asp-for="TXntc.CSlthung" class="form-control" />
+                <span asp-validation-for="TXntc.CSlthung" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkQuicach" class="control-label"></label>
+                <input asp-for="TXntc.FkQuicach" class="form-control" />
+                <span asp-validation-for="TXntc.FkQuicach" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CTienhang" class="control-label"></label>
+            <input asp-for="TXntc.CTienhang" class="form-control" />
+            <span asp-validation-for="TXntc.CTienhang" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CCpbanhang" class="control-label"></label>
+            <input asp-for="TXntc.CCpbanhang" class="form-control" />
+            <span asp-validation-for="TXntc.CCpbanhang" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.CPsno2" class="control-label"></label>
+                <input asp-for="TXntc.CPsno2" class="form-control" />
+                <span asp-validation-for="TXntc.CPsno2" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CPsco2" class="control-label"></label>
+                <input asp-for="TXntc.CPsco2" class="form-control" />
+                <span asp-validation-for="TXntc.CPsco2" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CDiengiai2" class="control-label"></label>
+                <input asp-for="TXntc.CDiengiai2" class="form-control" />
+                <span asp-validation-for="TXntc.CDiengiai2" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkCuocvanchuyen" class="control-label"></label>
+            <input asp-for="TXntc.FkCuocvanchuyen" class="form-control" />
+            <span asp-validation-for="TXntc.FkCuocvanchuyen" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkSoxe" class="control-label"></label>
+            <input asp-for="TXntc.FkSoxe" class="form-control" />
+            <span asp-validation-for="TXntc.FkSoxe" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CDongiatc" class="control-label"></label>
+            <input asp-for="TXntc.CDongiatc" class="form-control" />
+            <span asp-validation-for="TXntc.CDongiatc" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.FkChucnang" class="control-label"></label>
+                <input asp-for="TXntc.FkChucnang" class="form-control" />
+                <span asp-validation-for="TXntc.FkChucnang" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkCa" class="control-label"></label>
+                <input asp-for="TXntc.FkCa" class="form-control" />
+                <span asp-validation-for="TXntc.FkCa" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkTotruong" class="control-label"></label>
+                <input asp-for="TXntc.FkTotruong" class="form-control" />
+                <span asp-validation-for="TXntc.FkTotruong" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CKhdiachi" class="control-label"></label>
+            <input asp-for="TXntc.CKhdiachi" class="form-control" />
+            <span asp-validation-for="TXntc.CKhdiachi" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CTienthue2" class="control-label"></label>
+            <input asp-for="TXntc.CTienthue2" class="form-control" />
+            <span asp-validation-for="TXntc.CTienthue2" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkSochuyen" class="control-label"></label>
+            <input asp-for="TXntc.FkSochuyen" class="form-control" />
+            <span asp-validation-for="TXntc.FkSochuyen" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkHangvanchuyen" class="control-label"></label>
+            <input asp-for="TXntc.FkHangvanchuyen" class="form-control" />
+            <span asp-validation-for="TXntc.FkHangvanchuyen" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CNguoivanchuyen" class="control-label"></label>
+            <input asp-for="TXntc.CNguoivanchuyen" class="form-control" />
+            <span asp-validation-for="TXntc.CNguoivanchuyen" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.CField1" class="control-label"></label>
+                <input asp-for="TXntc.CField1" class="form-control" />
+                <span asp-validation-for="TXntc.CField1" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CField2" class="control-label"></label>
+                <input asp-for="TXntc.CField2" class="form-control" />
+                <span asp-validation-for="TXntc.CField2" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CExtraentry" class="control-label"></label>
+                <input asp-for="TXntc.CExtraentry" class="form-control" />
+                <span asp-validation-for="TXntc.CExtraentry" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CMauso" class="control-label"></label>
+                <input asp-for="TXntc.CMauso" class="form-control" />
+                <span asp-validation-for="TXntc.CMauso" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CTk" class="control-label"></label>
+            <input asp-for="TXntc.CTk" class="form-control" />
+            <span asp-validation-for="TXntc.CTk" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.FkTour" class="control-label"></label>
+                <input asp-for="TXntc.FkTour" class="form-control" />
+                <span asp-validation-for="TXntc.FkTour" class="text-danger"></span>
+            </div>*@
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.CSoluongxuat" class="control-label"></label>
+                <input asp-for="TXntc.CSoluongxuat" class="form-control" />
+                <span asp-validation-for="TXntc.CSoluongxuat" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CTmpdichdanh" class="control-label"></label>
+                <input asp-for="TXntc.CTmpdichdanh" class="form-control" />
+                <span asp-validation-for="TXntc.CTmpdichdanh" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkThutruong02" class="control-label"></label>
+                <input asp-for="TXntc.FkThutruong02" class="form-control" />
+                <span asp-validation-for="TXntc.FkThutruong02" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkKttruong02" class="control-label"></label>
+                <input asp-for="TXntc.FkKttruong02" class="form-control" />
+                <span asp-validation-for="TXntc.FkKttruong02" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkKetoan02" class="control-label"></label>
+                <input asp-for="TXntc.FkKetoan02" class="form-control" />
+                <span asp-validation-for="TXntc.FkKetoan02" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkThuquy02" class="control-label"></label>
+                <input asp-for="TXntc.FkThuquy02" class="form-control" />
+                <span asp-validation-for="TXntc.FkThuquy02" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkNguoilap02" class="control-label"></label>
+                <input asp-for="TXntc.FkNguoilap02" class="form-control" />
+                <span asp-validation-for="TXntc.FkNguoilap02" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkThukho02" class="control-label"></label>
+                <input asp-for="TXntc.FkThukho02" class="form-control" />
+                <span asp-validation-for="TXntc.FkThukho02" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkNguoigiao02" class="control-label"></label>
+                <input asp-for="TXntc.FkNguoigiao02" class="form-control" />
+                <span asp-validation-for="TXntc.FkNguoigiao02" class="text-danger"></span>
+            </div>*@
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.CFob" class="control-label"></label>
+                <input asp-for="TXntc.CFob" class="form-control" />
+                <span asp-validation-for="TXntc.CFob" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CF" class="control-label"></label>
+                <input asp-for="TXntc.CF" class="form-control" />
+                <span asp-validation-for="TXntc.CF" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CI" class="control-label"></label>
+                <input asp-for="TXntc.CI" class="form-control" />
+                <span asp-validation-for="TXntc.CI" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CCif" class="control-label"></label>
+                <input asp-for="TXntc.CCif" class="form-control" />
+                <span asp-validation-for="TXntc.CCif" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CCif2" class="control-label"></label>
+                <input asp-for="TXntc.CCif2" class="form-control" />
+                <span asp-validation-for="TXntc.CCif2" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CThuenk" class="control-label"></label>
+            <input asp-for="TXntc.CThuenk" class="form-control" />
+            <span asp-validation-for="TXntc.CThuenk" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CGttruocthue" class="control-label"></label>
+            <input asp-for="TXntc.CGttruocthue" class="form-control" />
+            <span asp-validation-for="TXntc.CGttruocthue" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CGttruocthue2" class="control-label"></label>
+            <input asp-for="TXntc.CGttruocthue2" class="form-control" />
+            <span asp-validation-for="TXntc.CGttruocthue2" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.FkCostCenter" class="control-label"></label>
+                <input asp-for="TXntc.FkCostCenter" class="form-control" />
+                <span asp-validation-for="TXntc.FkCostCenter" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CImportData" class="control-label"></label>
+                <input asp-for="TXntc.CImportData" class="form-control" />
+                <span asp-validation-for="TXntc.CImportData" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CTienhangvanchuyen" class="control-label"></label>
+            <input asp-for="TXntc.CTienhangvanchuyen" class="form-control" />
+            <span asp-validation-for="TXntc.CTienhangvanchuyen" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CSotknh" class="control-label"></label>
+            <input asp-for="TXntc.CSotknh" class="form-control" />
+            <span asp-validation-for="TXntc.CSotknh" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.FkVoyage" class="control-label"></label>
+                <input asp-for="TXntc.FkVoyage" class="form-control" />
+                <span asp-validation-for="TXntc.FkVoyage" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CBillOflading" class="control-label"></label>
+                <input asp-for="TXntc.CBillOflading" class="form-control" />
+                <span asp-validation-for="TXntc.CBillOflading" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CVoyage" class="control-label"></label>
+                <input asp-for="TXntc.CVoyage" class="form-control" />
+                <span asp-validation-for="TXntc.CVoyage" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CVessel" class="control-label"></label>
+                <input asp-for="TXntc.CVessel" class="form-control" />
+                <span asp-validation-for="TXntc.CVessel" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CEta" class="control-label"></label>
+                <input asp-for="TXntc.CEta" class="form-control" />
+                <span asp-validation-for="TXntc.CEta" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CPol" class="control-label"></label>
+                <input asp-for="TXntc.CPol" class="form-control" />
+                <span asp-validation-for="TXntc.CPol" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CPod" class="control-label"></label>
+                <input asp-for="TXntc.CPod" class="form-control" />
+                <span asp-validation-for="TXntc.CPod" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CPoreceive" class="control-label"></label>
+                <input asp-for="TXntc.CPoreceive" class="form-control" />
+                <span asp-validation-for="TXntc.CPoreceive" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CPodelivery" class="control-label"></label>
+                <input asp-for="TXntc.CPodelivery" class="form-control" />
+                <span asp-validation-for="TXntc.CPodelivery" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkBillOflading" class="control-label"></label>
+                <input asp-for="TXntc.FkBillOflading" class="form-control" />
+                <span asp-validation-for="TXntc.FkBillOflading" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CDain" class="control-label"></label>
+                <input asp-for="TXntc.CDain" class="form-control" />
+                <span asp-validation-for="TXntc.CDain" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CLastexport" class="control-label"></label>
+                <input asp-for="TXntc.CLastexport" class="form-control" />
+                <span asp-validation-for="TXntc.CLastexport" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkVthhLuu" class="control-label"></label>
+                <input asp-for="TXntc.FkVthhLuu" class="form-control" />
+                <span asp-validation-for="TXntc.FkVthhLuu" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkNhomKc" class="control-label"></label>
+                <input asp-for="TXntc.FkNhomKc" class="form-control" />
+                <span asp-validation-for="TXntc.FkNhomKc" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CBookingnote" class="control-label"></label>
+                <input asp-for="TXntc.CBookingnote" class="form-control" />
+                <span asp-validation-for="TXntc.CBookingnote" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkBookingnote" class="control-label"></label>
+                <input asp-for="TXntc.FkBookingnote" class="form-control" />
+                <span asp-validation-for="TXntc.FkBookingnote" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.FkDtcpLuu" class="control-label"></label>
+                <input asp-for="TXntc.FkDtcpLuu" class="form-control" />
+                <span asp-validation-for="TXntc.FkDtcpLuu" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CImportXuat" class="control-label"></label>
+                <input asp-for="TXntc.CImportXuat" class="form-control" />
+                <span asp-validation-for="TXntc.CImportXuat" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CCkTienmat" class="control-label"></label>
+            <input asp-for="TXntc.CCkTienmat" class="form-control" />
+            <span asp-validation-for="TXntc.CCkTienmat" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.CUpdate" class="control-label"></label>
+                <input asp-for="TXntc.CUpdate" class="form-control" />
+                <span asp-validation-for="TXntc.CUpdate" class="text-danger"></span>
+            </div>*@
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CKyhieumau" class="control-label"></label>
+            <input asp-for="TXntc.CKyhieumau" class="form-control" />
+            <span asp-validation-for="TXntc.CKyhieumau" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CMahoadon" class="control-label"></label>
+            <input asp-for="TXntc.CMahoadon" class="form-control" />
+            <span asp-validation-for="TXntc.CMahoadon" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CNguyengia" class="control-label"></label>
+            <input asp-for="TXntc.CNguyengia" class="form-control" />
+            <span asp-validation-for="TXntc.CNguyengia" class="text-danger"></span>
+        </div>
+        @*<div class="form-group col-3">
+                <label asp-for="TXntc.FkVitri" class="control-label"></label>
+                <input asp-for="TXntc.FkVitri" class="form-control" />
+                <span asp-validation-for="TXntc.FkVitri" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CSolo" class="control-label"></label>
+                <input asp-for="TXntc.CSolo" class="form-control" />
+                <span asp-validation-for="TXntc.CSolo" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CHansudung" class="control-label"></label>
+                <input asp-for="TXntc.CHansudung" class="form-control" />
+                <span asp-validation-for="TXntc.CHansudung" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TXntc.CHetSl" class="control-label"></label>
+                <input asp-for="TXntc.CHetSl" class="form-control" />
+                <span asp-validation-for="TXntc.CHetSl" class="text-danger"></span>
+            </div>*@
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Tạo mới" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

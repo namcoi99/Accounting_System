@@ -7,18 +7,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace Accounting_System.Areas.Admin.Pages.CatalogPage
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
         private readonly Cafe1Context _context;
-        public IndexModel(ILogger<IndexModel> logger, Cafe1Context context)
+        private readonly IConfiguration _config;
+        public IndexModel(Cafe1Context context, IConfiguration config)
         {
-            _logger = logger;
             _context = context;
+            _config = config;
         }
         public int? CurrentCatalogId { get; set; }
         public IList<TSysList> CatalogList { get; set; }
@@ -91,7 +92,7 @@ namespace Accounting_System.Areas.Admin.Pages.CatalogPage
             {
                 queryString += " WHERE " + keyString + " = '" + keyValue + "'";
             }
-            string connectionString = Constants.CONNECTION_STRING;
+            string connectionString = _config.GetConnectionString("Cafe1Context");
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -124,7 +125,7 @@ namespace Accounting_System.Areas.Admin.Pages.CatalogPage
             }
             queryString += string.Join(",", queryArray);
             queryString += ")";
-            string connectionString = Constants.CONNECTION_STRING;
+            string connectionString = _config.GetConnectionString("Cafe1Context"); ;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -146,7 +147,7 @@ namespace Accounting_System.Areas.Admin.Pages.CatalogPage
             }
             RowsCount = 0;
             string queryString = "SELECT " + string.Join(",", CurrentColumnNames) + " FROM  dbo." + CurrentCatalog.CTable;
-            string connectionString = Constants.CONNECTION_STRING;
+            string connectionString = _config.GetConnectionString("Cafe1Context");
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

@@ -77,13 +77,6 @@
                 <span asp-validation-for="TDondathang.CDiengiai" class="text-danger"></span>
             </div>
             <div class="form-group col-3">
-                <label asp-for="TDondathang.FkVuviec" class="control-label"></label>
-                <select asp-for="TDondathang.FkVuviec" asp-items="Model.VuviecSelectList" class="form-control">
-                    <option value="" selected disabled>Chọn</option>
-                </select>
-                <span asp-validation-for="TDondathang.FkVuviec" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
                 <label asp-for="TDondathang.FkPhongban" class="control-label"></label>
                 <select asp-for="TDondathang.FkPhongban" asp-items="Model.PhongbanSelectList" class="form-control">
                     <option value="" selected disabled>Chọn</option>
@@ -98,11 +91,6 @@
                 <span asp-validation-for="TDondathang.FkPhanxuong" class="text-danger"></span>
             </div>
             @*<div class="form-group col-3">
-                <label asp-for="TDondathang.FkDtcp" class="control-label"></label>
-                <input asp-for="TDondathang.FkDtcp" class="form-control" />
-                <span asp-validation-for="TDondathang.FkDtcp" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
                 <label asp-for="TDondathang.FkKmp" class="control-label"></label>
                 <input asp-for="TDondathang.FkKmp" class="form-control" />
                 <span asp-validation-for="TDondathang.FkKmp" class="text-danger"></span>
@@ -202,127 +190,6 @@
                 <span asp-validation-for="TDondathang.FkPttt" class="text-danger"></span>
             </div>
         </div>
-        @* Thông tin chi tiết *@
-        @*<h4>Thông tin chi tiết</h4>
-        <button class="btn btn-primary" id="addVthh">Thêm vật tư, hàng hóa</button>
-        <div class="card shadow my-4 w-100">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Thông tin chi tiết</h6>
-            </div>
-            <div class="card-body">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th scope="col">@Html.DisplayNameFor(model => model.TDondathangct.CStt)</th>
-                                <th scope="col">@Html.DisplayNameFor(model => model.TDondathangct.FkVthh)</th>
-                                <th scope="col">@Html.DisplayNameFor(model => model.TDondathangct.CNgaynhan)</th>
-                                <th scope="col">@Html.DisplayNameFor(model => model.TDondathangct.CNgaydukien)</th>
-                                <th scope="col">@Html.DisplayNameFor(model => model.TDondathangct.CSoluong)</th>
-                                <th scope="col">@Html.DisplayNameFor(model => model.TDondathangct.CDongia)</th>
-                                <th scope="col">@Html.DisplayNameFor(model => model.TDondathangct.CDongia2)</th>
-                                <th scope="col">@Html.DisplayNameFor(model => model.TDondathangct.CDongiatc)</th>
-                                <th scope="col">@Html.DisplayNameFor(model => model.TDondathangct.FkTrangthai)</th>
-                                <th scope="col">@Html.DisplayNameFor(model => model.TDondathangct.FkNguoncc)</th>
-                                <th scope="col">@Html.DisplayNameFor(model => model.TDondathangct.CKhuyenmai)</th>
-                                <th scope="col">@Html.DisplayNameFor(model => model.TDondathangct.CTinhthue)</th>
-                            </tr>
-                        </thead>
-                        <tbody id="VthhList">
-                            <tr>
-                                <td>
-                                    <input asp-for="TDondathangct.CStt" class="form-control" />
-                                </td>
-                                <td>
-                                    <select asp-for="TDondathangct.FkVthh" asp-items="Model.VattuhanghoaSelectList" class="form-control">
-                                    </select>
-                                </td>
-                                <td>
-                                    <input asp-for="TDondathangct.CNgaynhan" class="form-control" />
-                                </td>
-                                <td>
-                                    <input asp-for="TDondathangct.CNgaydukien" class="form-control" />
-                                </td>
-                                <td>
-                                    <input asp-for="TDondathangct.CSoluong" class="form-control" />
-                                </td>
-                                <td>
-                                    <input asp-for="TDondathangct.CDongia" class="form-control" />
-                                </td>
-                                <td>
-                                    <input asp-for="TDondathangct.CDongia2" class="form-control" />
-                                </td>
-                                <td>
-                                    <input asp-for="TDondathangct.CDongiatc" class="form-control" />
-                                </td>
-                                <td>
-                                    <input asp-for="TDondathangct.FkTrangthai" class="form-control" />
-                                </td>
-                                <td>
-                                    <input asp-for="TDondathangct.FkNguoncc" class="form-control" />
-                                </td>
-                                <td>
-                                    <input type="checkbox" name="TDondathangct.CKhuyenmai" value="false" />
-
-                                </td>
-                                <td>
-                                    <input type="checkbox" name="TDondathangct.CTinhthue" value="false" />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <hr />*@
-        @* Thông tin vận chuyển *@
-        @*<h4>Thông tin vận chuyển</h4>
-        <div class="row">
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.FkSoxe" class="control-label"></label>
-                <input asp-for="TDondathang.FkSoxe" class="form-control" />
-                <span asp-validation-for="TDondathang.FkSoxe" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.FkCuocvanchuyen" class="control-label"></label>
-                <input asp-for="TDondathang.FkCuocvanchuyen" class="form-control" />
-                <span asp-validation-for="TDondathang.FkCuocvanchuyen" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.FkSochuyen" class="control-label"></label>
-                <input asp-for="TDondathang.FkSochuyen" class="form-control" />
-                <span asp-validation-for="TDondathang.FkSochuyen" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.FkHangvanchuyen" class="control-label"></label>
-                <input asp-for="TDondathang.FkHangvanchuyen" class="form-control" />
-                <span asp-validation-for="TDondathang.FkHangvanchuyen" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.CNguoivanchuyen" class="control-label"></label>
-                <input asp-for="TDondathang.CNguoivanchuyen" class="form-control" />
-                <span asp-validation-for="TDondathang.CNguoivanchuyen" class="text-danger"></span>
-            </div>
-        </div>
-        <hr />*@
-        @* Điều khoản *@
-        @*<h4>Điều khoản</h4>
-        <div class="row">
-            <div class="form-group col-3">
-                <label asp-for="TDondathangdk.CStt" class="control-label"></label>
-                <input asp-for="TDondathangdk.CStt" class="form-control" />
-                <span asp-validation-for="TDondathangdk.CStt" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathangdk.FkDkbg" class="control-label"></label>
-                <select asp-for="TDondathangdk.FkDkbg" asp-items="Model.DkbgSelectList" class="form-control">
-                    <option value="" selected disabled>Chọn</option>
-                </select>
-                <span asp-validation-for="TDondathangdk.FkDkbg" class="text-danger"></span>
-            </div>
-        </div>*@
         <div class="form-group">
             <input type="submit" value="Tạo mới" class="btn btn-primary" />
         </div>

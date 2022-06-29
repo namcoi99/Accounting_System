@@ -41,7 +41,7 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
             IList<TDmPhongban> TDmPhongban;
             IList<TDmPhanxuong> TDmPhanxuong;
             IList<TDmVthh> TDmVthh;
-            IList<TDmLoaibg> TDmLoaibg;
+            //IList<TDmLoaibg> TDmLoaibg;
             IList<TDmPttt> TDmPttt;
             IList<TDmDkbg> TDmDkbg;
             TDvcs = _context.TDmDvcs.ToList();
@@ -106,10 +106,6 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
 
         [BindProperty]
         public TDondathang TDondathang { get; set; }
-        [BindProperty]
-        public TDondathangct TDondathangct { get; set; }
-        [BindProperty]
-        public TDondathangdk TDondathangdk { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -123,17 +119,7 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
             _context.TDondathang.Add(TDondathang);
             await _context.SaveChangesAsync();
             TDondathang newItem = await _context.TDondathang.Where(item => item.CSophieu == TDondathang.CSophieu).FirstOrDefaultAsync();
-            int fkDonDatHang = newItem.PkId;
-            TDmVthh vthh = await _context.TDmVthh.Where(item => item.PkId == TDondathangct.FkVthh).FirstOrDefaultAsync();
-            short fkDvban = vthh.FkDvban;
-            TDondathangct.FkDvban = fkDvban;
-            TDondathangct.FkDondathang = fkDonDatHang;
-            TDondathangdk.FkDondathang = fkDonDatHang;
-
-            _context.TDondathangct.Add(TDondathangct);
-            _context.TDondathangdk.Add(TDondathangdk);
-            await _context.SaveChangesAsync();
-            return RedirectToPage("./Details");
+            return RedirectToPage("./Details", new { id = newItem.PkId });
         }
     }
 }

@@ -93,7 +93,7 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
                     throw;
                 }
             }
-            return RedirectToPage("./Details", new { id = TDondathangct.FkDondathang });
+            return RedirectToPage("./Details", new { id = TDondathang.PkId });
         }
 
         public async Task<IActionResult> OnPostCreateVthhAsync()
@@ -155,6 +155,16 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
         private bool TDondathangExists(int id)
         {
             return _context.TDondathang.Any(e => e.PkId == id);
+        }
+
+        public TDmDkbg GetDkbgbyId(int id)
+        {
+            return _context.TDmDkbg.FirstOrDefault(item => item.PkId == id);
+        }
+
+        public TDmVthh GetVthhbyId(int id)
+        {
+            return _context.TDmVthh.FirstOrDefault(item => item.PkId == id);
         }
     }
 }

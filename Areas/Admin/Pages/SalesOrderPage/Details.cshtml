@@ -321,7 +321,7 @@
                                 @Html.DisplayFor(modelItem => item.CStt)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.FkVthh)
+                                @Html.DisplayFor(modelItem => Model.GetVthhbyId(item.FkVthh).CMa)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.CNgaynhan)
@@ -388,12 +388,14 @@
 </div>
 
 @* Thông tin vận chuyển *@
-<div class="card shadow mb-4 w-100">
+<!--<div class="card shadow mb-4 w-100">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Thông tin vận chuyển</h6>
     </div>
     <div class="card-body">
-        <form method="post" asp-page-handler="updateTtvc">
+        <form method="post" asp-page-handler="UpdateTtvc">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="TDondathang.PkId" />
             <div class="row">
                 <div class="form-group col-3">
                     <label asp-for="TDondathang.FkSoxe" class="control-label"></label>
@@ -401,34 +403,34 @@
                         <option value="" selected disabled>Chọn</option>
                     </select>
                     <span asp-validation-for="TDondathang.FkSoxe" class="text-danger"></span>
-                </div>
+                </div>-->
                 @*<div class="form-group col-3">
-                    <label asp-for="TDondathang.FkCuocvanchuyen" class="control-label"></label>
-                    <input asp-for="TDondathang.FkCuocvanchuyen" class="form-control" />
-                    <span asp-validation-for="TDondathang.FkCuocvanchuyen" class="text-danger"></span>
-                </div>*@
+                <label asp-for="TDondathang.FkCuocvanchuyen" class="control-label"></label>
+                <input asp-for="TDondathang.FkCuocvanchuyen" class="form-control" />
+                <span asp-validation-for="TDondathang.FkCuocvanchuyen" class="text-danger"></span>
+            </div>*@
                 @*<div class="form-group col-3">
-                    <label asp-for="TDondathang.FkSochuyen" class="control-label"></label>
-                    <input asp-for="TDondathang.FkSochuyen" class="form-control" />
-                    <span asp-validation-for="TDondathang.FkSochuyen" class="text-danger"></span>
-                </div>*@
+                <label asp-for="TDondathang.FkSochuyen" class="control-label"></label>
+                <input asp-for="TDondathang.FkSochuyen" class="form-control" />
+                <span asp-validation-for="TDondathang.FkSochuyen" class="text-danger"></span>
+            </div>*@
                 @*<div class="form-group col-3">
-                    <label asp-for="TDondathang.FkHangvanchuyen" class="control-label"></label>
-                    <input asp-for="TDondathang.FkHangvanchuyen" class="form-control" />
-                    <span asp-validation-for="TDondathang.FkHangvanchuyen" class="text-danger"></span>
-                </div>*@
-                <div class="form-group col-3">
+                <label asp-for="TDondathang.FkHangvanchuyen" class="control-label"></label>
+                <input asp-for="TDondathang.FkHangvanchuyen" class="form-control" />
+                <span asp-validation-for="TDondathang.FkHangvanchuyen" class="text-danger"></span>
+            </div>*@
+                <!--<div class="form-group col-3">
                     <label asp-for="TDondathang.CNguoivanchuyen" class="control-label"></label>
                     <input asp-for="TDondathang.CNguoivanchuyen" class="form-control" />
                     <span asp-validation-for="TDondathang.CNguoivanchuyen" class="text-danger"></span>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary">
                 Cập nhật
             </button>
         </form>
     </div>
-</div>
+</div>-->
 
 @*  Danh sách điều khoản*@
 <div class="card shadow w-100">
@@ -456,7 +458,7 @@
                                 @Html.DisplayFor(modelItem => item.CStt)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.FkDkbg)
+                                @Html.DisplayFor(modelItem => Model.GetDkbgbyId(item.FkDkbg).CMota)
                             </td>
                             <td>
                                 <form method="post" asp-page-handler="DeleteDkbg">

@@ -30,7 +30,7 @@ namespace Accounting_System.Models
         public DateTime? CNgaynhan { get; set; }
         [DisplayName("Ngày hết hạn")]
         public DateTime? CNgayhethan { get; set; }
-        [DisplayName("Khánh hàng")]
+        [DisplayName("Khách hàng")]
         public int? FkKhachhang { get; set; }
         [DisplayName("Người LH")]
         public int? FkNguoilh { get; set; }

@@ -1,0 +1,991 @@
+﻿@page
+@model Accounting_System.Areas.Admin.Pages.UpdateDocumentPage.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TXntc</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkChungtu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkChungtu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CSophieu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CSophieu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkDvcs)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkDvcs)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkTruso)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkTruso)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CNgaylap)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CNgaylap)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CNgayct)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CNgayct)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CSoct)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CSoct)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkKhachhang)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkKhachhang)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkNguoilh)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkNguoilh)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkLoaitien)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkLoaitien)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CTigia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CTigia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkPhongban)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkPhongban)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkTkno)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkTkno)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkTkco)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkTkco)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CPsno)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CPsno)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CPsco)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CPsco)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CDiengiai)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CDiengiai)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CDgdong)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CDgdong)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkThutruong)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkThutruong)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkThuquy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkThuquy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkKetoan)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkKetoan)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkKttruong)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkKttruong)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkNguoilap)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkNguoilap)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkThukho)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkThukho)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkKhoxuat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkKhoxuat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkKhonhap)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkKhonhap)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkKexuat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkKexuat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkKenhap)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkKenhap)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkNguoigiao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkNguoigiao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkVthh)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkVthh)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkDvt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkDvt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CSoluong)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CSoluong)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CDongia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CDongia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CVat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CVat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkVuviec)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkVuviec)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkPttt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkPttt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CHantt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CHantt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CHantt2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CHantt2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CLoaibt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CLoaibt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CCopy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CCopy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CPosted)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CPosted)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CPoster)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CPoster)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkUser)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkUser)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CDatetime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CDatetime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CSoxe)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CSoxe)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CKm)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CKm)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CPromo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CPromo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkOrder)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkOrder)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CTrong)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CTrong)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CLoaixn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CLoaixn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CLoaict)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CLoaict)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkKmp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkKmp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkDtcp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkDtcp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkPhanxuong)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkPhanxuong)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CHoadon)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CHoadon)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkLsx)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkLsx)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkLsxct)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkLsxct)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CCpsx)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CCpsx)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CMst)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CMst)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CKhthue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CKhthue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CChatluong)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CChatluong)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CMrb)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CMrb)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CSlkiemtra)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CSlkiemtra)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkLdhh)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkLdhh)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkKhachhangco)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkKhachhangco)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkTscd)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkTscd)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CSophieutralai)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CSophieutralai)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CNote)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CNote)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkNvkd)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkNvkd)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkKmpc)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkKmpc)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CKhuno)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CKhuno)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CKhuco)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CKhuco)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CTienthue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CTienthue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CSohdgtgt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CSohdgtgt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CNguoilh)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CNguoilh)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkModifyuser)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkModifyuser)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CThanhtoan)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CThanhtoan)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkLdtg)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkLdtg)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkNguonvon)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkNguonvon)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CLaphd)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CLaphd)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CTheobo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CTheobo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CMathang)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CMathang)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkLoaidl)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkLoaidl)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CChietkhau)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CChietkhau)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkDondathang)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkDondathang)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CSlthung)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CSlthung)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkQuicach)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkQuicach)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CTienhang)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CTienhang)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CCpbanhang)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CCpbanhang)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CPsno2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CPsno2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CPsco2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CPsco2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CDiengiai2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CDiengiai2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkCuocvanchuyen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkCuocvanchuyen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkSoxe)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkSoxe)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CDongiatc)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CDongiatc)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkChucnang)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkChucnang)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkCa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkCa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkTotruong)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkTotruong)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CKhdiachi)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CKhdiachi)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CTienthue2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CTienthue2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkSochuyen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkSochuyen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkHangvanchuyen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkHangvanchuyen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CNguoivanchuyen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CNguoivanchuyen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CField1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CField1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CField2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CField2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CExtraentry)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CExtraentry)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CMauso)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CMauso)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CTk)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CTk)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkTour)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkTour)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CStt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CStt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CSoluongxuat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CSoluongxuat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CTmpdichdanh)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CTmpdichdanh)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkThutruong02)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkThutruong02)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkKttruong02)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkKttruong02)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkKetoan02)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkKetoan02)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkThuquy02)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkThuquy02)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkNguoilap02)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkNguoilap02)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkThukho02)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkThukho02)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkNguoigiao02)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkNguoigiao02)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CButtoanthem)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CButtoanthem)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CSophieucu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CSophieucu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CFob)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CFob)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CF)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CF)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CI)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CI)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CCif)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CCif)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CCif2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CCif2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CThuenk)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CThuenk)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CGttruocthue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CGttruocthue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CGttruocthue2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CGttruocthue2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkCostCenter)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkCostCenter)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CImportData)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CImportData)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CTienhangvanchuyen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CTienhangvanchuyen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CSotknh)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CSotknh)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkVoyage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkVoyage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CBillOflading)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CBillOflading)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CVoyage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CVoyage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CVessel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CVessel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CEta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CEta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CPol)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CPol)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CPod)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CPod)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CPoreceive)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CPoreceive)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CPodelivery)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CPodelivery)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkBillOflading)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkBillOflading)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CDain)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CDain)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CLastexport)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CLastexport)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkVthhLuu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkVthhLuu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkNhomKc)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkNhomKc)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CBookingnote)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CBookingnote)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkBookingnote)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkBookingnote)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkDtcpLuu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkDtcpLuu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CImportXuat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CImportXuat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CCkTienmat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CCkTienmat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkQlxDenghixuat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkQlxDenghixuat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkDtcpco)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkDtcpco)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CUpdate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CUpdate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CKyhieumau)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CKyhieumau)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CMahoadon)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CMahoadon)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CNguyengia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CNguyengia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.FkVitri)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.FkVitri)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CSolo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CSolo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CHansudung)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CHansudung)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TXntc.CHetSl)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TXntc.CHetSl)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TXntc.PkId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
