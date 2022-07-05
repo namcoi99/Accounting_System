@@ -44,6 +44,7 @@ $(document).ready(function () {
             'print',
             'pdf'
         ],
-        fixedHeader: true
+        fixedHeader: true,
+        scrollX: true
     });
 });

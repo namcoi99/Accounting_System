@@ -2,13 +2,12 @@
 @model Accounting_System.Areas.Admin.Pages.SalesOrderPage.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi tiết đơn đặt hàng";
 }
 <div>
     <a asp-page="./Index"><i class="fas fa-arrow-left mr-1"></i>Trờ về</a>
 </div>
 <h1>Thông tin chi tiết</h1>
-
 <div>
     <h4>Đơn đặt hàng (Sales Order)</h4>
     <hr />
@@ -311,72 +310,77 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model.TDondathangctList)
+                    @if (Model.TDondathangctList != null)
                     {
-                        <tr>
-                            @*<td>
-                                    @Html.DisplayFor(modelItem => item.FkDondathang)
-                                </td>*@
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CStt)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => Model.GetVthhbyId(item.FkVthh).CMa)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CNgaynhan)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CSoluong)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.FkDvban)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CDongia)
-                            </td>
-                            @*<td>
-                                    @Html.DisplayFor(modelItem => item.CPheduyet)
+                        var index = 0;
+                        @foreach (var item in Model.TDondathangctList)
+                        {
+                            index++;
+                            <tr>
+                                @*<td>
+                        @Html.DisplayFor(modelItem => item.FkDondathang)
+                    </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => index)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.FkNguoipd)
-                                </td>*@
-                            <td>
-                                @Html.DisplayFor(modelItem => item.FkTrangthai)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CDongia2)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CKhuyenmai)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.FkNguoncc)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CNgaydukien)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CDongiatc)
-                            </td>
-                            @*<td>
-                                    @Html.DisplayFor(modelItem => item.CDaban)
-                                </td>*@
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CTinhthue)
-                            </td>
-                            @*<td>
-                                    @Html.DisplayFor(modelItem => item.CStopRemind)
-                                </td>*@
-                            <td>
-                                <form method="post" asp-page-handler="DeleteVthh">
-                                    <input name="id" value="@item.PkId" type="hidden" />
-                                    <input name="orderId" value="@Model.TDondathang.PkId" type="hidden" />
-                                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.PkId">Sửa</a>
-                                    <button type="submit" class="btn btn-primary">Xóa</button>
-                                </form>
-                            </td>
-                        </tr>
+                                    @Html.DisplayFor(modelItem => Model.GetVthhbyId(item.FkVthh).CMa)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CNgaynhan)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CSoluong)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FkDvban)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CDongia)
+                                </td>
+                                @*<td>
+                        @Html.DisplayFor(modelItem => item.CPheduyet)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FkNguoipd)
+                    </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FkTrangthai)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CDongia2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CKhuyenmai)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FkNguoncc)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CNgaydukien)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CDongiatc)
+                                </td>
+                                @*<td>
+                        @Html.DisplayFor(modelItem => item.CDaban)
+                    </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CTinhthue)
+                                </td>
+                                @*<td>
+                        @Html.DisplayFor(modelItem => item.CStopRemind)
+                    </td>*@
+                                <td>
+                                    <form method="post" asp-page-handler="DeleteVthh">
+                                        <input name="id" value="@item.PkId" type="hidden" />
+                                        <input name="orderId" value="@Model.TDondathang.PkId" type="hidden" />
+                                        <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.PkId">Sửa</a>
+                                        <button type="submit" class="btn btn-primary">Xóa</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
                     }
                 </tbody>
             </table>
@@ -404,22 +408,22 @@
                     </select>
                     <span asp-validation-for="TDondathang.FkSoxe" class="text-danger"></span>
                 </div>-->
-                @*<div class="form-group col-3">
-                <label asp-for="TDondathang.FkCuocvanchuyen" class="control-label"></label>
-                <input asp-for="TDondathang.FkCuocvanchuyen" class="form-control" />
-                <span asp-validation-for="TDondathang.FkCuocvanchuyen" class="text-danger"></span>
-            </div>*@
-                @*<div class="form-group col-3">
-                <label asp-for="TDondathang.FkSochuyen" class="control-label"></label>
-                <input asp-for="TDondathang.FkSochuyen" class="form-control" />
-                <span asp-validation-for="TDondathang.FkSochuyen" class="text-danger"></span>
-            </div>*@
-                @*<div class="form-group col-3">
-                <label asp-for="TDondathang.FkHangvanchuyen" class="control-label"></label>
-                <input asp-for="TDondathang.FkHangvanchuyen" class="form-control" />
-                <span asp-validation-for="TDondathang.FkHangvanchuyen" class="text-danger"></span>
-            </div>*@
-                <!--<div class="form-group col-3">
+@*<div class="form-group col-3">
+        <label asp-for="TDondathang.FkCuocvanchuyen" class="control-label"></label>
+        <input asp-for="TDondathang.FkCuocvanchuyen" class="form-control" />
+        <span asp-validation-for="TDondathang.FkCuocvanchuyen" class="text-danger"></span>
+    </div>*@
+@*<div class="form-group col-3">
+        <label asp-for="TDondathang.FkSochuyen" class="control-label"></label>
+        <input asp-for="TDondathang.FkSochuyen" class="form-control" />
+        <span asp-validation-for="TDondathang.FkSochuyen" class="text-danger"></span>
+    </div>*@
+@*<div class="form-group col-3">
+        <label asp-for="TDondathang.FkHangvanchuyen" class="control-label"></label>
+        <input asp-for="TDondathang.FkHangvanchuyen" class="form-control" />
+        <span asp-validation-for="TDondathang.FkHangvanchuyen" class="text-danger"></span>
+    </div>*@
+<!--<div class="form-group col-3">
                     <label asp-for="TDondathang.CNguoivanchuyen" class="control-label"></label>
                     <input asp-for="TDondathang.CNguoivanchuyen" class="form-control" />
                     <span asp-validation-for="TDondathang.CNguoivanchuyen" class="text-danger"></span>
@@ -431,7 +435,6 @@
         </form>
     </div>
 </div>-->
-
 @*  Danh sách điều khoản*@
 <div class="card shadow w-100">
     <div class="card-header py-3">
@@ -451,24 +454,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model.TDondathangdkList)
+                    @if (Model.TDondathangdkList != null)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CStt)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => Model.GetDkbgbyId(item.FkDkbg).CMota)
-                            </td>
-                            <td>
-                                <form method="post" asp-page-handler="DeleteDkbg">
-                                    <input name="id" value="@item.PkId" type="hidden" />
-                                    <input name="orderId" value="@Model.TDondathang.PkId" type="hidden" />
-                                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.PkId">Sửa</a>
-                                    <button type="submit" class="btn btn-primary">Xóa</button>
-                                </form>
-                            </td>
-                        </tr>
+                        var index = 0;
+                        @foreach (var item in Model.TDondathangdkList)
+                        {
+                            index++;
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => index)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => Model.GetDkbgbyId(item.FkDkbg).CMota)
+                                </td>
+                                <td>
+                                    <form method="post" asp-page-handler="DeleteDkbg">
+                                        <input name="id" value="@item.PkId" type="hidden" />
+                                        <input name="orderId" value="@Model.TDondathang.PkId" type="hidden" />
+                                        @*<a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.PkId">Sửa</a>*@
+                                        <button type="submit" class="btn btn-primary">Xóa</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
                     }
                 </tbody>
             </table>
@@ -492,12 +500,7 @@
             <div class="modal-body">
                 <form asp-page-handler="CreateVthh" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input asp-for="TDondathangct.FkDondathang" value="@Model.TDondathang.PkId" type="hidden" />
-                    <div class="form-group">
-                        <label asp-for="TDondathangct.CStt" class="control-label"></label>
-                        <input asp-for="TDondathangct.CStt" class="form-control" />
-                        <span asp-validation-for="TDondathangct.CStt" class="text-danger"></span>
-                    </div>
+                    <input asp-for="TDondathangct.FkDondathang" value="@Model.Id" type="hidden" />
                     <div class="form-group">
                         <label asp-for="TDondathangct.FkVthh" class="control-label"></label>
                         <select asp-for="TDondathangct.FkVthh" asp-items="Model.VattuhanghoaSelectList" class="form-control">
@@ -576,12 +579,7 @@
             <div class="modal-body">
                 <form asp-page-handler="CreateDkbg" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input asp-for="TDondathangdk.FkDondathang" value="@Model.TDondathang.PkId" type="hidden" />
-                    <div class="form-group">
-                        <label asp-for="TDondathangdk.CStt" class="control-label"></label>
-                        <input asp-for="TDondathangdk.CStt" class="form-control" />
-                        <span asp-validation-for="TDondathangdk.CStt" class="text-danger"></span>
-                    </div>
+                    <input asp-for="TDondathangdk.FkDondathang" value="@Model.Id" type="hidden" />
                     <div class="form-group">
                         <label asp-for="TDondathangdk.FkDkbg" class="control-label"></label>
                         <select asp-for="TDondathangdk.FkDkbg" asp-items="Model.DieukhoanbaogiaSelectList" class="form-control">

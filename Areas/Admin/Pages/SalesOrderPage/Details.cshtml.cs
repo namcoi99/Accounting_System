@@ -18,10 +18,11 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
         {
             _context = context;
         }
-        [BindProperty]
         public TDondathang TDondathang { get; set; }
         public IList<TDondathangct> TDondathangctList { get; set; }
         public IList<TDondathangdk> TDondathangdkList { get; set; }
+        [BindProperty]
+        public int Id { get; set; }
         [BindProperty]
         public TDondathangct TDondathangct { get; set; }
         [BindProperty]
@@ -37,11 +38,11 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
             {
                 return NotFound();
             }
-
+            Id = (int)id;
             TDondathang = await _context.TDondathang.FirstOrDefaultAsync(m => m.PkId == id);
-            TDondathangctList = await _context.TDondathangct.Where(item => item.FkDondathang == id).ToListAsync();
-            TDondathangdkList = await _context.TDondathangdk.Where(item => item.FkDondathang == id).ToListAsync();
-
+            TDondathangctList = _context.TDondathangct.Where(item => item.FkDondathang == id).ToList();
+            TDondathangdkList = _context.TDondathangdk.Where(item => item.FkDondathang == id).ToList();
+            await Task.WhenAll();
             if (TDondathang == null)
             {
                 return NotFound();

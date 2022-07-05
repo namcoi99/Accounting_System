@@ -17,12 +17,46 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
         {
             _context = context;
         }
-
-        public IList<TXntc> TXntc { get;set; }
+        public class TXntcRecord
+        {
+            public TXntc Xntc { get; set; }
+            public TDmKh Kh { get; set; }
+            public TDmVthh Vthh { get; set; }
+        }
+        public IList<TXntcRecord> TXntcRecordList { get; set; }
 
         public async Task OnGetAsync()
         {
-            TXntc = await _context.TXntc.ToListAsync();
+            TXntcRecordList = await _context.TXntc
+                .GroupJoin(_context.TDmKh, xntc => xntc.FkKhachhang, kh => kh.PkId,
+                (xntc, khList) => new
+                {
+                    Xntc = xntc,
+                    KhList = khList
+                })
+                .SelectMany(
+                   x => x.KhList.DefaultIfEmpty(),
+                   (x, y) => new TXntcRecord
+                   {
+                       Xntc = x.Xntc,
+                       Kh = y
+                   })
+                //.GroupJoin(_context.TDmVthh, xntc => xntc.Xntc.FkVthh, vthh => vthh.PkId,
+                //(xntc, vthhList) => new
+                //{
+                //    Xntc = xntc.Xntc,
+                //    Kh = xntc.Kh,
+                //    VthhList = vthhList
+                //})
+                //.SelectMany(
+                //   x => x.VthhList.DefaultIfEmpty(),
+                //   (x, y) => new TXntcRecord
+                //   {
+                //       Xntc = x.Xntc,
+                //       Kh = x.Kh,
+                //       Vthh = y
+                //   })
+                .ToListAsync();
         }
     }
 }

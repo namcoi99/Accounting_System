@@ -30,9 +30,9 @@ namespace Accounting_System.Areas.Auth.Pages
         public string ErrorMessage { get; set; }
         public class InputModel
         {
-            [Required(ErrorMessage = "Email không được để trống.")]
+            [Required(ErrorMessage = "Tên đăng nhập không được để trống.")]
             //[EmailAddress]
-            public string Email { get; set; }
+            public string Username { get; set; }
 
             [Required(ErrorMessage = "Mật khẩu không được để trống.")]
             [DataType(DataType.Password)]
@@ -61,11 +61,15 @@ namespace Accounting_System.Areas.Auth.Pages
             if (ModelState.IsValid)
             {
                 var user = _context.TSysAccount
-                    .Where(account => account.CMa == Input.Email)
+                    .Where(account => account.CMa == Input.Username)
                     .FirstOrDefault();
-                if(user == null)
+                if (user == null)
                 {
-                    ModelState.AddModelError(string.Empty, "Đăng nhập không hợp lệ.");
+                    ModelState.AddModelError(string.Empty, "Sai thông tin đăng nhập / mật khẩu.");
+                    return Page();
+                }
+                if (!BCrypt.Net.BCrypt.Verify(Input.Password, user.CMatkhau)) {
+                    ModelState.AddModelError(string.Empty, "Sai thông tin đăng nhập / mật khẩu.");
                     return Page();
                 }
                 var claims = new List<Claim>
@@ -107,8 +111,8 @@ namespace Accounting_System.Areas.Auth.Pages
                     new ClaimsPrincipal(claimsIdentity),
                     authProperties);
 
-                _logger.LogInformation("User {Email} logged in at {Time}.",
-                    Input.Email, DateTime.UtcNow);
+                _logger.LogInformation("User {Username} logged in at {Time}.",
+                    Input.Username, DateTime.UtcNow);
 
                 return LocalRedirect(returnUrl);
             }

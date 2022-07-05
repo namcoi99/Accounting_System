@@ -27,7 +27,6 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
         public List<SelectListItem> VuviecSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> PhongbanSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> PhanxuongSelectList { get; set; } = new List<SelectListItem>();
-        public List<SelectListItem> VattuhanghoaSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> PtttSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> DkbgSelectList { get; set; } = new List<SelectListItem>();
 
@@ -40,7 +39,6 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
             IList<TDmVuviec> TDmVuviec;
             IList<TDmPhongban> TDmPhongban;
             IList<TDmPhanxuong> TDmPhanxuong;
-            IList<TDmVthh> TDmVthh;
             //IList<TDmLoaibg> TDmLoaibg;
             IList<TDmPttt> TDmPttt;
             IList<TDmDkbg> TDmDkbg;
@@ -51,7 +49,6 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
             TDmVuviec = _context.TDmVuviec.ToList();
             TDmPhongban = _context.TDmPhongban.ToList();
             TDmPhanxuong = _context.TDmPhanxuong.ToList();
-            TDmVthh = _context.TDmVthh.ToList();
             //TDmLoaibg = _context.TDmLoaibg.ToList();
             TDmPttt = _context.TDmPttt.ToList();
             TDmDkbg = _context.TDmDkbg.ToList();
@@ -84,10 +81,6 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
             foreach (var item in TDmPhanxuong)
             {
                 PhanxuongSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa });
-            }
-            foreach (var item in TDmVthh)
-            {
-                VattuhanghoaSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa });
             }
             //foreach (var item in TDmLoaibg)
             //{

@@ -12,32 +12,30 @@
         <form class="user" id="account" method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <input asp-for="Input.Email" class="form-control form-control-user"
-                       aria-describedby="emailHelp" placeholder="Nhập email" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                <input asp-for="Input.Username" class="form-control form-control-user"
+                       aria-describedby="emailHelp" placeholder="Nhập tên đăng nhập" />
+                <span asp-validation-for="Input.Username" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input asp-for="Input.Password" class="form-control form-control-user" placeholder="Nhập mật khẩu" />
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
-
-            <div class="form-group">
+            @*<div class="form-group">
                 <div class="custom-control custom-checkbox small">
                     <input asp-for="Input.RememberMe" class="custom-control-input" />
                     <label class="custom-control-label" asp-for="Input.RememberMe"></label>
                 </div>
-            </div>
-
+            </div>*@
             <button type="submit" class="btn btn-primary btn-user btn-block">Đăng nhập</button>
-            <hr>
+            @*<hr>*@
         </form>
-        <hr>
+        @*<hr>
         <div class="text-center">
             <a id="forgot-password" asp-area="Auth" asp-page="/ForgotPassword" class="small">Quên mật khẩu</a>
         </div>
         <div class="text-center">
-            @*<a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="small">Chưa có tài khoản? Đăng ký ngay!</a>*@
+            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="small">Chưa có tài khoản? Đăng ký ngay!</a>
             <a asp-area="Auth" asp-page="/Register" class="small">Chưa có tài khoản? Đăng ký ngay!</a>
-        </div>
+        </div>*@
     </div>
 </div>

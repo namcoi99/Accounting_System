@@ -10,7 +10,7 @@ namespace Accounting_System.Models
 {
     public partial class TXntc
     {
-        public decimal PkId { get; set; }
+        public short PkId { get; set; }
         [DisplayName("Loại C.từ")]
         public int? FkChungtu { get; set; }
         [DisplayName("Số phiếu")]
@@ -20,9 +20,10 @@ namespace Accounting_System.Models
         public byte? FkTruso { get; set; }
         [DisplayName("Ngày lập")]
         public DateTime? CNgaylap { get; set; }
+        [DisplayName("Ngày CT")]
         public DateTime? CNgayct { get; set; }
         public string CSoct { get; set; }
-        [DisplayName("Khách hàng")]
+        [DisplayName("Mã KH")]
         public int? FkKhachhang { get; set; }
         [DisplayName("Người liên hệ")]
         public int? FkNguoilh { get; set; }
@@ -60,8 +61,10 @@ namespace Accounting_System.Models
         public short? FkNguoigiao { get; set; }
         [DisplayName("Vật tư, hàng hóa")]
         public short? FkVthh { get; set; }
+        [DisplayName("ĐVT")]
         public short? FkDvt { get; set; }
         public double? CSoluong { get; set; }
+        [DisplayName("Đơn giá")]
         public decimal? CDongia { get; set; }
         [DisplayName("Vat")]
         public float? CVat { get; set; }
@@ -84,8 +87,9 @@ namespace Accounting_System.Models
         public bool? CTrong { get; set; }
         public byte CLoaixn { get; set; }
         public byte CLoaict { get; set; }
+        [DisplayName("KMP")]
         public short? FkKmp { get; set; }
-        [DisplayName("Đtcp")]
+        [DisplayName("ĐTCP")]
         public short? FkDtcp { get; set; }
         [DisplayName("Phân xưởng")]
         public short? FkPhanxuong { get; set; }
@@ -93,6 +97,7 @@ namespace Accounting_System.Models
         public int? CHoadon { get; set; }
         public int? FkLsx { get; set; }
         public int? FkLsxct { get; set; }
+        [DisplayName("CPSX")]
         public bool? CCpsx { get; set; }
         public string CMst { get; set; }
         public string CKhthue { get; set; }
@@ -105,6 +110,7 @@ namespace Accounting_System.Models
         public int? FkTscd { get; set; }
         public string CSophieutralai { get; set; }
         public string CNote { get; set; }
+        [DisplayName("NVKD")]
         public int? FkNvkd { get; set; }
         public short? FkKmpc { get; set; }
         public bool? CKhuno { get; set; }
@@ -131,9 +137,11 @@ namespace Accounting_System.Models
         [DisplayName("Tiền hàng")]
         public decimal? CTienhang { get; set; }
         public bool? CCpbanhang { get; set; }
+        [DisplayName("PS Nợ NT")]
         public decimal? CPsno2 { get; set; }
+        [DisplayName("PS Có NT")]
         public decimal? CPsco2 { get; set; }
-        [DisplayName("Diễn giải 2")]
+        [DisplayName("Diễn giải (EN)")]
         public string CDiengiai2 { get; set; }
         public short? FkCuocvanchuyen { get; set; }
         [DisplayName("Số xe")]
@@ -183,6 +191,7 @@ namespace Accounting_System.Models
         public short? FkCostCenter { get; set; }
         public bool? CImportData { get; set; }
         public decimal? CTienhangvanchuyen { get; set; }
+        [DisplayName("Ngân hàng")]
         public string CSotknh { get; set; }
         public int? FkVoyage { get; set; }
         public string CBillOflading { get; set; }
