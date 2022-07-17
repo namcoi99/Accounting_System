@@ -38,7 +38,7 @@ $(document).ready(function () {
                 sortDescending: ": sắp xếp cột theo thứ tự giảm dần"
             }
         },
-        dom: 'Bfrtip',
+        dom: 'Bflrtip',
         buttons: [
             'excel',
             'print',

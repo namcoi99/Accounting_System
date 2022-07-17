@@ -1,0 +1,86 @@
+﻿@page
+@model Accounting_System.Areas.Admin.Pages.OrderForcastPage.IndexModel
+
+@{
+    ViewData["Title"] = "Dự báo bán hàng";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <a class="btn btn-primary" asp-page="Create">Tạo mới</a>
+</div>
+
+<div class="card shadow mb-4 w-100">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách dự báo</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.TDubao[0].Dubao.CNam)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TDubao[0].Dubao.CThang)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TDubao[0].Dubao.FkPhongban)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TDubao[0].Kh.CMa)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TDubao[0].Kh.CTen)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TDubao[0].Dubao.FkUser)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TDubao[0].Dubao.FkDvcs)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.TDubao)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Dubao.CNam)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Dubao.CThang)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Dubao.FkPhongban)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Kh.CMa)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Kh.CTen)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nguoilap)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Dvcs.CMa)
+                        </td>
+                        <td>
+                            <div class="d-flex" style="gap: 16px">
+                                <a class="btn btn-success btn-circle" asp-page="./Edit" asp-route-id="@item.Dubao.PkId"><i class="fas fa-edit"></i></a>
+                                <a class="btn btn-info btn-circle" asp-page="./Details" asp-route-id="@item.Dubao.PkId"><i class="fas fa-eye"></i></a>
+                                <a class="btn btn-danger btn-circle" asp-page="./Delete" asp-route-id="@item.Dubao.PkId"><i class="fas fa-trash-alt"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

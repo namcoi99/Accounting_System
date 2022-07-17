@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -14,6 +15,7 @@ namespace Accounting_System.Models
         public int FkDondathang { get; set; }
         public short CStt { get; set; }
         [DisplayName("Mã VTHH")]
+        [Required]
         public int FkVthh { get; set; }
         [DisplayName("Ngày nhận")]
         public DateTime? CNgaynhan { get; set; }

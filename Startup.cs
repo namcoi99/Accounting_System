@@ -34,7 +34,9 @@ namespace Accounting_System
             options.UseSqlServer(Configuration.GetConnectionString("Cafe1Context")));
             services.AddTransient<DataAccessService>();
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie();
+                .AddCookie(options => {
+                    options.LoginPath = "/login";
+                });
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 

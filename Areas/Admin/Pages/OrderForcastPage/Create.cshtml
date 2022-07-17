@@ -1,0 +1,66 @@
+﻿@page
+@model Accounting_System.Areas.Admin.Pages.OrderForcastPage.CreateModel
+
+@{
+    ViewData["Title"] = "Tạo mới dự báo bán hàng";
+}
+<div>
+    <a asp-page="Index"><i class="fas fa-arrow-left mr-1"></i>Trờ về</a>
+</div>
+
+<h1>Tạo mới</h1>
+
+<h4>Dự báo bán hàng</h4>
+<hr />
+<div>
+    <form asp-page-handler="CreateSalesOrder" method="post">
+        <h4>Thông tin chung</h4>
+        <div class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="TDubao.FkUser" value="@Model.UserId" type="hidden" class="form-control" />
+            <div class="form-group col-3">
+                <label asp-for="TDubao.FkDvcs" class="control-label"></label>
+                <select asp-for="TDubao.FkDvcs" asp-items="Model.DvcsSelectList" class="form-control">
+                    <option value="" selected disabled>Chọn</option>
+                </select>
+                <span asp-validation-for="TDubao.FkDvcs" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TDubao.CNam" class="control-label"></label>
+                <input asp-for="TDubao.CNam" class="form-control" />
+                <span asp-validation-for="TDubao.CNam" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TDubao.CThang" class="control-label"></label>
+                <input asp-for="TDubao.CThang" class="form-control" />
+                <span asp-validation-for="TDubao.CThang" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TDubao.FkPhongban" class="control-label"></label>
+                <select asp-for="TDubao.FkPhongban" asp-items="Model.PhongbanSelectList" class="form-control">
+                    <option value="" selected disabled>Chọn</option>
+                </select>
+                <span asp-validation-for="TDubao.FkPhongban" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TDubao.FkKhachhang" class="control-label"></label>
+                <select asp-for="TDubao.FkKhachhang" asp-items="Model.KhachhangSelectList" class="form-control">
+                    <option value="" selected disabled>Chọn</option>
+                </select>
+                <span asp-validation-for="TDubao.FkKhachhang" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TDubao.CDatetime" class="control-label"></label>
+                <input asp-for="TDubao.CDatetime" class="form-control" />
+                <span asp-validation-for="TDubao.CDatetime" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Tạo mới" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

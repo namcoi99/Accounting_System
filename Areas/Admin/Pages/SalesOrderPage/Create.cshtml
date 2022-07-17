@@ -47,10 +47,20 @@
             </div>
             <div class="form-group col-3">
                 <label asp-for="TDondathang.FkKhachhang" class="control-label"></label>
-                <select asp-for="TDondathang.FkKhachhang" asp-items="Model.KhSelectList" class="form-control">
+                <select asp-for="TDondathang.FkKhachhang" asp-items="Model.KhSelectList" onchange="HandleCustomerSelect(this)" class="form-control">
                     <option value="" selected disabled>Chọn</option>
                 </select>
                 <span asp-validation-for="TDondathang.FkKhachhang" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TDondathang.CKhdk" class="control-label"></label>
+                <input asp-for="TDondathang.CKhdk" id="KhachHang" class="form-control" />
+                <span asp-validation-for="TDondathang.CKhdk" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
+                <label asp-for="TDondathang.CKhdkdc" class="control-label"></label>
+                <input asp-for="TDondathang.CKhdkdc" id="KhachHangDiaChi" readonly class="form-control" />
+                <span asp-validation-for="TDondathang.CKhdkdc" class="text-danger"></span>
             </div>
             <div class="form-group col-3">
                 <label asp-for="TDondathang.FkNguoilh" class="control-label"></label>
@@ -77,6 +87,13 @@
                 <span asp-validation-for="TDondathang.CDiengiai" class="text-danger"></span>
             </div>
             <div class="form-group col-3">
+                <label asp-for="TDondathang.FkVuviec" class="control-label"></label>
+                <select asp-for="TDondathang.FkVuviec" asp-items="Model.VuviecSelectList" class="form-control">
+                    <option value="" selected disabled>Chọn</option>
+                </select>
+                <span asp-validation-for="TDondathang.FkVuviec" class="text-danger"></span>
+            </div>
+            <div class="form-group col-3">
                 <label asp-for="TDondathang.FkPhongban" class="control-label"></label>
                 <select asp-for="TDondathang.FkPhongban" asp-items="Model.PhongbanSelectList" class="form-control">
                     <option value="" selected disabled>Chọn</option>
@@ -91,97 +108,87 @@
                 <span asp-validation-for="TDondathang.FkPhanxuong" class="text-danger"></span>
             </div>
             @*<div class="form-group col-3">
-                <label asp-for="TDondathang.FkKmp" class="control-label"></label>
-                <input asp-for="TDondathang.FkKmp" class="form-control" />
-                <span asp-validation-for="TDondathang.FkKmp" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.CKhdk" class="control-label"></label>
-                <input asp-for="TDondathang.CKhdk" class="form-control" />
-                <span asp-validation-for="TDondathang.CKhdk" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.CKhdkdc" class="control-label"></label>
-                <input asp-for="TDondathang.CKhdkdc" class="form-control" />
-                <span asp-validation-for="TDondathang.CKhdkdc" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.CKhdkdt" class="control-label"></label>
-                <input asp-for="TDondathang.CKhdkdt" class="form-control" />
-                <span asp-validation-for="TDondathang.CKhdkdt" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.CKhdkemail" class="control-label"></label>
-                <input asp-for="TDondathang.CKhdkemail" class="form-control" />
-                <span asp-validation-for="TDondathang.CKhdkemail" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.CKhdknlh" class="control-label"></label>
-                <input asp-for="TDondathang.CKhdknlh" class="form-control" />
-                <span asp-validation-for="TDondathang.CKhdknlh" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.CKhdkfax" class="control-label"></label>
-                <input asp-for="TDondathang.CKhdkfax" class="form-control" />
-                <span asp-validation-for="TDondathang.CKhdkfax" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.FkUser" class="control-label"></label>
-                <input asp-for="TDondathang.FkUser" class="form-control" />
-                <span asp-validation-for="TDondathang.FkUser" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.CDatetime" class="control-label"></label>
-                <input asp-for="TDondathang.CDatetime" class="form-control" />
-                <span asp-validation-for="TDondathang.CDatetime" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.FkDdct" class="control-label"></label>
-                <input asp-for="TDondathang.FkDdct" class="form-control" />
-                <span asp-validation-for="TDondathang.FkDdct" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.CDaban" class="control-label"></label>
-                <input asp-for="TDondathang.CDaban" class="form-control" />
-                <span asp-validation-for="TDondathang.CDaban" class="text-danger"></span>
-            </div>*@
+            <label asp-for="TDondathang.FkKmp" class="control-label"></label>
+            <input asp-for="TDondathang.FkKmp" class="form-control" />
+            <span asp-validation-for="TDondathang.FkKmp" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TDondathang.CKhdkdt" class="control-label"></label>
+            <input asp-for="TDondathang.CKhdkdt" class="form-control" />
+            <span asp-validation-for="TDondathang.CKhdkdt" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TDondathang.CKhdkemail" class="control-label"></label>
+            <input asp-for="TDondathang.CKhdkemail" class="form-control" />
+            <span asp-validation-for="TDondathang.CKhdkemail" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TDondathang.CKhdknlh" class="control-label"></label>
+            <input asp-for="TDondathang.CKhdknlh" class="form-control" />
+            <span asp-validation-for="TDondathang.CKhdknlh" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TDondathang.CKhdkfax" class="control-label"></label>
+            <input asp-for="TDondathang.CKhdkfax" class="form-control" />
+            <span asp-validation-for="TDondathang.CKhdkfax" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TDondathang.FkUser" class="control-label"></label>
+            <input asp-for="TDondathang.FkUser" class="form-control" />
+            <span asp-validation-for="TDondathang.FkUser" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TDondathang.CDatetime" class="control-label"></label>
+            <input asp-for="TDondathang.CDatetime" class="form-control" />
+            <span asp-validation-for="TDondathang.CDatetime" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TDondathang.FkDdct" class="control-label"></label>
+            <input asp-for="TDondathang.FkDdct" class="form-control" />
+            <span asp-validation-for="TDondathang.FkDdct" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TDondathang.CDaban" class="control-label"></label>
+            <input asp-for="TDondathang.CDaban" class="form-control" />
+            <span asp-validation-for="TDondathang.CDaban" class="text-danger"></span>
+        </div>*@
             <div class="form-group col-3">
                 <label asp-for="TDondathang.CVat" class="control-label"></label>
                 <input asp-for="TDondathang.CVat" class="form-control" />
                 <span asp-validation-for="TDondathang.CVat" class="text-danger"></span>
             </div>
             @*<div class="form-group col-3">
-                <label asp-for="TDondathang.FkLoaibg" class="control-label"></label>
-                <select asp-for="TDondathang.FkLoaibg" asp-items="Model.LoaiBgSelectList" class="form-control">
-                    <option value="" selected disabled>Chọn</option>
-                </select>
-                <span asp-validation-for="TDondathang.FkLoaibg" class="text-danger"></span>
-            </div>*@
+            <label asp-for="TDondathang.FkLoaibg" class="control-label"></label>
+            <select asp-for="TDondathang.FkLoaibg" asp-items="Model.LoaiBgSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TDondathang.FkLoaibg" class="text-danger"></span>
+        </div>*@
             @*<div class="form-group col-3">
-                <label asp-for="TDondathang.FkPpvc" class="control-label"></label>
-                <input asp-for="TDondathang.FkPpvc" class="form-control" />
-                <span asp-validation-for="TDondathang.FkPpvc" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.FkDondathang" class="control-label"></label>
-                <input asp-for="TDondathang.FkDondathang" class="form-control" />
-                <span asp-validation-for="TDondathang.FkDondathang" class="text-danger"></span>
-            </div>*@
+            <label asp-for="TDondathang.FkPpvc" class="control-label"></label>
+            <input asp-for="TDondathang.FkPpvc" class="form-control" />
+            <span asp-validation-for="TDondathang.FkPpvc" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TDondathang.FkDondathang" class="control-label"></label>
+            <input asp-for="TDondathang.FkDondathang" class="form-control" />
+            <span asp-validation-for="TDondathang.FkDondathang" class="text-danger"></span>
+        </div>*@
             @*<div class="form-group col-3">
-                <label asp-for="TDondathang.CField1" class="control-label"></label>
-                <input asp-for="TDondathang.CField1" class="form-control" />
-                <span asp-validation-for="TDondathang.CField1" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.CField2" class="control-label"></label>
-                <input asp-for="TDondathang.CField2" class="form-control" />
-                <span asp-validation-for="TDondathang.CField2" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.FkModifyuser" class="control-label"></label>
-                <input asp-for="TDondathang.FkModifyuser" class="form-control" />
-                <span asp-validation-for="TDondathang.FkModifyuser" class="text-danger"></span>
-            </div>*@
+            <label asp-for="TDondathang.CField1" class="control-label"></label>
+            <input asp-for="TDondathang.CField1" class="form-control" />
+            <span asp-validation-for="TDondathang.CField1" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TDondathang.CField2" class="control-label"></label>
+            <input asp-for="TDondathang.CField2" class="form-control" />
+            <span asp-validation-for="TDondathang.CField2" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TDondathang.FkModifyuser" class="control-label"></label>
+            <input asp-for="TDondathang.FkModifyuser" class="form-control" />
+            <span asp-validation-for="TDondathang.FkModifyuser" class="text-danger"></span>
+        </div>*@
             <div class="form-group col-3">
                 <label asp-for="TDondathang.FkPttt" class="control-label"></label>
                 <select asp-for="TDondathang.FkPttt" asp-items="Model.PtttSelectList" class="form-control">
@@ -198,4 +205,24 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        const customer = $("#KhachHang");
+        const customerAddress = $("#KhachHangDiaChi");
+        function HandleCustomerSelect(e) {
+            $.ajax({
+                type: "POST",
+                url: "/Admin/SalesOrderPage/Create?handler=GetSelectedCustomer",
+                headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+                data: { "Id": e.value },
+                dataType: "json",
+                success: function (result) {
+                    customer.val(result.cTen);
+                    customerAddress.val(result.cDiachi);
+                },
+                error: function (data) {
+                    alert(data);
+                }
+            })
+        }
+    </script>
 }

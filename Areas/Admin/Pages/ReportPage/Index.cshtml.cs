@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Accounting_System.Helpers;
 using Accounting_System.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using OfficeOpenXml;
 
 namespace Accounting_System.Areas.Admin.Pages.ReportPage
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly Accounting_System.Models.Cafe1Context _context;

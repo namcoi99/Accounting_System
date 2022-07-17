@@ -22,6 +22,8 @@ namespace Accounting_System.Helpers
                     return Constants.FXN;
                 case "FREP":
                     return Constants.FREP;
+                case "FDUBAO":
+                    return Constants.FDUBAO;
                 default:
                     return "";
             }

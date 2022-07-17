@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Accounting_System.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Data.SqlClient;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
         private readonly Accounting_System.Models.Cafe1Context _context;
@@ -104,15 +106,14 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostCreateSalesOrderAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             _context.TDondathang.Add(TDondathang);
             await _context.SaveChangesAsync();
-            TDondathang newItem = await _context.TDondathang.Where(item => item.CSophieu == TDondathang.CSophieu).FirstOrDefaultAsync();
-            return RedirectToPage("./Details", new { id = newItem.PkId });
+            return RedirectToPage("./Details", new { id = TDondathang.PkId });
+        }
+        public JsonResult OnPostGetSelectedCustomer(int Id)
+        {
+            var result = _context.TDmKh.Where(kh => kh.PkId == Id).First();
+            return new JsonResult(result);
         }
     }
 }

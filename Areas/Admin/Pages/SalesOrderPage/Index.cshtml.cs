@@ -4,9 +4,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Accounting_System.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly Cafe1Context _context;
@@ -28,7 +30,6 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
         }
 
         public IList<TDondathangRecord> TDondathangRecordList { get; set; }
-
         public async Task OnGetAsync()
         {
             TDondathangRecordList = await _context.TDondathang

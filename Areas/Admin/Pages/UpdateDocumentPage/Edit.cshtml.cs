@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Accounting_System.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly Accounting_System.Models.Cafe1Context _context;

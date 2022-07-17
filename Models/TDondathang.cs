@@ -30,7 +30,7 @@ namespace Accounting_System.Models
         public DateTime? CNgaynhan { get; set; }
         [DisplayName("Ngày hết hạn")]
         public DateTime? CNgayhethan { get; set; }
-        [DisplayName("Khách hàng")]
+        [DisplayName("Mã khách hàng")]
         public int? FkKhachhang { get; set; }
         [DisplayName("Người LH")]
         public int? FkNguoilh { get; set; }
@@ -49,7 +49,9 @@ namespace Accounting_System.Models
         public short? FkPhanxuong { get; set; }
         public short? FkDtcp { get; set; }
         public short? FkKmp { get; set; }
+        [DisplayName("Tên người nhận")]
         public string CKhdk { get; set; }
+        [DisplayName("Địa chỉ")]
         public string CKhdkdc { get; set; }
         public string CKhdkdt { get; set; }
         public string CKhdkemail { get; set; }

@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Accounting_System.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Accounting_System.Areas.Admin.Pages.CustomerPage
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly Accounting_System.Models.Cafe1Context _context;

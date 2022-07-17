@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Accounting_System.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
         private readonly Accounting_System.Models.Cafe1Context _context;

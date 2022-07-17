@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Accounting_System.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Data.SqlClient;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Accounting_System.Areas.Admin.Pages.CatalogPage
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly Cafe1Context _context;
@@ -32,11 +34,6 @@ namespace Accounting_System.Areas.Admin.Pages.CatalogPage
         public int RowsCount { get; set; }
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (!User.Identity.IsAuthenticated)
-            {
-                // Redirect to home page if the user is not authenticated.
-                return RedirectToPage("/login", new { area = "Auth" });
-            }
             CatalogList = await _context.TSysList
                 .Where(item => item.CVisible == true)
                 .ToListAsync();
