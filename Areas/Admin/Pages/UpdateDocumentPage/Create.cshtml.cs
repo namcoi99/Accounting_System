@@ -37,9 +37,6 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
         public List<SelectListItem> TDmPhanxuongSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> TDmKmpSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> TDondathangSelectList { get; set; } = new List<SelectListItem>();
-        public short? DvcsId { get; set; }
-        [BindProperty]
-        public TXntc TXntc { get; set; } = new TXntc();
 
         public async Task<IActionResult> OnGetAsync()
         {
@@ -58,7 +55,6 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             IList<TDmKmp> TDmKmp;
             IList<TDondathang> TDondathang;
 
-            TSysAccount currentUser = _context.TSysAccount.Where(acc => string.Equals(acc.PkId.ToString(), User.FindFirstValue(ClaimTypes.NameIdentifier))).First();
             TDmChungtu = _context.TDmChungtu.OrderBy(ct => ct.CMa).ToList();
             TDmDvcs = _context.TDmDvcs.ToList();
             TDmKh = _context.TDmKh.ToList();
@@ -74,11 +70,6 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             TDmKmp = _context.TDmKmp.ToList();
             TDondathang = _context.TDondathang.ToList();
             await Task.WhenAll();
-
-            if (currentUser != null && currentUser.FkDvcs != null)
-            {
-                TXntc.FkDvcs = (byte)currentUser.FkDvcs;
-            }
 
             foreach (var item in TDmChungtu)
             {
@@ -139,6 +130,9 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
 
             return Page();
         }
+
+        [BindProperty]
+        public TXntc TXntc { get; set; } = new TXntc();
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.

@@ -29,7 +29,15 @@ namespace Accounting_System
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            //services.AddRazorPages();
+            services.AddRazorPages().AddMvcOptions(option => {
+                option.EnableEndpointRouting = false;
+            }).AddNewtonsoftJson();
+            services.AddMvc().AddRazorPagesOptions(options => {
+                //options.Conventions.AddAreaPageRoute("Admin", "", "");
+                options.Conventions.AddPageRoute("/", "");
+                options.Conventions.AuthorizePage("/");
+            });
             services.AddDbContext<Cafe1Context>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Cafe1Context")));
             services.AddTransient<DataAccessService>();
@@ -58,6 +66,7 @@ namespace Accounting_System
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseMvc();
 
             app.UseAuthentication();
             app.UseAuthorization();

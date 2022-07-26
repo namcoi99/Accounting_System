@@ -4,7 +4,9 @@
     ViewData["Title"] = "Xuất báo cáo";
 }
 <h1>@ViewData["Title"]</h1>
-<form method="post">
+@*<form method="post">
     <button class="btn btn-primary">Xuất báo cáo doanh thu</button>
-
-</form>
+</form>*@
+<div style="min-height: 600px;width: 100%;">
+    <bold-report-viewer id="viewer" report-path=@Model.reportPath report-service-url=@Model.serviceUrl></bold-report-viewer>
+</div>

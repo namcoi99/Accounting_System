@@ -176,11 +176,12 @@
                     const transformedControls = TransformControls(result.cControls);
                     Object.keys(transformedControls).forEach(key => {
                         const enable = !!transformedControls[key].controls[0];
-                        const notoption = !!transformedControls[key].controls[1];
+                        const notOption = !!transformedControls[key].controls[1];
                         const keep = !!transformedControls[key].controls[2];
                         const save = !!transformedControls[key].controls[3];
                         $(`#${key}`).attr('disabled', !enable);
                     })
+                    $('#DVCS').val(result.fkDvcs);
                 },
                 error: function (data) {
                     console.log(data);
