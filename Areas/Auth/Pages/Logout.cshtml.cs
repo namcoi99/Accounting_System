@@ -21,8 +21,9 @@ namespace Accounting_System.Areas.Auth.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            return RedirectToPage("/login");
         }
 
         public async Task<IActionResult> OnPost(string returnUrl = null)

@@ -26,7 +26,7 @@
                             @Html.DisplayNameFor(model => model.TXntcRecordList[0].Xntc.CSophieu)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.TXntcRecordList[0].Xntc.FkNguoilh)
+                            @Html.DisplayNameFor(model => model.TXntcRecordList[0].Nlh.CTen)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.TXntcRecordList[0].Xntc.CDiengiai)
@@ -56,7 +56,7 @@
                             @Html.DisplayNameFor(model => model.TXntcRecordList[0].Xntc.CTigia)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.TXntcRecordList[0].Xntc.FkKhachhang)
+                            @Html.DisplayNameFor(model => model.TXntcRecordList[0].Kh.CMa)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.TXntcRecordList[0].Kh.CTen)
@@ -65,10 +65,10 @@
                             @Html.DisplayNameFor(model => model.TXntcRecordList[0].Kh.CDiachi)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.TXntcRecordList[0].Xntc.FkVthh)
+                            @Html.DisplayNameFor(model => model.TXntcRecordList[0].Vthh.CMa)
                         </th>
                         <th>
-                            Tên vật tư, hàng hóa
+                            @Html.DisplayNameFor(model => model.TXntcRecordList[0].Vthh.CTen)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.TXntcRecordList[0].Xntc.FkDvt)
@@ -119,7 +119,7 @@
                             @Html.DisplayNameFor(model => model.TXntcRecordList[0].Xntc.FkTscd)
                         </th>
                         <th>
-                            Tên TSCĐ
+                            @Html.DisplayNameFor(model => model.TXntcRecordList[0].Tscd.CTen)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.TXntcRecordList[0].Xntc.FkDondathang)
@@ -138,7 +138,7 @@
                             @Html.DisplayFor(model => item.Xntc.CSophieu)
                         </td>
                         <td>
-                            @Html.DisplayFor(model => item.Xntc.FkNguoilh)
+                            @Html.DisplayFor(model => item.Nlh.CTen)
                         </td>
                         <td>
                             @Html.DisplayFor(model => item.Xntc.CDiengiai)
@@ -168,7 +168,7 @@
                             @Html.DisplayFor(model => item.Xntc.CTigia)
                         </td>
                         <td>
-                            @Html.DisplayFor(model => item.Xntc.FkKhachhang)
+                            @Html.DisplayFor(model => item.Kh.CMa)
                         </td>
                         <td>
                             @Html.DisplayFor(model => item.Kh.CTen)
@@ -177,13 +177,13 @@
                             @Html.DisplayFor(model => item.Kh.CDiachi)
                         </td>
                         <td>
-                            @Html.DisplayFor(model => item.Xntc.FkVthh)
+                            @Html.DisplayFor(model => item.Vthh.CMa)
                         </td>
                         <td>
                             @Html.DisplayFor(model => item.Vthh.CTen)
                         </td>
                         <td>
-                            @Html.DisplayFor(model => item.Xntc.FkDvt)
+                            @Html.DisplayFor(model => item.Dvt.CMa)
                         </td>
                         <td>
                             @Html.DisplayFor(model => item.Xntc.CDongia)
@@ -222,7 +222,7 @@
                             @Html.DisplayFor(model => item.Xntc.CSotknh)
                         </td>
                         <td>
-                            @Html.DisplayFor(model => item.Xntc.FkDvcs)
+                            @Html.DisplayFor(model => item.Dvcs.CMa)
                         </td>
                         <td>
                             @Html.DisplayFor(model => item.Xntc.FkPttt)
@@ -231,7 +231,7 @@
                             @Html.DisplayFor(model => item.Xntc.FkTscd)
                         </td>
                         <td>
-                            Tên TSCĐ
+                            @Html.DisplayFor(model => item.Tscd.CTen)
                         </td>
                         <td>
                             @Html.DisplayFor(model => item.Xntc.FkDondathang)

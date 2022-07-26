@@ -306,14 +306,14 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
         {
             return _context.TDmVthh.FirstOrDefault(item => item.PkId == id);
         }
-        public JsonResult OnPostGetSelectedProduct(int Id)
+        public JsonResult OnPostGetSelectedProduct(int id)
         {
-            var result = _context.TDmVthh.Where(vthh => vthh.PkId == Id).First();
+            var result = _context.TDmVthh.Where(vthh => vthh.PkId == id).First();
             return new JsonResult(result);
         }
-        public JsonResult OnPostGetSelectedCustomer(int Id)
+        public JsonResult OnPostGetSelectedCustomer(int id)
         {
-            var result = _context.TDmKh.Where(kh => kh.PkId == Id).First();
+            var result = _context.TDmKh.Where(kh => kh.PkId == id).First();
             return new JsonResult(result);
         }
     }

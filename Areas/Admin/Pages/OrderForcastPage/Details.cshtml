@@ -55,3 +55,160 @@
         </div>
     </form>
 </div>
+
+<div class="card shadow mb-4 w-100">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách vật tư, hàng hóa</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TDubaoctList[0].Vthh.CMa)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TDubaoctList[0].Vthh.CTen)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TDubaoctList[0].Vthh.CMaphu)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TDubaoctList[0].Dubaoct.CSoluong)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TDubaoctList[0].Dubaoct.FkDvban)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.TDubaoctList != null)
+                    {
+                        var index = 0;
+                        @foreach (var item in Model.TDubaoctList)
+                        {
+                            index++;
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => index)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Vthh.CMa)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Vthh.CTen)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Vthh.CMaphu)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Dubaoct.CSoluong)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Dvt.CMa)
+                                </td>
+                                <td>
+                                    <div class="d-flex" style="gap:16px">
+                                        @*<button class="btn btn-success btn-circle" data-toggle="modal" data-target="#createVthhModal" onclick="GetSelectedDubaoct(this,@item.Dubaoct.PkId)"><i class="fas fa-edit"></i></button>*@
+                                        <form method="post" asp-page-handler="DeleteVthh">
+                                            <input name="id" value="@item.Dubaoct.PkId" type="hidden" />
+                                            <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash-alt"></i></button>
+                                        </form>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createVthhModal">
+                Thêm mới
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- CreateVthhModal -->
+<div class="modal fade" id="createVthhModal" tabindex="-1" role="dialog" aria-labelledby="createVthhModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createVthhModalLabel">Thêm mới Vật tư, hàng hóa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-page-handler="CreateVthh" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="TDubaoct.FkDubao" value="@Model.Id" type="hidden" />
+                    <div class="form-group">
+                        <label asp-for="TDubaoct.FkVthh" class="control-label"></label>
+                        <select asp-for="TDubaoct.FkVthh" asp-items="Model.VattuhanghoaSelectList" onchange="HandleProductSelect(this)" class="form-control">
+                            <option value="" selected disabled>Chọn</option>
+                        </select>
+                        <span asp-validation-for="TDubaoct.FkVthh" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TDubaoct.CSoluong" class="control-label"></label>
+                        <input asp-for="TDubaoct.CSoluong" id="Soluong" value="0" class="form-control" />
+                        <span asp-validation-for="TDubaoct.CSoluong" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TDubaoct.FkDvban" class="control-label"></label>
+                        <input asp-for="TDubaoct.FkDvban" id="Dvban" type="hidden" />
+                        <input id="DvbanMa" class="form-control" readonly />
+                        <span asp-validation-for="TDubaoct.FkDvban" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right">Thêm mới</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        const soluong = $("#Soluong");
+        const Dvban = $("#Dvban");
+        const DvbanMa = $("#DvbanMa");
+        function HandleProductSelect(e) {
+            $.ajax({
+                type: "POST",
+                url: "/Admin/OrderForcastPage/Details?handler=GetSelectedProduct",
+                headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+                data: { "id": e.value },
+                dataType: "json",
+                success: function (result) {
+                    Dvban.val(result.dvt.pkId);
+                    DvbanMa.val(result.dvt.cMa);
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            })
+        }
+
+        //function GetSelectedDubaoct(e, id) {
+        //    console.log("edit clicked")
+        //    TODO: get select dubaoct on edit
+        //    $.ajax({
+        //        type: "POST",
+        //        url: "/Admin/OrderForcastPage/Details?handler=GetSelectedDubaoct",
+        //        data: { "id": id },
+        //        dataType: "json",
+        //        success: function (result) {
+        //            console.log(result);
+        //        },
+        //        error: function (data) {
+        //            alert(data);
+        //        }
+        //    })
+        //}
+    </script>
+}

@@ -584,7 +584,7 @@
                 type: "POST",
                 url: "/Admin/SalesOrderPage/Details?handler=GetSelectedProduct",
                 headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
-                data: { "Id": e.value },
+                data: { "id": e.value },
                 dataType: "json",
                 success: function (result) {
                     dongia.val(result.cGiachuan);
@@ -603,7 +603,7 @@
                 type: "POST",
                 url: "/Admin/SalesOrderPage/Create?handler=GetSelectedCustomer",
                 headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
-                data: { "Id": e.value },
+                data: { "id": e.value },
                 dataType: "json",
                 success: function (result) {
                     customer.val(result.cTen);

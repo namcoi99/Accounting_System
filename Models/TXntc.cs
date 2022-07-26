@@ -59,7 +59,7 @@ namespace Accounting_System.Models
         [DisplayName("Kệ nhập")]
         public short? FkKenhap { get; set; }
         public short? FkNguoigiao { get; set; }
-        [DisplayName("Vật tư, hàng hóa")]
+        [DisplayName("Mã VTHH")]
         public short? FkVthh { get; set; }
         [DisplayName("ĐVT")]
         public short? FkDvt { get; set; }
@@ -106,7 +106,7 @@ namespace Accounting_System.Models
         public decimal? CSlkiemtra { get; set; }
         public short? FkLdhh { get; set; }
         public int? FkKhachhangco { get; set; }
-        [DisplayName("Tên TSCĐ")]
+        [DisplayName("Mã TSCĐ")]
         public int? FkTscd { get; set; }
         public string CSophieutralai { get; set; }
         public string CNote { get; set; }

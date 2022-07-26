@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -7,15 +6,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Accounting_System.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
 {
     [Authorize]
     public class CreateModel : PageModel
     {
-        private readonly Accounting_System.Models.Cafe1Context _context;
+        private readonly Cafe1Context _context;
 
-        public CreateModel(Accounting_System.Models.Cafe1Context context)
+        public CreateModel(Cafe1Context context)
         {
             _context = context;
         }
@@ -36,6 +37,9 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
         public List<SelectListItem> TDmPhanxuongSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> TDmKmpSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> TDondathangSelectList { get; set; } = new List<SelectListItem>();
+        public short? DvcsId { get; set; }
+        [BindProperty]
+        public TXntc TXntc { get; set; } = new TXntc();
 
         public async Task<IActionResult> OnGetAsync()
         {
@@ -54,7 +58,8 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             IList<TDmKmp> TDmKmp;
             IList<TDondathang> TDondathang;
 
-            TDmChungtu = _context.TDmChungtu.ToList();
+            TSysAccount currentUser = _context.TSysAccount.Where(acc => string.Equals(acc.PkId.ToString(), User.FindFirstValue(ClaimTypes.NameIdentifier))).First();
+            TDmChungtu = _context.TDmChungtu.OrderBy(ct => ct.CMa).ToList();
             TDmDvcs = _context.TDmDvcs.ToList();
             TDmKh = _context.TDmKh.ToList();
             TDmTiente = _context.TDmTiente.ToList();
@@ -68,12 +73,16 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             TDmPhanxuong = _context.TDmPhanxuong.ToList();
             TDmKmp = _context.TDmKmp.ToList();
             TDondathang = _context.TDondathang.ToList();
-
             await Task.WhenAll();
+
+            if (currentUser != null && currentUser.FkDvcs != null)
+            {
+                TXntc.FkDvcs = (byte)currentUser.FkDvcs;
+            }
 
             foreach (var item in TDmChungtu)
             {
-                TDmChungtuSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CTen });
+                TDmChungtuSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa + " - " + item.CTen });
             }
             foreach (var item in TDmDvcs)
             {
@@ -109,7 +118,7 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             }
             foreach (var item in TDmPttt)
             {
-                TDmPtttSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa });
+                TDmPtttSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa + " - " + item.CMota });
             }
             foreach (var item in TDmDtcp)
             {
@@ -131,22 +140,19 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             return Page();
         }
 
-        [BindProperty]
-        public TXntc TXntc { get; set; }
-
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             _context.TXntc.Add(TXntc);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+        }
+        public JsonResult OnPostGetSelectedDocument(int id)
+        {
+            var result = _context.TDmChungtu.Where(ct => ct.PkId == id).First();
+            return new JsonResult(result);
         }
     }
 }

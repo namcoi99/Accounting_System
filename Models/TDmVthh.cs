@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -11,11 +12,17 @@ namespace Accounting_System.Models
     {
         public int PkId { get; set; }
         public short? FkDvcs { get; set; }
+        [DisplayName("Mã VTHH")]
         public string CMa { get; set; }
+        [DisplayName("Mã phụ")]
         public string CMaphu { get; set; }
+        [DisplayName("Tên VTHH")]
         public string CTen { get; set; }
+        [DisplayName("ĐV mua")]
         public short FkDvmua { get; set; }
+        [DisplayName("ĐV tồn kho")]
         public short FkDvtonkho { get; set; }
+        [DisplayName("ĐV bán")]
         public short FkDvban { get; set; }
         public bool? CTdtk { get; set; }
         public byte? FkCtg { get; set; }
@@ -23,6 +30,7 @@ namespace Accounting_System.Models
         public short? FkNhomvt { get; set; }
         public short? FkNhomvt2 { get; set; }
         public short? FkNhomvt3 { get; set; }
+        [DisplayName("Thuế VAT")]
         public float? CThuevat { get; set; }
         public bool? CKttsx { get; set; }
         public byte[] CAnh { get; set; }
@@ -37,19 +45,23 @@ namespace Accounting_System.Models
         public string CQcdg { get; set; }
         public short? FkHsx { get; set; }
         public byte? CTgbh { get; set; }
+        [DisplayName("Giá chuẩn")]
         public decimal? CGiachuan { get; set; }
         public decimal? CGiatran { get; set; }
+        [DisplayName("Giá sàn")]
         public decimal? CGiasan { get; set; }
         public short? FkUser { get; set; }
         public DateTime? CDatetime { get; set; }
         public int? CConvert { get; set; }
         public float? CTilehongvc { get; set; }
         public float? CTelehongsx { get; set; }
+        [DisplayName("Mã Kho")]
         public short? FkKhohang { get; set; }
         public short? FkDtcp { get; set; }
         public short? FkModifyuser { get; set; }
         public int? FkVthh { get; set; }
         public decimal? CThuenk { get; set; }
+        [DisplayName("Qui cách")]
         public int? FkQuicach { get; set; }
         public string FkTkgvon { get; set; }
         public bool? CPolastPrice { get; set; }

@@ -18,13 +18,15 @@ namespace Accounting_System.Models
         }
 
         public int PkId { get; set; }
-        [Required(ErrorMessage = "ĐVCS là trường bắt buộc")]
+        [Required(ErrorMessage = "{0} là trường bắt buộc")]
         [DisplayName("ĐVCS")]
         public byte FkDvcs { get; set; }
         [DisplayName("Năm")]
-        [Required(ErrorMessage = "Năm là trường bắt buộc")]
+        [Required(ErrorMessage = "{0} là trường bắt buộc")]
+        [Range(1900,2099, ErrorMessage = "Giá trị cho {0} phải nằm trong khoảng từ {1} đến {2}")]
         public short CNam { get; set; }
-        [Required(ErrorMessage = "Tháng là trường bắt buộc")]
+        [Required(ErrorMessage = "{0} là trường bắt buộc")]
+        [Range(1,12, ErrorMessage = "Giá trị cho {0} phải nằm trong khoảng từ {1} đến {2}")]
         [DisplayName("Tháng")]
         public byte CThang { get; set; }
         [DisplayName("Phòng ban")]

@@ -24,6 +24,7 @@ namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
         public List<SelectListItem> DvcsSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> PhongbanSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> KhachhangSelectList { get; set; } = new List<SelectListItem>();
+
         [BindProperty]
         public string UserId { get; set; }
 
@@ -33,9 +34,11 @@ namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
             IList<TDmDvcs> TDvcs;
             IList<TDmPhongban> TDmPhongban;
             IList<TDmKh> TDmKh;
+
             TDvcs = _context.TDmDvcs.ToList();
             TDmPhongban = _context.TDmPhongban.ToList();
             TDmKh = _context.TDmKh.ToList();
+
             await Task.WhenAll();
             foreach (var item in TDvcs)
             {
@@ -49,6 +52,7 @@ namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
             {
                 KhachhangSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CTen });
             }
+
             return Page();
         }
 
