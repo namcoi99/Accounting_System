@@ -37,7 +37,7 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
         public List<SelectListItem> TDmPhanxuongSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> TDmKmpSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> TDondathangSelectList { get; set; } = new List<SelectListItem>();
-        public short? DvcsId { get; set; }
+        public byte? DvcsId { get; set; }
         [BindProperty]
         public TXntc TXntc { get; set; } = new TXntc();
 

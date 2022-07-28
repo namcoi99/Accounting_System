@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -10,14 +11,17 @@ namespace Accounting_System.Models
 {
     public partial class TXntc
     {
-        public short PkId { get; set; }
+        public decimal PkId { get; set; }
         [DisplayName("Loại C.từ")]
         public int? FkChungtu { get; set; }
+        [Required(ErrorMessage = "Số phiếu là trường bắt buộc")]
         [DisplayName("Số phiếu")]
         public string CSophieu { get; set; }
         [DisplayName("ĐVCS")]
+        [Required(ErrorMessage = "ĐVCS là trường bắt buộc")]
         public byte FkDvcs { get; set; }
         public byte? FkTruso { get; set; }
+        [Required(ErrorMessage = "Ngày lập là trường bắt buộc")]
         [DisplayName("Ngày lập")]
         public DateTime? CNgaylap { get; set; }
         [DisplayName("Ngày CT")]

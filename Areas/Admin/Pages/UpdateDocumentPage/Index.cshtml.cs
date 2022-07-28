@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Accounting_System.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
 {
@@ -30,7 +31,7 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             public TDmKhnlh Nlh { get; set; }
         }
         public IList<TXntcRecord> TXntcRecordList { get; set; }
-
+        public TXntc TXntc { get; set; }
         public async Task OnGetAsync()
         {
             TXntcRecordList = await _context.TXntc
@@ -195,6 +196,22 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
                        Nlh = y
                    })
                 .ToListAsync();
+        }
+        public async Task<IActionResult> OnPostDeleteChungtuAsync(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            TXntc = await _context.TXntc.FindAsync((decimal)id);
+
+            if (TXntc != null)
+            {
+                _context.TXntc.Remove(TXntc);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToPage("./Index");
         }
     }
 }

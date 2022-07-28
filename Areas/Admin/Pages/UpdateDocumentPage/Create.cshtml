@@ -180,6 +180,7 @@
                         const keep = !!transformedControls[key].controls[2];
                         const save = !!transformedControls[key].controls[3];
                         $(`#${key}`).attr('disabled', !enable);
+                        $(`#${key}`).attr('required', notoption);
                     })
                 },
                 error: function (data) {
