@@ -1,11 +1,7 @@
 ﻿using BoldReports.Web.ReportDesigner;
 using BoldReports.Web.ReportViewer;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Accounting_System.Controllers
 {
@@ -13,9 +9,9 @@ namespace Accounting_System.Controllers
     public class ReportDesignerController : Controller, IReportDesignerController
     {
         private Microsoft.Extensions.Caching.Memory.IMemoryCache _cache;
-        private Microsoft.AspNetCore.Hosting.IHostingEnvironment _hostingEnvironment;
+        private Microsoft.AspNetCore.Hosting.IWebHostEnvironment _hostingEnvironment;
 
-        public ReportDesignerController(Microsoft.Extensions.Caching.Memory.IMemoryCache memoryCache, Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnvironment)
+        public ReportDesignerController(Microsoft.Extensions.Caching.Memory.IMemoryCache memoryCache, Microsoft.AspNetCore.Hosting.IWebHostEnvironment hostingEnvironment)
         {
             _cache = memoryCache;
             _hostingEnvironment = hostingEnvironment;

@@ -30,13 +30,9 @@ namespace Accounting_System
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddRazorPages();
-            services.AddRazorPages().AddMvcOptions(option => {
-                option.EnableEndpointRouting = false;
-            }).AddNewtonsoftJson();
+            services.AddRazorPages().AddMvcOptions(option => option.EnableEndpointRouting = false);
             services.AddMvc().AddRazorPagesOptions(options => {
-                //options.Conventions.AddAreaPageRoute("Admin", "", "");
-                options.Conventions.AddPageRoute("/", "");
-                options.Conventions.AuthorizePage("/");
+                options.Conventions.AddPageRoute("/ReportViewer", "");
             });
             services.AddDbContext<Cafe1Context>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Cafe1Context")));
@@ -44,6 +40,8 @@ namespace Accounting_System
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options => {
                     options.LoginPath = "/login";
+                    options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+                    options.SlidingExpiration = true;
                 });
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
@@ -64,9 +62,8 @@ namespace Accounting_System
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-            app.UseMvc();
+            //app.UseMvc();
 
             app.UseAuthentication();
             app.UseAuthorization();
@@ -74,6 +71,7 @@ namespace Accounting_System
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }

@@ -110,7 +110,6 @@ namespace Accounting_System.Areas.Auth.Pages
                     CookieAuthenticationDefaults.AuthenticationScheme,
                     new ClaimsPrincipal(claimsIdentity),
                     authProperties);
-
                 _logger.LogInformation("User {Username} logged in at {Time}.",
                     Input.Username, DateTime.UtcNow);
 
