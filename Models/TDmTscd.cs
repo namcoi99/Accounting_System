@@ -11,14 +11,11 @@ namespace Accounting_System.Models
     public partial class TDmTscd
     {
         public int PkId { get; set; }
-        [DisplayName("Mã ĐVCS")]
         public byte FkDvcs { get; set; }
         public byte? CCap { get; set; }
-        [DisplayName("Mã ĐVCS")]
         public string CMa { get; set; }
-        [DisplayName("Tên ĐVCS")]
+        [DisplayName("Tên TSCĐ")]
         public string CTen { get; set; }
-        [DisplayName("ĐVT")]
         public byte? FkDvt { get; set; }
         public string CCongsuat { get; set; }
         public string CTailieukt { get; set; }

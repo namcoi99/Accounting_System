@@ -72,6 +72,7 @@ namespace Accounting_System.Models
         public short? FkCuocvanchuyen { get; set; }
         [DisplayName("Số chuyến")]
         public short? FkSochuyen { get; set; }
+        [DisplayName("Hãng vận chuyển")]
         public int? FkHangvanchuyen { get; set; }
         [DisplayName("Người VC")]
         public string CNguoivanchuyen { get; set; }

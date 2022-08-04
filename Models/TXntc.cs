@@ -12,6 +12,7 @@ namespace Accounting_System.Models
     public partial class TXntc
     {
         public decimal PkId { get; set; }
+        [Required(ErrorMessage = "Loại C.từ là trường bắt buộc")]
         [DisplayName("Loại C.từ")]
         public int? FkChungtu { get; set; }
         [Required(ErrorMessage = "Số phiếu là trường bắt buộc")]
@@ -23,6 +24,7 @@ namespace Accounting_System.Models
         public byte? FkTruso { get; set; }
         [Required(ErrorMessage = "Ngày lập là trường bắt buộc")]
         [DisplayName("Ngày lập")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-ddTHH:mm}")]
         public DateTime? CNgaylap { get; set; }
         [DisplayName("Ngày CT")]
         public DateTime? CNgayct { get; set; }
@@ -122,6 +124,7 @@ namespace Accounting_System.Models
         public decimal? CTienthue { get; set; }
         [DisplayName("Hóa đơn GTGT")]
         public string CSohdgtgt { get; set; }
+        [DisplayName("Người liên hệ")]
         public string CNguoilh { get; set; }
         public short? FkModifyuser { get; set; }
         public string CThanhtoan { get; set; }

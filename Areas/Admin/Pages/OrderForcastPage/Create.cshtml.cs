@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using System;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
 {
@@ -16,10 +17,12 @@ namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
     public class CreateModel : PageModel
     {
         private readonly Cafe1Context _context;
+        private readonly INotyfService _notyf;
 
-        public CreateModel(Cafe1Context context)
+        public CreateModel(Cafe1Context context, INotyfService notyf)
         {
             _context = context;
+            _notyf = notyf;
         }
         public List<SelectListItem> DvcsSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> PhongbanSelectList { get; set; } = new List<SelectListItem>();

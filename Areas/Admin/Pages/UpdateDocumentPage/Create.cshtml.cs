@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Accounting_System.Models;
 using Microsoft.AspNetCore.Authorization;
-using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
 {
@@ -15,12 +15,12 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
     public class CreateModel : PageModel
     {
         private readonly Cafe1Context _context;
-
-        public CreateModel(Cafe1Context context)
+        private readonly INotyfService _notyf;
+        public CreateModel(Cafe1Context context, INotyfService notyf)
         {
             _context = context;
+            _notyf = notyf;
         }
-
         public List<SelectListItem> TDmChungtuSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> LoaiXnSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> TDmDvcsSelectList { get; set; } = new List<SelectListItem>();
@@ -37,11 +37,18 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
         public List<SelectListItem> TDmPhanxuongSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> TDmKmpSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> TDondathangSelectList { get; set; } = new List<SelectListItem>();
-        public byte? DvcsId { get; set; }
+        [BindProperty]
+        public byte SelectedDvcs { get; set; }
+        public string SoPhieu { get; set; }
         [BindProperty]
         public TXntc TXntc { get; set; } = new TXntc();
-
         public async Task<IActionResult> OnGetAsync()
+        {
+            await InitializeModel();
+            return Page();
+        }
+
+        private async Task InitializeModel()
         {
             IList<TDmChungtu> TDmChungtu;
             IList<TDmDvcs> TDmDvcs;
@@ -58,7 +65,6 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             IList<TDmKmp> TDmKmp;
             IList<TDondathang> TDondathang;
 
-            TSysAccount currentUser = _context.TSysAccount.Where(acc => string.Equals(acc.PkId.ToString(), User.FindFirstValue(ClaimTypes.NameIdentifier))).First();
             TDmChungtu = _context.TDmChungtu.OrderBy(ct => ct.CMa).ToList();
             TDmDvcs = _context.TDmDvcs.ToList();
             TDmKh = _context.TDmKh.ToList();
@@ -74,11 +80,6 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             TDmKmp = _context.TDmKmp.ToList();
             TDondathang = _context.TDondathang.ToList();
             await Task.WhenAll();
-
-            if (currentUser != null && currentUser.FkDvcs != null)
-            {
-                TXntc.FkDvcs = (byte)currentUser.FkDvcs;
-            }
 
             foreach (var item in TDmChungtu)
             {
@@ -106,11 +107,11 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             }
             foreach (var item in TDmTaikhoan)
             {
-                TDmTaikhoanSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa });
+                TDmTaikhoanSelectList.Add(new SelectListItem { Value = item.CMa.ToString(), Text = item.CMa + " - " + item.CTen });
             }
             foreach (var item in TDmKho)
             {
-                TDmKhohangSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa });
+                TDmKhohangSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa + " - " + item.CMota });
             }
             foreach (var item in TDmKehang)
             {
@@ -137,18 +138,32 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
                 TDondathangSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CSophieu });
             }
 
-            return Page();
+            TXntc.CNgaylap = System.DateTime.Now;
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            TXntcorder TXntcorder;
+            TXntcorder = await _context.TXntcorder.FirstOrDefaultAsync(m => string.Equals(m.CSophieu, TXntc.CSophieu));
+            if(TXntcorder != null)
+            {
+                _notyf.Error("Chứng từ với số phiếu " + TXntc.CSophieu + " đã tồn tại");
+                return RedirectToPage("./Create");
+            }
+            TXntcorder = new TXntcorder();
+            TXntcorder.FkDvcs = TXntc.FkDvcs;
+            TXntcorder.CSophieu = TXntc.CSophieu;
+            _context.TXntcorder.Add(TXntcorder);
+            await _context.SaveChangesAsync();
+            TXntc.FkOrder = TXntcorder.PkId;
             _context.TXntc.Add(TXntc);
             await _context.SaveChangesAsync();
-
+            _notyf.Success("Tạo mới thành công.");
             return RedirectToPage("./Index");
         }
+
         public JsonResult OnPostGetSelectedDocument(int id)
         {
             var result = _context.TDmChungtu.Where(ct => ct.PkId == id).First();

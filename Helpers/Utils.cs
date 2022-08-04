@@ -37,5 +37,10 @@ namespace Accounting_System.Helpers
             }
             return fi;
         }
+
+        public static string GenerateSoPhieu()
+        {
+            return "";
+        }
     }
 }

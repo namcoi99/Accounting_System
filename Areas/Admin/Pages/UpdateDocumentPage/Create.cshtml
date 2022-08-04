@@ -18,7 +18,8 @@
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group col-3">
             <label asp-for="TXntc.FkDvcs" class="control-label"></label>
-            <select asp-for="TXntc.FkDvcs" id="DVCS" asp-items="Model.TDmDvcsSelectList" class="form-control">
+            <input asp-for="TXntc.FkDvcs" id="FKDVCS" type="hidden" />
+            <select asp-for="SelectedDvcs" id="DVCS" asp-items="Model.TDmDvcsSelectList" onchange="HandleDvcsChange(this)" class="form-control">
                 <option value="" selected disabled>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkDvcs" class="text-danger"></span>
@@ -32,7 +33,7 @@
         </div>
         <div class="form-group col-3">
             <label asp-for="TXntc.CNgaylap" class="control-label"></label>
-            <input asp-for="TXntc.CNgaylap" id="NgayLap" class="form-control" />
+            <input asp-for="TXntc.CNgaylap" onchange="HandleDateChange(this)" id="NgayLap" class="form-control" />
             <span asp-validation-for="TXntc.CNgaylap" class="text-danger"></span>
         </div>
         <div class="form-group col-3">
@@ -42,7 +43,8 @@
         </div>
         <div class="form-group col-3">
             <label asp-for="TXntc.CSophieu" class="control-label"></label>
-            <input asp-for="TXntc.CSophieu" id="SoPhieu" class="form-control" />
+            <input asp-for="TXntc.CSophieu" id="CSoPhieu" />
+            <input asp-for="SoPhieu" id="SoPhieu" class="form-control" />
             <span asp-validation-for="TXntc.CSophieu" class="text-danger"></span>
         </div>
         <div class="form-group col-3">
@@ -164,6 +166,18 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script>
+        const dvcs = $(`#DVCS`);
+        const fkDvcs = $(`#FKDVCS`);
+        const cSophieu = $(`#CSoPhieu`);
+        const ngaylap = $('#NgayLap');
+        const tigia = $(`#TiGia`);
+        const loaitien = $(`#LoaiTien`);
+        const fktkco = $('#TKCo');
+        const fktkno = $('#TKNo');
+        const fkkhonhap = $('#KhoNhap');
+        const fkkhoxuat = $('#KhoXuat');
+        const sophieu = $('#SoPhieu');
+        let namePrefix, showMonth, showYear, sophieuLen, separator;
         function HandleDocumentSelect(e) {
             $.ajax({
                 type: "POST",
@@ -172,22 +186,43 @@
                 data: { "id": e.value },
                 dataType: "json",
                 success: function (result) {
-                    console.log(TransformControls(result.cControls))
+                    console.log(result);
+                    dvcs.val(result.fkDvcs);
+                    fkDvcs.val(result.fkDvcs);
+                    loaitien.val(result.fkTiente);
+                    fktkco.val(result.fkTkc);
+                    fktkno.val(result.fkTkn);
+                    fkkhonhap.val(result.fkKhonhap);
+                    fkkhoxuat.val(result.fkKhoxuat);
+                    // Generate SoPhieu's name
+                    namePrefix = result.cPrefix;
+                    sophieuLen = result.cFulllen;
+                    separator = result.cSeparator;
+                    showMonth = result.cMonth;
+                    showYear = result.cYear;
+                    sophieu.val(GenerateSoPhieu());
+                    cSophieu.val(GenerateSoPhieu());
+
                     const transformedControls = TransformControls(result.cControls);
                     Object.keys(transformedControls).forEach(key => {
                         const enable = !!transformedControls[key].controls[0];
-                        const notoption = !!transformedControls[key].controls[1];
+                        const notOption = !!transformedControls[key].controls[1];
                         const keep = !!transformedControls[key].controls[2];
                         const save = !!transformedControls[key].controls[3];
+                        if (!enable && !notOption) {
+                            $(`#${key}`).val("");
+                        }
                         $(`#${key}`).attr('disabled', !enable);
-                        $(`#${key}`).attr('required', notoption);
+                        $(`#${key}`).attr('required', notOption);
                     })
+
                 },
                 error: function (data) {
                     console.log(data);
                 }
             })
         }
+
         function TransformControls(controls) {
             const controlsArray = controls.split("#");
             const controlsObj = {};
@@ -197,16 +232,33 @@
                 const dataType = data.slice(0, 3);
                 const name = data.slice(3);
                 const index = props.shift();
-                //four digits at last is create, read, update, delete
+                //four digits at last is enable, notOption, keep, save
                 Object.assign(controlsObj, {
                     [name]: {
                         index: +index,
                         type: dataType,
                         controls: props.map(p => +p)
                     }
-                })
+                });
             })
             return controlsObj;
+        }
+        function HandleDvcsChange(e) {
+            fkDvcs.val(e.value);
+        }
+        function HandleDateChange(e) {
+            if (namePrefix) {
+                sophieu.val(GenerateSoPhieu());
+                cSophieu.val(GenerateSoPhieu());
+            }
+        }
+        function GenerateSoPhieu() {
+            const date = new Date(ngaylap.val());
+            const yearStr = showYear ? date.getFullYear().toString().slice(-2) : "";
+            const monthStr = showMonth ? ('0' + (date.getMonth() + 1).toString()).slice(-2) : "";
+            const soPhieuPrefix = namePrefix + yearStr + monthStr;
+            const count = '1';
+            return `${soPhieuPrefix}${separator}${count.padStart(sophieuLen - soPhieuPrefix.length, '0')}`;
         }
     </script>
 }
