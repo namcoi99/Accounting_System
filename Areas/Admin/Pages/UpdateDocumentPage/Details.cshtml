@@ -2,990 +2,401 @@
 @model Accounting_System.Areas.Admin.Pages.UpdateDocumentPage.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi tiết chứng từ";
 }
 
-<h1>Details</h1>
+<div>
+    <a asp-page="Index"><i class="fas fa-arrow-left mr-1"></i>Trờ về</a>
+</div>
 
-<div>
-    <h4>TXntc</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkChungtu)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkChungtu)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CSophieu)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CSophieu)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkDvcs)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkDvcs)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkTruso)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkTruso)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CNgaylap)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CNgaylap)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CNgayct)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CNgayct)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CSoct)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CSoct)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkKhachhang)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkKhachhang)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkNguoilh)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkNguoilh)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkLoaitien)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkLoaitien)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CTigia)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CTigia)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkPhongban)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkPhongban)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkTkno)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkTkno)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkTkco)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkTkco)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CPsno)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CPsno)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CPsco)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CPsco)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CDiengiai)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CDiengiai)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CDgdong)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CDgdong)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkThutruong)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkThutruong)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkThuquy)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkThuquy)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkKetoan)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkKetoan)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkKttruong)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkKttruong)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkNguoilap)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkNguoilap)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkThukho)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkThukho)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkKhoxuat)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkKhoxuat)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkKhonhap)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkKhonhap)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkKexuat)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkKexuat)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkKenhap)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkKenhap)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkNguoigiao)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkNguoigiao)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkVthh)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkVthh)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkDvt)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkDvt)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CSoluong)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CSoluong)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CDongia)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CDongia)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CVat)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CVat)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkVuviec)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkVuviec)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkPttt)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkPttt)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CHantt)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CHantt)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CHantt2)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CHantt2)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CLoaibt)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CLoaibt)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CCopy)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CCopy)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CPosted)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CPosted)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CPoster)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CPoster)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkUser)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkUser)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CDatetime)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CDatetime)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CSoxe)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CSoxe)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CKm)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CKm)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CPromo)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CPromo)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkOrder)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkOrder)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CTrong)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CTrong)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CLoaixn)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CLoaixn)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CLoaict)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CLoaict)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkKmp)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkKmp)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkDtcp)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkDtcp)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkPhanxuong)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkPhanxuong)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CHoadon)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CHoadon)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkLsx)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkLsx)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkLsxct)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkLsxct)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CCpsx)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CCpsx)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CMst)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CMst)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CKhthue)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CKhthue)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CChatluong)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CChatluong)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CMrb)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CMrb)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CSlkiemtra)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CSlkiemtra)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkLdhh)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkLdhh)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkKhachhangco)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkKhachhangco)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkTscd)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkTscd)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CSophieutralai)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CSophieutralai)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CNote)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CNote)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkNvkd)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkNvkd)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkKmpc)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkKmpc)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CKhuno)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CKhuno)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CKhuco)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CKhuco)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CTienthue)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CTienthue)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CSohdgtgt)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CSohdgtgt)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CNguoilh)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CNguoilh)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkModifyuser)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkModifyuser)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CThanhtoan)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CThanhtoan)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkLdtg)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkLdtg)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkNguonvon)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkNguonvon)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CLaphd)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CLaphd)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CTheobo)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CTheobo)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CMathang)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CMathang)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkLoaidl)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkLoaidl)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CChietkhau)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CChietkhau)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkDondathang)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkDondathang)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CSlthung)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CSlthung)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkQuicach)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkQuicach)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CTienhang)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CTienhang)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CCpbanhang)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CCpbanhang)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CPsno2)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CPsno2)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CPsco2)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CPsco2)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CDiengiai2)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CDiengiai2)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkCuocvanchuyen)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkCuocvanchuyen)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkSoxe)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkSoxe)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CDongiatc)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CDongiatc)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkChucnang)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkChucnang)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkCa)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkCa)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkTotruong)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkTotruong)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CKhdiachi)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CKhdiachi)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CTienthue2)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CTienthue2)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkSochuyen)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkSochuyen)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkHangvanchuyen)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkHangvanchuyen)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CNguoivanchuyen)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CNguoivanchuyen)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CField1)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CField1)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CField2)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CField2)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CExtraentry)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CExtraentry)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CMauso)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CMauso)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CTk)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CTk)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkTour)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkTour)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CStt)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CStt)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CSoluongxuat)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CSoluongxuat)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CTmpdichdanh)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CTmpdichdanh)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkThutruong02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkThutruong02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkKttruong02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkKttruong02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkKetoan02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkKetoan02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkThuquy02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkThuquy02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkNguoilap02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkNguoilap02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkThukho02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkThukho02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkNguoigiao02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkNguoigiao02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CButtoanthem)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CButtoanthem)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CSophieucu)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CSophieucu)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CFob)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CFob)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CF)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CF)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CI)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CI)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CCif)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CCif)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CCif2)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CCif2)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CThuenk)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CThuenk)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CGttruocthue)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CGttruocthue)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CGttruocthue2)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CGttruocthue2)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkCostCenter)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkCostCenter)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CImportData)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CImportData)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CTienhangvanchuyen)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CTienhangvanchuyen)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CSotknh)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CSotknh)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkVoyage)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkVoyage)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CBillOflading)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CBillOflading)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CVoyage)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CVoyage)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CVessel)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CVessel)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CEta)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CEta)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CPol)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CPol)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CPod)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CPod)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CPoreceive)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CPoreceive)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CPodelivery)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CPodelivery)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkBillOflading)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkBillOflading)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CDain)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CDain)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CLastexport)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CLastexport)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkVthhLuu)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkVthhLuu)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkNhomKc)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkNhomKc)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CBookingnote)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CBookingnote)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkBookingnote)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkBookingnote)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkDtcpLuu)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkDtcpLuu)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CImportXuat)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CImportXuat)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CCkTienmat)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CCkTienmat)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkQlxDenghixuat)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkQlxDenghixuat)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkDtcpco)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkDtcpco)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CUpdate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CUpdate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CKyhieumau)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CKyhieumau)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CMahoadon)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CMahoadon)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CNguyengia)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CNguyengia)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.FkVitri)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.FkVitri)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CSolo)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CSolo)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CHansudung)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CHansudung)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TXntc.CHetSl)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TXntc.CHetSl)
-        </dd>
-    </dl>
+<h1>Tạo mới</h1>
+
+<h4>Cập nhật chứng từ</h4>
+<hr />
+<form method="post">
+    <div class="row">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="TXntc.PkId" type="hidden" />
+        <input asp-for="TXntc.FkOrder" type="hidden" />
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkDvcs" class="control-label"></label>
+            <select asp-for="TXntc.FkDvcs" asp-items="Model.TDmDvcsSelectList" disabled class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkDvcs" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkChungtu" class="control-label"></label>
+            <select asp-for="TXntc.FkChungtu" id="ChungTu" asp-items="Model.TDmChungtuSelectList" disabled class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkChungtu" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CNgaylap" class="control-label"></label>
+            <input asp-for="TXntc.CNgaylap" id="NgayLap" class="form-control" />
+            <span asp-validation-for="TXntc.CNgaylap" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CDiengiai" class="control-label"></label>
+            <input asp-for="TXntc.CDiengiai" id="DienGiai" class="form-control" />
+            <span asp-validation-for="TXntc.CDiengiai" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CSophieu" class="control-label"></label>
+            <input asp-for="TXntc.CSophieu" id="SoPhieu" class="form-control" disabled />
+            <span asp-validation-for="TXntc.CSophieu" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkKhachhang" class="control-label"></label>
+            <select asp-for="TXntc.FkKhachhang" id="MaKH" asp-items="Model.TDmKhSelectList" onchange="HandleSelectKh(this.value)" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkKhachhang" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CKhdiachi" class="control-label"></label>
+            <input asp-for="TXntc.CKhdiachi" id="KHDiaChi" class="form-control" />
+            <span asp-validation-for="TXntc.CKhdiachi" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkNguoilh" class="control-label"></label>
+            <select asp-for="TXntc.FkNguoilh" id="NguoiLH" asp-items="Model.TDmNguoilhSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkNguoilh" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CNguoilh" class="control-label"></label>
+            <input asp-for="TXntc.CNguoilh" class="form-control" />
+            <span asp-validation-for="TXntc.CNguoilh" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkTkno" class="control-label"></label>
+            <select asp-for="TXntc.FkTkno" id="TKNo" asp-items="Model.TDmTaikhoanSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkTkno" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkTkco" class="control-label"></label>
+            <select asp-for="TXntc.FkTkco" id="TKCo" asp-items="Model.TDmTaikhoanSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkTkco" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkKhoxuat" class="control-label"></label>
+            <select asp-for="TXntc.FkKhoxuat" id="KhoXuat" asp-items="Model.TDmKhohangSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkKhoxuat" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkKhonhap" class="control-label"></label>
+            <select asp-for="TXntc.FkKhonhap" id="KhoNhap" asp-items="Model.TDmKhohangSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkKhonhap" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CNgayct" class="control-label"></label>
+            <input asp-for="TXntc.CNgayct" id="NgayCT" class="form-control" />
+            <span asp-validation-for="TXntc.CNgayct" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CMahoadon" class="control-label"></label>
+            <input asp-for="TXntc.CMahoadon" class="form-control" />
+            <span asp-validation-for="TXntc.CMahoadon" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CKyhieumau" class="control-label"></label>
+            <input asp-for="TXntc.CKyhieumau" class="form-control" />
+            <span asp-validation-for="TXntc.CKyhieumau" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CVat" class="control-label"></label>
+            <input asp-for="TXntc.CVat" id="VAT" class="form-control" />
+            <span asp-validation-for="TXntc.CVat" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkPhongban" class="control-label"></label>
+            <select asp-for="TXntc.FkPhongban" id="PhongBan" asp-items="Model.TDmPhongbanSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkPhongban" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkPhanxuong" class="control-label"></label>
+            <select asp-for="TXntc.FkPhanxuong" id="PhanXuong" asp-items="Model.TDmPhanxuongSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkPhanxuong" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkLoaitien" class="control-label"></label>
+            <select asp-for="TXntc.FkLoaitien" id="LoaiTien" asp-items="Model.TDmLoaitienSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkLoaitien" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CTigia" class="control-label"></label>
+            <input asp-for="TXntc.CTigia" id="TiGia" class="form-control" />
+            <span asp-validation-for="TXntc.CTigia" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.FkPttt" class="control-label"></label>
+            <select asp-for="TXntc.FkPttt" id="PTTT" asp-items="Model.TDmPtttSelectList" class="form-control">
+                <option value="" selected disabled>Chọn</option>
+            </select>
+            <span asp-validation-for="TXntc.FkPttt" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="TXntc.CSotknh" class="control-label"></label>
+            <input asp-for="TXntc.CSotknh" class="form-control" />
+            <span asp-validation-for="TXntc.CSotknh" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Lưu" class="btn btn-primary" />
+    </div>
+</form>
+
+<div class="card shadow mb-4 w-100">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách vật tư, hàng hóa</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            STT
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Vthh.CTen)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CSoluong)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CNguyengia)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CChietkhau)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CDongia)
+                        </th>
+                        <th>
+                            T/Tiền
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.TXntcList != null)
+                    {
+                        var index = 0;
+                        @foreach (var item in Model.TXntcList)
+                        {
+                            index++;
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => index)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Vthh.CTen)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.CSoluong)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.CNguyengia)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.CChietkhau)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.CDongia)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.CPsno)
+                                </td>
+                                @*<td>
+                                        <form method="post" asp-page-handler="DeleteVthh">
+                                            <input name="id" value="@item.Xntc.PkId" type="hidden" />
+                                            <input name="orderId" value="@Model.Id" type="hidden" />
+                                            <div class="d-flex" style="gap:16px">
+                                                <a class="btn btn-success btn-circle" asp-page="./Edit" asp-route-id="@item.Vthh.PkId"><i class="fas fa-edit"></i></a>
+                                                <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                        </form>
+                                    </td>*@
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createVthhModal">
+                Thêm mới
+            </button>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.TXntc.PkId">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+
+<!-- CreateVthhModal -->
+<div class="modal fade" id="createVthhModal" tabindex="-1" role="dialog" aria-labelledby="createVthhModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createVthhModalLabel">Thêm mới Vật tư, hàng hóa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-page-handler="CreateVthh" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="TXntcItem.FkOrder" type="hidden" />
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.FkVthh" class="control-label"></label>
+                        <select asp-for="TXntcItem.FkVthh" asp-items="Model.VattuhanghoaSelectList" onchange="HandleProductSelect(this)" class="form-control">
+                            <option value="" selected disabled>Chọn</option>
+                        </select>
+                        <span asp-validation-for="TXntcItem.FkVthh" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.CSoluong" class="control-label"></label>
+                        <input asp-for="TXntcItem.CSoluong" class="form-control" />
+                        <span asp-validation-for="TXntcItem.CSoluong" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.CDongia" class="control-label"></label>
+                        <input asp-for="TXntcItem.CDongia" class="form-control" />
+                        <span asp-validation-for="TXntcItem.CDongia" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.CTienhang" class="control-label"></label>
+                        <input asp-for="TXntcItem.CTienhang" class="form-control" />
+                        <span asp-validation-for="TXntcItem.CTienhang" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.CTienhang" class="control-label"></label>
+                        <input asp-for="TXntcItem.CTienhang" class="form-control" />
+                        <span asp-validation-for="TXntcItem.CTienhang" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.CPsco2" class="control-label"></label>
+                        <input asp-for="TXntcItem.CPsno2" class="form-control" />
+                        <span asp-validation-for="TXntcItem.CPsno2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.CTienthue" class="control-label"></label>
+                        <input asp-for="TXntcItem.CTienthue" class="form-control" />
+                        <span asp-validation-for="TXntcItem.CTienthue" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.CPsno" class="control-label"></label>
+                        <input asp-for="TXntcItem.CPsno" class="form-control" />
+                        <span asp-validation-for="TXntcItem.CPsno" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right">Thêm mới</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        const dvcs = $(`#DVCS`);
+        const loaitien = $(`#LoaiTien`);
+        const fktkco = $('#TKCo');
+        const fktkno = $('#TKNo');
+        const fkkhonhap = $('#KhoNhap');
+        const fkkhoxuat = $('#KhoXuat');
+        const sophieu = $('#SoPhieu');
+
+        function InitData() {
+            $.ajax({
+                type: "POST",
+                headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+                url: "/Admin/UpdateDocumentPage/Details?handler=GetSelectedDocument",
+                data: { "id": $("#ChungTu").val() },
+                dataType: "json",
+                success: function (result) {
+                    console.log(result);
+
+                    dvcs.val(result.fkDvcs);
+                    loaitien.val(result.fkTiente);
+                    fktkco.val(result.fkTkc);
+                    fktkno.val(result.fkTkn);
+                    fkkhonhap.val(result.fkKhonhap);
+                    fkkhoxuat.val(result.fkKhoxuat);
+
+                    const transformedControls = TransformControls(result.cControls);
+                    Object.keys(transformedControls).forEach(key => {
+                        const enable = !!transformedControls[key].controls[0];
+                        const notOption = !!transformedControls[key].controls[1];
+                        const keep = !!transformedControls[key].controls[2];
+                        const save = !!transformedControls[key].controls[3];
+                        if (!enable && !notOption) {
+                            $(`#${key}`).val("");
+                        }
+                        $(`#${key}`).attr('disabled', !enable);
+                        $(`#${key}`).attr('required', notOption);
+                    })
+
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            })
+            HandleSelectKh($('#MaKH').val());
+        }
+
+        function HandleSelectKh(id) {
+            $.ajax({
+                type: "POST",
+                url: "/Admin/UpdateDocumentPage/Details?handler=GetSelectedCustomer",
+                headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+                data: { "id": id },
+                dataType: "json",
+                success: function (result) {
+                    $("#KHDiaChi").val(result.cDiachi);
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            })
+        }
+
+        function TransformControls(controls) {
+            const controlsArray = controls.split("#");
+            const controlsObj = {};
+            controlsArray.forEach(control => {
+                const props = control.split(",");
+                const data = props.shift();
+                const dataType = data.slice(0, 3);
+                const name = data.slice(3);
+                const index = props.shift();
+                //four digits at last is enable, notOption, keep, save
+                Object.assign(controlsObj, {
+                    [name]: {
+                        index: +index,
+                        type: dataType,
+                        controls: props.map(p => +p)
+                    }
+                });
+            })
+            return controlsObj;
+        }
+
+        InitData();
+    </script>
+}

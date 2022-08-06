@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="AspNetCore.Reporting" Version="2.1.0" />
+    <PackageReference Include="AspNetCoreHero.ToastNotification" Version="1.1.0" />
     <PackageReference Include="BCrypt.Net-Core" Version="1.6.0" />
     <PackageReference Include="BoldReports.AspNet.Core" Version="4.1.85" />
     <PackageReference Include="BoldReports.Net.Core" Version="4.1.85" />

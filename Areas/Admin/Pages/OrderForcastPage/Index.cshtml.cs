@@ -25,6 +25,7 @@ namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
             public TDmKh Kh { get; set; }
             public TDmDvcs Dvcs { get; set; }
             public string Nguoilap { get; set; }
+            public TDmPhongban Pb { get; set; }
         }
         public IList<TDubaoRecord> TDubao { get;set; }
 
@@ -74,6 +75,25 @@ namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
                        Kh = x.Kh,
                        Dvcs = x.Dvcs,
                        Nguoilap = y.CMa
+                   })
+                .GroupJoin(_context.TDmPhongban, db => db.Dubao.FkPhongban, pb => pb.PkId,
+                (dubao, pbList) => new
+                {
+                    Dubao = dubao.Dubao,
+                    Kh = dubao.Kh,
+                    Dvcs = dubao.Dvcs,
+                    Nguoilap = dubao.Nguoilap,
+                    PhongbanList = pbList
+                })
+                .SelectMany(
+                   x => x.PhongbanList.DefaultIfEmpty(),
+                   (x, y) => new TDubaoRecord
+                   {
+                       Dubao = x.Dubao,
+                       Kh = x.Kh,
+                       Dvcs = x.Dvcs,
+                       Nguoilap = x.Nguoilap,
+                       Pb = y
                    })
                 .ToListAsync();
         }

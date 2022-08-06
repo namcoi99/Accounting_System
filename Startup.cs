@@ -1,6 +1,7 @@
 using Accounting_System.Interfaces;
 using Accounting_System.Models;
 using Accounting_System.Services;
+using AspNetCoreHero.ToastNotification;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -44,6 +45,7 @@ namespace Accounting_System
                     options.SlidingExpiration = true;
                 });
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.BottomRight; });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

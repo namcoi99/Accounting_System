@@ -8,33 +8,6 @@
 
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
-        <!-- Nav Item - Messages -->
-        <li class="nav-item dropdown no-arrow mx-1">
-            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
-                <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">1</span>
-            </a>
-            <!-- Dropdown - Messages -->
-            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                    Các thông báo
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div class="dropdown-list-image mr-3">
-                        <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                        <div class="status-indicator bg-success"></div>
-                    </div>
-                    <div class="font-weight-bold">
-                        <div class="text-truncate">Thông báo 1 ...</div>
-                        <div class="small text-gray-500">Chức năng chưa xây dựng</div>
-                    </div>
-                </a>
-            </div>
-        </li>
-
-        <div class="topbar-divider d-none d-sm-block"></div>
-
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -43,11 +16,11 @@
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" asp-page="/Account/Manage/Index">
+                @*<a class="dropdown-item" asp-page="/Account/Manage/Index">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Hồ sơ
                 </a>
-                <div class="dropdown-divider"></div>
+                <div class="dropdown-divider"></div>*@
 
                 <form class="form-inline" asp-area="Auth" asp-page="/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                     <button type="submit" class="dropdown-item">

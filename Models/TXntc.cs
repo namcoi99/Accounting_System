@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -10,15 +11,20 @@ namespace Accounting_System.Models
 {
     public partial class TXntc
     {
-        public short PkId { get; set; }
+        public decimal PkId { get; set; }
+        [Required(ErrorMessage = "{0} là trường bắt buộc")]
         [DisplayName("Loại C.từ")]
         public int? FkChungtu { get; set; }
+        [Required(ErrorMessage = "{0} là trường bắt buộc")]
         [DisplayName("Số phiếu")]
         public string CSophieu { get; set; }
         [DisplayName("ĐVCS")]
+        [Required(ErrorMessage = "{0} là trường bắt buộc")]
         public byte FkDvcs { get; set; }
         public byte? FkTruso { get; set; }
+        [Required(ErrorMessage = "{0} là trường bắt buộc")]
         [DisplayName("Ngày lập")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-ddTHH:mm}")]
         public DateTime? CNgaylap { get; set; }
         [DisplayName("Ngày CT")]
         public DateTime? CNgayct { get; set; }
@@ -63,6 +69,7 @@ namespace Accounting_System.Models
         public short? FkVthh { get; set; }
         [DisplayName("ĐVT")]
         public short? FkDvt { get; set; }
+        [DisplayName("Số lượng")]
         public double? CSoluong { get; set; }
         [DisplayName("Đơn giá")]
         public decimal? CDongia { get; set; }
@@ -118,6 +125,7 @@ namespace Accounting_System.Models
         public decimal? CTienthue { get; set; }
         [DisplayName("Hóa đơn GTGT")]
         public string CSohdgtgt { get; set; }
+        [DisplayName("Người liên hệ")]
         public string CNguoilh { get; set; }
         public short? FkModifyuser { get; set; }
         public string CThanhtoan { get; set; }
@@ -129,6 +137,7 @@ namespace Accounting_System.Models
         [DisplayName("Mặt hàng")]
         public string CMathang { get; set; }
         public byte? FkLoaidl { get; set; }
+        [DisplayName("CK")]
         public decimal? CChietkhau { get; set; }
         [DisplayName("Đơn đặt hàng")]
         public int? FkDondathang { get; set; }
@@ -146,6 +155,7 @@ namespace Accounting_System.Models
         public short? FkCuocvanchuyen { get; set; }
         [DisplayName("Số xe")]
         public short? FkSoxe { get; set; }
+        [DisplayName("ĐVT")]
         public decimal? CDongiatc { get; set; }
         public short? FkChucnang { get; set; }
         public short? FkCa { get; set; }
@@ -211,6 +221,7 @@ namespace Accounting_System.Models
         public int? FkBookingnote { get; set; }
         public int? FkDtcpLuu { get; set; }
         public bool? CImportXuat { get; set; }
+        [DisplayName("T/Tiền")]
         public decimal? CCkTienmat { get; set; }
         public int? FkQlxDenghixuat { get; set; }
         public int? FkDtcpco { get; set; }
@@ -219,6 +230,7 @@ namespace Accounting_System.Models
         public string CKyhieumau { get; set; }
         [DisplayName("Mã hóa đơn")]
         public string CMahoadon { get; set; }
+        [DisplayName("Nguyên giá")]
         public decimal? CNguyengia { get; set; }
         public int? FkVitri { get; set; }
         public string CSolo { get; set; }

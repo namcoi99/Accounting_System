@@ -193,13 +193,7 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
 
         public async Task<IActionResult> OnPostUpdateCommonInfoAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             _context.Attach(TDondathang).State = EntityState.Modified;
-
             try
             {
                 await _context.SaveChangesAsync();
@@ -220,13 +214,7 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
 
         public async Task<IActionResult> OnPostUpdateTtvcAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             _context.Attach(TDondathang).State = EntityState.Modified;
-
             try
             {
                 await _context.SaveChangesAsync();

@@ -51,30 +51,58 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <table class="table table-bordered" id="catalogTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     @foreach (var item in Model.CatalogListDetail)
                                     {
                                         <th scope="col">@item.CVietnamese</th>
                                     }
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @for (int i = 0; i < Model.RowsCount; i++)
                                 {
-                                    <form class="w-100" method="post">
                                     <tr>
-                                        <input type="text" value="@Model.CurrentCatalog.CTable" name="C_TABLE" hidden />
+                                        <input value="@Model.CurrentCatalog.CTable"
+                                               form="@(Model.CurrentCatalog.CTable + "_" + i)"
+                                               name="C_TABLE"
+                                               type="hidden" />
                                         @foreach (var columnName in Model.TableData.Keys)
                                         {
-                                            <td>
-                                                <input type="text" class="form-control w-auto" name="@columnName" value="@Model.TableData[columnName][i]" readonly="@(string.Equals(@columnName, "PK_ID")|string.Equals(@columnName, "C_MA"))">
-                                            </td>
+                                            var currentListDetail = Model.GetCurrentListDetail(Model.CurrentCatalog.PkId, columnName);
+                                            bool isReadOnly = currentListDetail.CReadonly ?? false;
+                                            bool isRequired = currentListDetail.CAllownull ?? false;
+                                            bool isVisible = currentListDetail.CVisible ?? false;
+                                            if (isVisible)
+                                            {
+                                                <td>
+                                                    <input class="form-control w-auto"
+                                                           form="@(Model.CurrentCatalog.CTable + "_" + i)"
+                                                           name="@columnName"
+                                                           value="@Model.TableData[columnName][i]"
+                                                           readonly="@isReadOnly"
+                                                           required="@isRequired">
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <input name="@columnName"
+                                                       value="@Model.TableData[columnName][i]"
+                                                       form="@(Model.CurrentCatalog.CTable + "_" + i)"
+                                                       type="hidden">
+                                            }
                                         }
-                                        <td class="text-center"><button type="submit" class="btn btn-primary">Cập nhật</button></td>
+                                    <td class="text-center">
+                                        <button type="submit" form="@(Model.CurrentCatalog.CTable + "_" + i)" class="btn btn-success">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button type="submit" form="@(Model.CurrentCatalog.CTable + "_DELETE_" + i)" class="btn btn-danger">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </td>
                                     </tr>
-                                    </form>
                                 }
                             </tbody>
                         </table>
@@ -82,6 +110,17 @@
                 </div>
             </div>
         </div>
+        @for (int i = 0; i < Model.RowsCount; i++)
+        {
+            <form id="@(Model.CurrentCatalog.CTable + "_" + i)" method="post">
+            </form>
+            <form id="@(Model.CurrentCatalog.CTable + "_DELETE_" + i)" asp-page-handler="DeleteCatalogItem" method="post">
+                <input value="@Model.CurrentCatalog.CTable"
+                       name="C_TABLE" type="hidden"/>
+                <input name="PK_ID"
+                       value="@Model.TableData["PK_ID"][i]" type="hidden">
+            </form>
+        }
 
         <!-- Modal -->
         <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
@@ -98,9 +137,23 @@
                             <input type="text" value="@Model.CurrentCatalog.CTable" name="C_TABLE" hidden />
                             @foreach (var columnName in Model.TableData.Keys)
                             {
+                                var currentListDetail = Model.GetCurrentListDetail(Model.CurrentCatalog.PkId, columnName);
+                                bool isReadOnly = currentListDetail.CReadonly ?? false;
+                                bool isRequired = currentListDetail.CAllownull ?? false;
+                                bool isVisible = currentListDetail.CVisible ?? false;
                                 <div class="form-group">
-                                    <label for="@columnName">@columnName</label>
-                                    <input type="text" class="form-control" name="@columnName" value="" readonly="@(string.Equals(@columnName, "PK_ID"))">
+                                    @{
+                                        if (isVisible)
+                                        {
+                                            <label for="@columnName">@currentListDetail.CVietnamese</label>
+                                        }
+                                    }
+                                    <input class="form-control"
+                                           name="@columnName"
+                                           value=""
+                                           readonly="@isReadOnly"
+                                           required="@isRequired"
+                                           type="@(isVisible ? "" : "hidden")">
                                 </div>
                             }
                             <button type="submit" class="btn btn-primary float-right">Tạo mới</button>

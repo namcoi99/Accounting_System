@@ -69,57 +69,56 @@
                     {
                         @foreach (var item in Model.TDondathangRecordList)
                         {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Dondathang.CSophieu)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Dondathang.CNgaylap)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Dondathang.CDiengiai)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Kh.CMa)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Kh.CTen)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Kh.CDiachi)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Khnlh.CTen)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Dondathang.FkSoxe)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Dondathang.CNguoivanchuyen)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Dondathang.FkHangvanchuyen)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Dondathang.CVat)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Dondathang.FkPhongban)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Dondathang.FkVuviec)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Dvcs.CMa)
-                        </td>
-                        <td>
-                            <div class="d-flex" style="gap: 16px">
-                                <a class="btn btn-success btn-circle" asp-page="./Edit" asp-route-id="@item.Dondathang.PkId"><i class="fas fa-edit"></i></a>
-                                <a class="btn btn-info btn-circle" asp-page="./Details" asp-route-id="@item.Dondathang.PkId"><i class="fas fa-eye"></i></a>
-                                <a class="btn btn-danger btn-circle" asp-page="./Delete" asp-route-id="@item.Dondathang.PkId"><i class="fas fa-trash-alt"></i></a>
-                            </div>
-                        </td>
-                    </tr>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Dondathang.CSophieu)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Dondathang.CNgaylap)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Dondathang.CDiengiai)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Kh.CMa)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Kh.CTen)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Kh.CDiachi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Khnlh.CTen)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xe.CSoxe)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Dondathang.CNguoivanchuyen)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Dondathang.FkHangvanchuyen)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Dondathang.CVat)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Pb.CMa)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Dondathang.FkVuviec)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Dvcs.CMa)
+                                </td>
+                                <td>
+                                    <div class="d-flex" style="gap: 16px">
+                                        <a class="btn btn-success btn-circle" asp-page="./Details" asp-route-id="@item.Dondathang.PkId"><i class="fas fa-edit"></i></a>
+                                        <a class="btn btn-danger btn-circle" asp-page="./Delete" asp-route-id="@item.Dondathang.PkId"><i class="fas fa-trash-alt"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
                         }
                     }
                 </tbody>

@@ -11,149 +11,34 @@
 
 <h1>Tạo mới</h1>
 
-<h4>Cập nhật chứng từ</h4>
+<h4>Tạo mới chứng từ</h4>
 <hr />
 <form method="post">
     <div class="row">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group col-3">
-            <label asp-for="TXntc.FkDvcs" class="control-label"></label>
-            <select asp-for="TXntc.FkDvcs" id="DVCS" asp-items="Model.TDmDvcsSelectList" class="form-control">
+            <label asp-for="TXntcorder.FkDvcs" class="control-label"></label>
+            <select asp-for="TXntcorder.FkDvcs" id="DVCS" asp-items="Model.TDmDvcsSelectList" class="form-control">
                 <option value="" selected disabled>Chọn</option>
             </select>
-            <span asp-validation-for="TXntc.FkDvcs" class="text-danger"></span>
+            <span asp-validation-for="TXntcorder.FkDvcs" class="text-danger"></span>
         </div>
         <div class="form-group col-3">
-            <label asp-for="TXntc.FkChungtu" class="control-label"></label>
-            <select asp-for="TXntc.FkChungtu" id="MaCT" asp-items="Model.TDmChungtuSelectList" onchange="HandleDocumentSelect(this)" class="form-control">
+            <label asp-for="TXntcorder.FkOrder" class="control-label"></label>
+            <select asp-for="TXntcorder.FkOrder" id="MaCT" asp-items="Model.TDmChungtuSelectList" onchange="HandleDocumentSelect(this)" class="form-control">
                 <option value="" selected disabled>Chọn</option>
             </select>
-            <span asp-validation-for="TXntc.FkChungtu" class="text-danger"></span>
+            <span asp-validation-for="TXntcorder.FkOrder" class="text-danger"></span>
         </div>
         <div class="form-group col-3">
-            <label asp-for="TXntc.CNgaylap" class="control-label"></label>
-            <input asp-for="TXntc.CNgaylap" id="NgayLap" class="form-control" />
-            <span asp-validation-for="TXntc.CNgaylap" class="text-danger"></span>
+            <label asp-for="NgayLap" class="control-label"></label>
+            <input asp-for="NgayLap" onchange="HandleDateChange(this)" id="NgayLap" class="form-control" />
+            <span asp-validation-for="NgayLap" class="text-danger"></span>
         </div>
         <div class="form-group col-3">
-            <label asp-for="TXntc.CDiengiai" class="control-label"></label>
-            <input asp-for="TXntc.CDiengiai" id="DienGiai" class="form-control" />
-            <span asp-validation-for="TXntc.CDiengiai" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.CSophieu" class="control-label"></label>
-            <input asp-for="TXntc.CSophieu" id="SoPhieu" class="form-control" />
-            <span asp-validation-for="TXntc.CSophieu" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.FkKhachhang" class="control-label"></label>
-            <select asp-for="TXntc.FkKhachhang" id="MaKH" asp-items="Model.TDmKhSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
-            </select>
-            <span asp-validation-for="TXntc.FkKhachhang" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.CKhdiachi" class="control-label"></label>
-            <input asp-for="TXntc.CKhdiachi" id="KHDiaChi" class="form-control" />
-            <span asp-validation-for="TXntc.CKhdiachi" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.FkNguoilh" class="control-label"></label>
-            <select asp-for="TXntc.FkNguoilh" id="NguoiLH" asp-items="Model.TDmNguoilhSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
-            </select>
-            <span asp-validation-for="TXntc.FkNguoilh" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.CNguoilh" class="control-label"></label>
-            <input asp-for="TXntc.CNguoilh" class="form-control" />
-            <span asp-validation-for="TXntc.CNguoilh" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.FkTkno" class="control-label"></label>
-            <select asp-for="TXntc.FkTkno" id="TKNo" asp-items="Model.TDmTaikhoanSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
-            </select>
-            <span asp-validation-for="TXntc.FkTkno" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.FkTkco" class="control-label"></label>
-            <select asp-for="TXntc.FkTkco" id="TKCo" asp-items="Model.TDmTaikhoanSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
-            </select>
-            <span asp-validation-for="TXntc.FkTkco" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.FkKhoxuat" class="control-label"></label>
-            <select asp-for="TXntc.FkKhoxuat" id="KhoXuat" asp-items="Model.TDmKhohangSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
-            </select>
-            <span asp-validation-for="TXntc.FkKhoxuat" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.FkKhonhap" class="control-label"></label>
-            <select asp-for="TXntc.FkKhonhap" id="KhoNhap" asp-items="Model.TDmKhohangSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
-            </select>
-            <span asp-validation-for="TXntc.FkKhonhap" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.CNgayct" class="control-label"></label>
-            <input asp-for="TXntc.CNgayct" id="NgayCT" class="form-control" />
-            <span asp-validation-for="TXntc.CNgayct" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.CMahoadon" class="control-label"></label>
-            <input asp-for="TXntc.CMahoadon" class="form-control" />
-            <span asp-validation-for="TXntc.CMahoadon" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.CKyhieumau" class="control-label"></label>
-            <input asp-for="TXntc.CKyhieumau" class="form-control" />
-            <span asp-validation-for="TXntc.CKyhieumau" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.CVat" class="control-label"></label>
-            <input asp-for="TXntc.CVat" id="VAT" class="form-control" />
-            <span asp-validation-for="TXntc.CVat" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.FkPhongban" class="control-label"></label>
-            <select asp-for="TXntc.FkPhongban" id="PhongBan" asp-items="Model.TDmPhongbanSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
-            </select>
-            <span asp-validation-for="TXntc.FkPhongban" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.FkPhanxuong" class="control-label"></label>
-            <select asp-for="TXntc.FkPhanxuong" id="PhanXuong" asp-items="Model.TDmPhanxuongSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
-            </select>
-            <span asp-validation-for="TXntc.FkPhanxuong" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.FkLoaitien" class="control-label"></label>
-            <select asp-for="TXntc.FkLoaitien" id="LoaiTien" asp-items="Model.TDmLoaitienSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
-            </select>
-            <span asp-validation-for="TXntc.FkLoaitien" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.CTigia" class="control-label"></label>
-            <input asp-for="TXntc.CTigia" id="TiGia" class="form-control" />
-            <span asp-validation-for="TXntc.CTigia" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.FkPttt" class="control-label"></label>
-            <select asp-for="TXntc.FkPttt" id="LoaiTien" asp-items="Model.TDmPtttSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
-            </select>
-            <span asp-validation-for="TXntc.FkPttt" class="text-danger"></span>
-        </div>
-        <div class="form-group col-3">
-            <label asp-for="TXntc.CSotknh" class="control-label"></label>
-            <input asp-for="TXntc.CSotknh" class="form-control" />
-            <span asp-validation-for="TXntc.CSotknh" class="text-danger"></span>
+            <label asp-for="TXntcorder.CSophieu" class="control-label"></label>
+            <input asp-for="TXntcorder.CSophieu" id="SoPhieu" class="form-control" />
+            <span asp-validation-for="TXntcorder.CSophieu" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group">
@@ -164,6 +49,10 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script>
+        const dvcs = $('#DVCS');
+        const sophieu = $('#SoPhieu');
+        const ngaylap = $('#NgayLap');
+        let namePrefix, showMonth, showYear, sophieuLen, separator;
         function HandleDocumentSelect(e) {
             $.ajax({
                 type: "POST",
@@ -172,41 +61,32 @@
                 data: { "id": e.value },
                 dataType: "json",
                 success: function (result) {
-                    console.log(TransformControls(result.cControls))
-                    const transformedControls = TransformControls(result.cControls);
-                    Object.keys(transformedControls).forEach(key => {
-                        const enable = !!transformedControls[key].controls[0];
-                        const notOption = !!transformedControls[key].controls[1];
-                        const keep = !!transformedControls[key].controls[2];
-                        const save = !!transformedControls[key].controls[3];
-                        $(`#${key}`).attr('disabled', !enable);
-                    })
-                    $('#DVCS').val(result.fkDvcs);
+                    dvcs.val(result.fkDvcs);
+                    // Generate SoPhieu's name
+                    namePrefix = result.cPrefix;
+                    sophieuLen = result.cFulllen;
+                    separator = result.cSeparator;
+                    showMonth = result.cMonth;
+                    showYear = result.cYear;
+                    sophieu.val(GenerateSoPhieu());
                 },
                 error: function (data) {
                     console.log(data);
                 }
             })
         }
-        function TransformControls(controls) {
-            const controlsArray = controls.split("#");
-            const controlsObj = {};
-            controlsArray.forEach(control => {
-                const props = control.split(",");
-                const data = props.shift();
-                const dataType = data.slice(0, 3);
-                const name = data.slice(3);
-                const index = props.shift();
-                //four digits at last is create, read, update, delete
-                Object.assign(controlsObj, {
-                    [name]: {
-                        index: +index,
-                        type: dataType,
-                        controls: props.map(p => +p)
-                    }
-                })
-            })
-            return controlsObj;
+        function HandleDateChange(e) {
+            if (namePrefix) {
+                sophieu.val(GenerateSoPhieu());
+            }
+        }
+        function GenerateSoPhieu() {
+            const date = new Date(ngaylap.val());
+            const yearStr = showYear ? date.getFullYear().toString().slice(-2) : "";
+            const monthStr = showMonth ? ('0' + (date.getMonth() + 1).toString()).slice(-2) : "";
+            const soPhieuPrefix = namePrefix + yearStr + monthStr;
+            const count = '1';
+            return `${soPhieuPrefix}${separator}${count.padStart(sophieuLen - soPhieuPrefix.length, '0')}`;
         }
     </script>
 }

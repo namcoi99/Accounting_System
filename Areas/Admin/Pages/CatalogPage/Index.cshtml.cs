@@ -1,7 +1,9 @@
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Accounting_System.Models;
+using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -16,15 +18,16 @@ namespace Accounting_System.Areas.Admin.Pages.CatalogPage
     {
         private readonly Cafe1Context _context;
         private readonly IConfiguration _config;
-        public IndexModel(Cafe1Context context, IConfiguration config)
+        private readonly INotyfService _notyf;
+        public IndexModel(Cafe1Context context, IConfiguration config, INotyfService notyf)
         {
             _context = context;
             _config = config;
+            _notyf = notyf;
         }
         public int? CurrentCatalogId { get; set; }
         public IList<TSysList> CatalogList { get; set; }
         public IList<TSysListdetail> CatalogListDetail { get; set; }
-        [BindProperty]
         public TSysList CurrentCatalog { get; set; }
         public IList<string> CurrentColumnNames { get; set; }
         [BindProperty]
@@ -45,7 +48,7 @@ namespace Accounting_System.Areas.Admin.Pages.CatalogPage
                     .Where(item => item.FkList == CurrentCatalogId && item.CVisible == true)
                     .ToListAsync();
                 CurrentColumnNames = await _context.TSysListdetail
-                    .Where(item => item.FkList == CurrentCatalogId && item.CVisible == true)
+                    .Where(item => item.FkList == CurrentCatalogId)
                     .Select(item => item.CName)
                     .ToListAsync();
                 GetCurrentTableData();
@@ -68,7 +71,7 @@ namespace Accounting_System.Areas.Admin.Pages.CatalogPage
             List<string> queryArray = new List<string>();
             foreach (KeyValuePair<string, List<object>> entry in tempTableData)
             {
-                if (string.Equals(entry.Key, "PK_ID") | string.Equals(entry.Key, "C_MA"))
+                if (string.Equals(entry.Key, "PK_ID"))
                 {
                     keyString = entry.Key;
                     keyValue = Request.Form[entry.Key];
@@ -79,22 +82,25 @@ namespace Accounting_System.Areas.Admin.Pages.CatalogPage
                 }
             }
             queryString += string.Join(",", queryArray);
-            if (string.Equals(keyString, "PK_ID"))
-            {
-                queryString += " WHERE " + keyString + " = " + keyValue;
-            }
-            else
-            {
-                queryString += " WHERE " + keyString + " = '" + keyValue + "'";
-            }
+            queryString += " WHERE " + keyString + " = " + keyValue;
             string connectionString = _config.GetConnectionString("Cafe1Context");
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                SqlCommand command = new SqlCommand(queryString, connection);
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    SqlCommand command = new SqlCommand(queryString, connection);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
             }
+            catch (Exception e)
+            {
+                _notyf.Error("Có lỗi xảy ra khi sửa dữ liệu");
+                return RedirectToPage();
+
+            }
+            _notyf.Success("Sửa dữ liệu thành công.");
             return RedirectToPage();
 
         }
@@ -120,16 +126,47 @@ namespace Accounting_System.Areas.Admin.Pages.CatalogPage
             }
             queryString += string.Join(",", queryArray);
             queryString += ")";
-            string connectionString = _config.GetConnectionString("Cafe1Context"); ;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            string connectionString = _config.GetConnectionString("Cafe1Context");
+            try
             {
-                SqlCommand command = new SqlCommand(queryString, connection);
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    SqlCommand command = new SqlCommand(queryString, connection);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
             }
+            catch (Exception e)
+            {
+                _notyf.Error("Có lỗi xảy ra khi thêm mới dữ liệu.");
+                return RedirectToPage();
+            }
+            _notyf.Success("Tạo mới dữ liệu trong bảng " + Request.Form["C_TABLE"] + " thành công.");
             return RedirectToPage();
-
+        }
+        public IActionResult OnPostDeleteCatalogItem()
+        {
+            string queryString = "DELETE FROM " + Request.Form["C_TABLE"];
+            queryString += " WHERE PK_ID = " + Request.Form["PK_ID"];
+            string connectionString = _config.GetConnectionString("Cafe1Context");
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    SqlCommand command = new SqlCommand(queryString, connection);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                _notyf.Error("Có lỗi xảy ra khi thêm mới dữ liệu.");
+                return RedirectToPage();
+            }
+            _notyf.Success("Xóa dữ liệu trong bảng " + Request.Form["C_TABLE"] + " thành công.");
+            return RedirectToPage();
         }
 
         private void GetCurrentTableData()
@@ -167,5 +204,11 @@ namespace Accounting_System.Areas.Admin.Pages.CatalogPage
                 connection.Close();
             }
         }
+
+        public TSysListdetail GetCurrentListDetail(int id, string columnName)
+        {
+            return _context.TSysListdetail.Where(m => (m.FkList == id) && string.Equals(m.CName, columnName)).FirstOrDefault();
+        }
+
     }
 }

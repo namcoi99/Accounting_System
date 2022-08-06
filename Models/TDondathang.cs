@@ -18,13 +18,13 @@ namespace Accounting_System.Models
 
         public int PkId { get; set; }
         [DisplayName("ĐVCS")]
-        [Required(ErrorMessage = "ĐVCS là trường bắt buộc")]
+        [Required(ErrorMessage = "{0} là trường bắt buộc")]
         public short FkDvcs { get; set; }
-        [Required(ErrorMessage = "Số phiếu là trường bắt buộc")]
+        [Required(ErrorMessage = "{0} là trường bắt buộc")]
         [DisplayName("Số phiếu")]
         public string CSophieu { get; set; }
         [DisplayName("Ngày lập")]
-        [Required(ErrorMessage = "Ngày lập là trường bắt buộc")]
+        [Required(ErrorMessage = "{0} là trường bắt buộc")]
         public DateTime CNgaylap { get; set; }
         [DisplayName("Ngày nhận")]
         public DateTime? CNgaynhan { get; set; }
@@ -35,7 +35,7 @@ namespace Accounting_System.Models
         [DisplayName("Người LH")]
         public int? FkNguoilh { get; set; }
         [DisplayName("Loại tiền")]
-        [Required(ErrorMessage = "Loại tiền là trường bắt buộc")]
+        [Required(ErrorMessage = "{0} là trường bắt buộc")]
         public short FkLoaitien { get; set; }
         [DisplayName("Tỉ giá")]
         public decimal? CTigia { get; set; }
@@ -72,6 +72,7 @@ namespace Accounting_System.Models
         public short? FkCuocvanchuyen { get; set; }
         [DisplayName("Số chuyến")]
         public short? FkSochuyen { get; set; }
+        [DisplayName("Hãng vận chuyển")]
         public int? FkHangvanchuyen { get; set; }
         [DisplayName("Người VC")]
         public string CNguoivanchuyen { get; set; }
