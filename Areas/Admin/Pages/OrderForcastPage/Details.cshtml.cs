@@ -126,7 +126,12 @@ namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
 
         public async Task<IActionResult> OnPostUpdateCommonInfoAsync()
         {
-            _context.Attach(TDubao).State = EntityState.Modified;
+            var included = new[] { "FkDvcs", "CNam", "CThang", "FkPhongban", "FkKhachhang" };
+            var entry = _context.Entry(TDubao);
+            foreach (var name in included)
+            {
+                entry.Property(name).IsModified = true;
+            }
             try
             {
                 await _context.SaveChangesAsync();

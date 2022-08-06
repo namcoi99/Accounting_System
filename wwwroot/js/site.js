@@ -48,9 +48,7 @@ $(document).ready(function () {
         language: tableLanguage,
         dom: 'Bflrtip',
         buttons: [
-            'excel',
-            'print',
-            'pdf'
+            'excel'
         ],
         fixedHeader: true,
         scrollX: true

@@ -16,16 +16,18 @@
 <form method="post">
     <div class="row">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="TXntc.PkId" type="hidden" />
+        <input asp-for="TXntc.FkOrder" type="hidden" />
         <div class="form-group col-3">
             <label asp-for="TXntc.FkDvcs" class="control-label"></label>
-            <select asp-for="TXntc.FkDvcs" id="DVCS" asp-items="Model.TDmDvcsSelectList" disabled class="form-control">
+            <select asp-for="TXntc.FkDvcs" asp-items="Model.TDmDvcsSelectList" disabled class="form-control">
                 <option value="" selected disabled>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkDvcs" class="text-danger"></span>
         </div>
         <div class="form-group col-3">
             <label asp-for="TXntc.FkChungtu" class="control-label"></label>
-            <select asp-for="TXntc.FkChungtu" id="MaCT" asp-items="Model.TDmChungtuSelectList" disabled class="form-control">
+            <select asp-for="TXntc.FkChungtu" id="ChungTu" asp-items="Model.TDmChungtuSelectList" disabled class="form-control">
                 <option value="" selected disabled>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkChungtu" class="text-danger"></span>
@@ -145,7 +147,7 @@
         </div>
         <div class="form-group col-3">
             <label asp-for="TXntc.FkPttt" class="control-label"></label>
-            <select asp-for="TXntc.FkPttt" id="LoaiTien" asp-items="Model.TDmPtttSelectList" class="form-control">
+            <select asp-for="TXntc.FkPttt" id="PTTT" asp-items="Model.TDmPtttSelectList" class="form-control">
                 <option value="" selected disabled>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkPttt" class="text-danger"></span>
@@ -157,7 +159,7 @@
         </div>
     </div>
     <div class="form-group">
-        <input type="submit" value="Tạo mới" class="btn btn-primary" />
+        <input type="submit" value="Lưu" class="btn btn-primary" />
     </div>
 </form>
 
@@ -184,13 +186,13 @@
                             @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CNguyengia)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CSoluong)
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CChietkhau)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CDongia)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CDongiatc)
+                            T/Tiền
                         </th>
                         <th></th>
                     </tr>
@@ -216,22 +218,24 @@
                                     @Html.DisplayFor(modelItem => item.Xntc.CNguyengia)
                                 </td>
                                 <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.CChietkhau)
+                                </td>
+                                <td>
                                     @Html.DisplayFor(modelItem => item.Xntc.CDongia)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Xntc.CDongiatc)
+                                    @Html.DisplayFor(modelItem => item.Xntc.CPsno)
                                 </td>
                                 @*<td>
-                                    <form method="post" asp-page-handler="DeleteVthh">
-                                        <input name="id" value="@item.Xntc.PkId" type="hidden" />
-                                        <input name="orderId" value="@Model.Id" type="hidden" />
-                                        <div class="d-flex" style="gap:16px">
-                                            <a class="btn btn-success btn-circle" asp-page="./Edit" asp-route-id="@item.Vthh.PkId"><i class="fas fa-edit"></i></a>
-                                            <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </form>
-
-                                </td>*@
+                                        <form method="post" asp-page-handler="DeleteVthh">
+                                            <input name="id" value="@item.Xntc.PkId" type="hidden" />
+                                            <input name="orderId" value="@Model.Id" type="hidden" />
+                                            <div class="d-flex" style="gap:16px">
+                                                <a class="btn btn-success btn-circle" asp-page="./Edit" asp-route-id="@item.Vthh.PkId"><i class="fas fa-edit"></i></a>
+                                                <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                        </form>
+                                    </td>*@
                             </tr>
                         }
                     }
@@ -244,18 +248,97 @@
     </div>
 </div>
 
+<!-- CreateVthhModal -->
+<div class="modal fade" id="createVthhModal" tabindex="-1" role="dialog" aria-labelledby="createVthhModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createVthhModalLabel">Thêm mới Vật tư, hàng hóa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-page-handler="CreateVthh" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="TXntcItem.FkOrder" type="hidden" />
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.FkVthh" class="control-label"></label>
+                        <select asp-for="TXntcItem.FkVthh" asp-items="Model.VattuhanghoaSelectList" onchange="HandleProductSelect(this)" class="form-control">
+                            <option value="" selected disabled>Chọn</option>
+                        </select>
+                        <span asp-validation-for="TXntcItem.FkVthh" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.CSoluong" class="control-label"></label>
+                        <input asp-for="TXntcItem.CSoluong" class="form-control" />
+                        <span asp-validation-for="TXntcItem.CSoluong" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.CDongia" class="control-label"></label>
+                        <input asp-for="TXntcItem.CDongia" class="form-control" />
+                        <span asp-validation-for="TXntcItem.CDongia" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.CTienhang" class="control-label"></label>
+                        <input asp-for="TXntcItem.CTienhang" class="form-control" />
+                        <span asp-validation-for="TXntcItem.CTienhang" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.CTienhang" class="control-label"></label>
+                        <input asp-for="TXntcItem.CTienhang" class="form-control" />
+                        <span asp-validation-for="TXntcItem.CTienhang" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.CPsco2" class="control-label"></label>
+                        <input asp-for="TXntcItem.CPsno2" class="form-control" />
+                        <span asp-validation-for="TXntcItem.CPsno2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.CTienthue" class="control-label"></label>
+                        <input asp-for="TXntcItem.CTienthue" class="form-control" />
+                        <span asp-validation-for="TXntcItem.CTienthue" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TXntcItem.CPsno" class="control-label"></label>
+                        <input asp-for="TXntcItem.CPsno" class="form-control" />
+                        <span asp-validation-for="TXntcItem.CPsno" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right">Thêm mới</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script>
+        const dvcs = $(`#DVCS`);
+        const loaitien = $(`#LoaiTien`);
+        const fktkco = $('#TKCo');
+        const fktkno = $('#TKNo');
+        const fkkhonhap = $('#KhoNhap');
+        const fkkhoxuat = $('#KhoXuat');
+        const sophieu = $('#SoPhieu');
+
         function InitData() {
             $.ajax({
                 type: "POST",
                 headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
                 url: "/Admin/UpdateDocumentPage/Details?handler=GetSelectedDocument",
-                data: { "id": $("#MaCT").val() },
+                data: { "id": $("#ChungTu").val() },
                 dataType: "json",
                 success: function (result) {
                     console.log(result);
+
+                    dvcs.val(result.fkDvcs);
+                    loaitien.val(result.fkTiente);
+                    fktkco.val(result.fkTkc);
+                    fktkno.val(result.fkTkn);
+                    fkkhonhap.val(result.fkKhonhap);
+                    fkkhoxuat.val(result.fkKhoxuat);
+
                     const transformedControls = TransformControls(result.cControls);
                     Object.keys(transformedControls).forEach(key => {
                         const enable = !!transformedControls[key].controls[0];

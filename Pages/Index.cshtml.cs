@@ -21,7 +21,12 @@ namespace Accounting_System.Pages
             _logger = logger;
             _context = context;
         }
-        public IList<TSysCommand> CommandList { get; set; }
+        public IList<TXntc> PhieuNhapHangHoaList { get; set; }
+        public IList<TXntc> PhieuXuatBanHangList { get; set; }
+        public int Sales { get; set; }
+        public int SalesPerMonth { get; set; }
+        public int Imports { get; set; }
+        public int ImportsPerMonth { get; set; }
         public async Task<IActionResult> OnGetAsync()
         {
             if (!User.Identity.IsAuthenticated)
@@ -29,7 +34,12 @@ namespace Accounting_System.Pages
                 // Redirect to home page if the user is not authenticated.
                 return RedirectToPage("/login", new { area = "Auth" });
             }
-            CommandList = await _context.TSysCommand.ToListAsync();
+            PhieuNhapHangHoaList = await _context.TXntc.Where(m => m.FkChungtu == Constants.PHIEU_NHAP_HANG_HOA_ID).ToListAsync();
+            PhieuXuatBanHangList = await _context.TXntc.Where(m => m.FkChungtu == Constants.PHIEU_XUAT_BAN_HANG_ID).ToListAsync();
+            Sales = PhieuXuatBanHangList.Sum(m => Convert.ToInt32(m.CDongia) * Convert.ToInt32(m.CSoluong));
+            Imports = PhieuNhapHangHoaList.Sum(m => Convert.ToInt32(m.CDongia) * Convert.ToInt32(m.CSoluong));
+            SalesPerMonth = PhieuXuatBanHangList.Where(m => m.CNgaylap.Value.Month == DateTime.Now.Month).Sum(m => Convert.ToInt32(m.CDongia) * Convert.ToInt32(m.CSoluong));
+            ImportsPerMonth = PhieuNhapHangHoaList.Where(m => m.CNgaylap.Value.Month == DateTime.Now.Month).Sum(m => Convert.ToInt32(m.CDongia) * Convert.ToInt32(m.CSoluong));
             return Page();
         }
     }
