@@ -4,7 +4,12 @@
     ViewData["Title"] = "Xuất báo cáo";
 }
 <h1>@ViewData["Title"]</h1>
-<form method="post">
-    <button class="btn btn-primary">Xuất báo cáo doanh thu</button>
-
-</form>
+<div>
+    @*<a asp-page="./ReportView" asp-route-id="@item.PkId">Xuất báo cáo</a>
+        <a asp-page="./ReportDesign" asp-route-id="@item.PkId">Xem báo cáo</a>*@
+    <a asp-page="./ReportView">Xuất báo cáo</a>
+    <a asp-page="./ReportDesign">Xem báo cáo</a>
+</div>
+@*<form method="post">
+        <button class="btn btn-primary">Xuất báo cáo doanh thu</button>
+    </form>*@

@@ -1,0 +1,15 @@
+﻿@page
+@model Accounting_System.Areas.Admin.Pages.ReportPage.IndexModel
+@{
+    ViewData["Title"] = "Xuất báo cáo";
+}
+<h1>@ViewData["Title"]</h1>
+@*<form method="post">
+        <button class="btn btn-primary">Xuất báo cáo doanh thu</button>
+    </form>*@
+<div>
+    <a asp-page="Index"><i class="fas fa-arrow-left mr-1"></i>Trờ về</a>
+</div>
+<div style="min-height: 100vh;width: 100%;">
+    <bold-report-designer id="designer" service-url="/api/ReportDesigner"></bold-report-designer>
+</div>
