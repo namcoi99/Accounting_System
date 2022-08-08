@@ -68,6 +68,7 @@ namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
         {
             _context.TDubao.Add(TDubao);
             await _context.SaveChangesAsync();
+            _notyf.Success("Thêm mới dữ liệu thành công.");
             return RedirectToPage("./Details", new { id = TDubao.PkId });
         }
     }

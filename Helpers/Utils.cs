@@ -23,7 +23,7 @@ namespace Accounting_System.Helpers
                 case "FDUBAO":
                     return Constants.FDUBAO;
                 default:
-                    return "";
+                    return "NotFoundPage";
             }
         }
         public static FileInfo GetCleanFileInfo(string file)

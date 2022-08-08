@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Accounting_System.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Authorization;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
 {
@@ -14,10 +15,12 @@ namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
     public class DetailsModel : PageModel
     {
         private readonly Cafe1Context _context;
+        private readonly INotyfService _notyf;
 
-        public DetailsModel(Cafe1Context context)
+        public DetailsModel(Cafe1Context context, INotyfService notyf)
         {
             _context = context;
+            _notyf = notyf;
         }
         public class TDubaoctRecord
         {
@@ -154,6 +157,7 @@ namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
         {
             _context.TDubaoct.Add(TDubaoct);
             await _context.SaveChangesAsync();
+            _notyf.Success("Thêm vật tư, hàng hóa vào dư báo bán hàng thành công.");
             return RedirectToPage("./Details", new { id = TDubaoct.FkDubao });
         }
 
@@ -168,6 +172,7 @@ namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
 
             if (TDubaoct != null)
             {
+                _notyf.Success("Xóa dữ liệu thành công.");
                 _context.TDubaoct.Remove(TDubaoct);
                 await _context.SaveChangesAsync();
             }
