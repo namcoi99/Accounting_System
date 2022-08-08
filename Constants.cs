@@ -8,7 +8,6 @@ namespace Accounting_System
     public class Constants
     {
         public const string FDM = "CatalogPage";
-        public const string FKH = "CustomerPage";
         public const string FGDH2 = "SalesOrderPage";
         public const string FXN = "UpdateDocumentPage";
         public const string FREP = "ReportPage";

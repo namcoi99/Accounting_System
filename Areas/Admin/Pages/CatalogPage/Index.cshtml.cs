@@ -58,10 +58,6 @@ namespace Accounting_System.Areas.Admin.Pages.CatalogPage
 
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
             Dictionary<string, List<object>> tempTableData = TableData;
             tempTableData.Remove("__RequestVerificationToken");
             tempTableData.Remove("C_TABLE");
@@ -107,10 +103,6 @@ namespace Accounting_System.Areas.Admin.Pages.CatalogPage
 
         public IActionResult OnPostCreateData()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
             Dictionary<string, List<object>> tempTableData = TableData;
             tempTableData.Remove("__RequestVerificationToken");
             tempTableData.Remove("PK_ID");

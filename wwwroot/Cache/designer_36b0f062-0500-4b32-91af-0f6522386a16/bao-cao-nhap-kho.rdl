@@ -1,0 +1,2968 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition">
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>274.5pt</Height>
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <Left>37.5pt</Left>
+            <Top>81pt</Top>
+            <Height>33pt</Height>
+            <Width>824.5pt</Width>
+            <Style>
+              <FontFamily>Arial</FontFamily>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+            <DataSetName>BaoCaoNhapKho</DataSetName>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>73.24219pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>73.24219pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>73.24219pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>61.5pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>73.24219pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>73.24219pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>48pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>76.5pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>45pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>84pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>49.5pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>93.78516pt</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>16.5pt</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox25">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>73.24215pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>STT</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>10.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>black</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox23">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>73.24215pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Mã VTHH</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>10.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>black</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox20">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>73.24215pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Tên VTHH</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>10.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>black</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox18">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>61.5pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>ĐVT</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>10.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>black</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox16">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>73.24215pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>SL tồn đầu</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>10.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>black</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox14">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>73.24215pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Tiền tồn đầu</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>10.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>black</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox2">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>48pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>SL nhập</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>10.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>black</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox8">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>76.5pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Tiền nhập</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>10.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>black</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox10">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>45pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>SL xuất</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>10.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>black</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox12">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>84pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Tiền xuất</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>10.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>black</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox3">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>49.5pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>SL tồn</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>10.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>black</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox4">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>93.78525pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Tiền tồn</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>10.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>black</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>16.5pt</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox26">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>73.24215pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=RowNumber()</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <Color>black</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox24">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>73.24215pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!C_MA.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox22">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>73.24215pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!C_TEN.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox21">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>61.5pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox17">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>73.24215pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox15">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>73.24215pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox5">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>48pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox9">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>76.5pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox11">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>45pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox28">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>84pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!C_NGUYENGIA.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox6">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>49.5pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox7">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>16.5pt</Height>
+                          <Width>93.78525pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+          </Tablix>
+          <Textbox Name="TextBox27">
+            <Left>360pt</Left>
+            <Top>26.25pt</Top>
+            <Height>37.5pt</Height>
+            <Width>355.5pt</Width>
+            <Style>
+              <FontFamily>Arial</FontFamily>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Báo cáo nhập kho</Value>
+                    <Style>
+                      <FontFamily>Arial</FontFamily>
+                      <FontSize>22.5pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>black</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>﻿</Value>
+                    <Style>
+                      <FontFamily>Arial</FontFamily>
+                      <FontSize>22.5pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>black</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <FontFamily>Arial</FontFamily>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+          </Textbox>
+        </ReportItems>
+        <Style>
+          <FontFamily>Arial</FontFamily>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>1110pt</Width>
+      <Page>
+        <PageHeader>
+          <Height>60pt</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="TextBox1">
+              <Left>9pt</Left>
+              <Top>9.75pt</Top>
+              <Height>37.5pt</Height>
+              <Width>150pt</Width>
+              <Style>
+                <FontFamily>Arial</FontFamily>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Đơn vị:</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>Black</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>
+</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>Black</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>Địa chỉ:</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>Black</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>
+</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <Color>Black</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value />
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <Color>Black</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <FontFamily>Arial</FontFamily>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value />
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <Color>Black</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <FontFamily>Arial</FontFamily>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <FontFamily>Arial</FontFamily>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>329.25pt</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox_bold_license_0001">
+              <Left>0in</Left>
+              <Top>0in</Top>
+              <Height>329.25pt</Height>
+              <Width>1110pt</Width>
+              <Style>
+                <VerticalAlign>Middle</VerticalAlign>
+                <Border>
+                  <Width>0.01385in</Width>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>The Bold license is not registered in your application. Please use a valid license to permanently remove this license validation message. You can also obtain a free 30-day evaluation license to temporarily remove this message during the evaluation period. Please refer to this help topic</Value>
+                      <Style>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Medium</FontWeight>
+                        <Color>#838F9D</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>link</Value>
+                      <Style>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Medium</FontWeight>
+                        <TextDecoration>Underline</TextDecoration>
+                        <Color>#0F0FFF</Color>
+                      </Style>
+                      <ActionInfo>
+                        <Actions>
+                          <Action>
+                            <Hyperlink>https://help.boldreports.com/licensing/licensing-errors/#license-token-not-registered</Hyperlink>
+                          </Action>
+                        </Actions>
+                      </ActionInfo>
+                    </TextRun>
+                    <TextRun>
+                      <Value> for more information.</Value>
+                      <Style>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Medium</FontWeight>
+                        <Color>#838F9D</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                    <VerticalAlign>Middle</VerticalAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <FontFamily>Arial</FontFamily>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style>
+          <FontFamily>Arial</FontFamily>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=NAMCOI\SQLEXPRESS;Initial Catalog=CAFE1;</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="BaoCaoNhapKho">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>SELECT [dbo].[T_DM_VTHH].[PK_ID] AS [T_DM_VTHH_PK_ID],
+[dbo].[T_DM_VTHH].[FK_DVCS] AS [T_DM_VTHH_FK_DVCS],
+[dbo].[T_DM_VTHH].[C_MA],
+[dbo].[T_DM_VTHH].[C_MAPHU],
+[dbo].[T_DM_VTHH].[C_TEN],
+[dbo].[T_DM_VTHH].[FK_DVMUA],
+[dbo].[T_DM_VTHH].[FK_DVTONKHO],
+[dbo].[T_DM_VTHH].[FK_DVBAN],
+[dbo].[T_DM_VTHH].[C_TDTK],
+[dbo].[T_DM_VTHH].[FK_CTG],
+[dbo].[T_DM_VTHH].[FK_TKKHO],
+[dbo].[T_DM_VTHH].[FK_NHOMVT],
+[dbo].[T_DM_VTHH].[FK_NHOMVT2],
+[dbo].[T_DM_VTHH].[FK_NHOMVT3],
+[dbo].[T_DM_VTHH].[C_THUEVAT],
+[dbo].[T_DM_VTHH].[C_KTTSX],
+[dbo].[T_DM_VTHH].[C_ANH],
+[dbo].[T_DM_VTHH].[C_NGAYTL],
+[dbo].[T_DM_VTHH].[C_XOA],
+[dbo].[T_DM_VTHH].[C_SANXUAT],
+[dbo].[T_DM_VTHH].[C_SOGIA],
+[dbo].[T_DM_VTHH].[C_GHICHU],
+[dbo].[T_DM_VTHH].[C_SLTTT],
+[dbo].[T_DM_VTHH].[C_SLTTD],
+[dbo].[T_DM_VTHH].[C_TSKT],
+[dbo].[T_DM_VTHH].[C_QCDG],
+[dbo].[T_DM_VTHH].[FK_HSX],
+[dbo].[T_DM_VTHH].[C_TGBH],
+[dbo].[T_DM_VTHH].[C_GIACHUAN],
+[dbo].[T_DM_VTHH].[C_GIATRAN],
+[dbo].[T_DM_VTHH].[C_GIASAN],
+[dbo].[T_DM_VTHH].[FK_USER] AS [T_DM_VTHH_FK_USER],
+[dbo].[T_DM_VTHH].[C_DATETIME] AS [T_DM_VTHH_C_DATETIME],
+[dbo].[T_DM_VTHH].[C_CONVERT],
+[dbo].[T_DM_VTHH].[C_TILEHONGVC],
+[dbo].[T_DM_VTHH].[C_TELEHONGSX],
+[dbo].[T_DM_VTHH].[FK_KHOHANG],
+[dbo].[T_DM_VTHH].[FK_DTCP] AS [T_DM_VTHH_FK_DTCP],
+[dbo].[T_DM_VTHH].[FK_MODIFYUSER] AS [T_DM_VTHH_FK_MODIFYUSER],
+[dbo].[T_DM_VTHH].[FK_VTHH] AS [T_DM_VTHH_FK_VTHH],
+[dbo].[T_DM_VTHH].[C_THUENK] AS [T_DM_VTHH_C_THUENK],
+[dbo].[T_DM_VTHH].[FK_QUICACH] AS [T_DM_VTHH_FK_QUICACH],
+[dbo].[T_DM_VTHH].[FK_TKGVON],
+[dbo].[T_DM_VTHH].[C_POLastPrice],
+[dbo].[T_DM_VTHH].[C_POMultiple],
+[dbo].[T_DM_VTHH].[C_POMinOrder],
+[dbo].[T_DM_VTHH].[C_POMaxOrder],
+[dbo].[T_DM_VTHH].[FK_POPrimaryVendor],
+[dbo].[T_DM_VTHH].[C_POLeadTime],
+[dbo].[T_DM_VTHH].[C_PROMultiple],
+[dbo].[T_DM_VTHH].[C_PROMinOrder],
+[dbo].[T_DM_VTHH].[C_PROMaxOrder],
+[dbo].[T_DM_VTHH].[C_PROLeadTime],
+[dbo].[T_DM_VTHH].[C_BANPHAMVI],
+[dbo].[T_DM_VTHH].[C_BANTUNGAY],
+[dbo].[T_DM_VTHH].[C_BANDENNGAY],
+[dbo].[T_DM_VTHH].[C_BANBOISO],
+[dbo].[T_DM_VTHH].[C_BANDONGGOI],
+[dbo].[T_DM_VTHH].[C_HOTROVC],
+[dbo].[T_DM_VTHH].[C_NETWEIGHT],
+[dbo].[T_DM_VTHH].[C_GROSSWEIGHT],
+[dbo].[T_DM_VTHH].[C_CHIEUDAI],
+[dbo].[T_DM_VTHH].[C_CHIEUCAO],
+[dbo].[T_DM_VTHH].[C_CHIEURONG],
+[dbo].[T_DM_VTHH].[C_PHICHUAN],
+[dbo].[T_DM_VTHH].[FK_SPTieuChuan],
+[dbo].[T_DM_VTHH].[C_MAVACH],
+[dbo].[T_DM_VTHH].[FK_VITRI] AS [T_DM_VTHH_FK_VITRI],
+[dbo].[T_DM_VTHH].[C_SEQ],
+[dbo].[T_DM_VTHH].[C_SELECT],
+[dbo].[T_DM_VTHH].[C_SIZE],
+[dbo].[T_DM_VTHH].[FK_NOISX],
+[dbo].[T_DM_VTHH].[C_POPrice],
+[dbo].[T_DM_VTHH].[C_DODANGDT],
+[dbo].[T_DM_VTHH].[C_TRONGCONGDOAN],
+[dbo].[T_DM_VTHH].[C_SP_PHU],
+[dbo].[T_DM_VTHH].[C_HS_THUHOI],
+[dbo].[T_DM_VTHH].[C_LASTEXPORT] AS [T_DM_VTHH_C_LASTEXPORT],
+[dbo].[T_DM_VTHH].[C_CHOXOA],
+[dbo].[T_DM_VTHH].[C_UPDATEDATE],
+[dbo].[T_DM_DVT].[PK_ID] AS [T_DM_DVT_PK_ID],
+[dbo].[T_DM_DVT].[FK_DVCS] AS [T_DM_DVT_FK_DVCS],
+[dbo].[T_DM_DVT].[C_MA] AS [T_DM_DVT_C_MA],
+[dbo].[T_DM_DVT].[C_MOTA],
+[dbo].[T_DM_DVT].[C_LASTEXPORT] AS [T_DM_DVT_C_LASTEXPORT],
+[dbo].[T_DM_DVT].[C_SMS_UNIT],
+[dbo].[T_DM_DVT].[C_CHOXOA] AS [T_DM_DVT_C_CHOXOA],
+[dbo].[T_XNTC].[PK_ID],
+[dbo].[T_XNTC].[FK_CHUNGTU],
+[dbo].[T_XNTC].[C_SOPHIEU],
+[dbo].[T_XNTC].[FK_DVCS],
+[dbo].[T_XNTC].[FK_TRUSO],
+[dbo].[T_XNTC].[C_NGAYLAP],
+[dbo].[T_XNTC].[C_NGAYCT],
+[dbo].[T_XNTC].[C_SOCT],
+[dbo].[T_XNTC].[FK_KHACHHANG],
+[dbo].[T_XNTC].[FK_NGUOILH],
+[dbo].[T_XNTC].[FK_LOAITIEN],
+[dbo].[T_XNTC].[C_TIGIA],
+[dbo].[T_XNTC].[FK_PHONGBAN],
+[dbo].[T_XNTC].[FK_TKNO],
+[dbo].[T_XNTC].[FK_TKCO],
+[dbo].[T_XNTC].[C_PSNO],
+[dbo].[T_XNTC].[C_PSCO],
+[dbo].[T_XNTC].[C_DIENGIAI],
+[dbo].[T_XNTC].[C_DGDONG],
+[dbo].[T_XNTC].[FK_THUTRUONG],
+[dbo].[T_XNTC].[FK_THUQUY],
+[dbo].[T_XNTC].[FK_KETOAN],
+[dbo].[T_XNTC].[FK_KTTRUONG],
+[dbo].[T_XNTC].[FK_NGUOILAP],
+[dbo].[T_XNTC].[FK_THUKHO],
+[dbo].[T_XNTC].[FK_KHOXUAT],
+[dbo].[T_XNTC].[FK_KHONHAP],
+[dbo].[T_XNTC].[FK_KEXUAT],
+[dbo].[T_XNTC].[FK_KENHAP],
+[dbo].[T_XNTC].[FK_NGUOIGIAO],
+[dbo].[T_XNTC].[FK_VTHH],
+[dbo].[T_XNTC].[FK_DVT],
+[dbo].[T_XNTC].[C_SOLUONG],
+[dbo].[T_XNTC].[C_DONGIA],
+[dbo].[T_XNTC].[C_VAT],
+[dbo].[T_XNTC].[FK_VUVIEC],
+[dbo].[T_XNTC].[FK_PTTT],
+[dbo].[T_XNTC].[C_HANTT],
+[dbo].[T_XNTC].[C_HANTT2],
+[dbo].[T_XNTC].[C_LOAIBT],
+[dbo].[T_XNTC].[C_COPY],
+[dbo].[T_XNTC].[C_POSTED],
+[dbo].[T_XNTC].[C_POSTER],
+[dbo].[T_XNTC].[FK_USER],
+[dbo].[T_XNTC].[C_DATETIME],
+[dbo].[T_XNTC].[C_SOXE],
+[dbo].[T_XNTC].[C_KM],
+[dbo].[T_XNTC].[C_PROMO],
+[dbo].[T_XNTC].[FK_ORDER],
+[dbo].[T_XNTC].[C_TRONG],
+[dbo].[T_XNTC].[C_LOAIXN],
+[dbo].[T_XNTC].[C_LOAICT],
+[dbo].[T_XNTC].[FK_KMP],
+[dbo].[T_XNTC].[FK_DTCP],
+[dbo].[T_XNTC].[FK_PHANXUONG],
+[dbo].[T_XNTC].[C_HOADON],
+[dbo].[T_XNTC].[FK_LSX],
+[dbo].[T_XNTC].[FK_LSXCT],
+[dbo].[T_XNTC].[C_CPSX],
+[dbo].[T_XNTC].[C_MST],
+[dbo].[T_XNTC].[C_KHTHUE],
+[dbo].[T_XNTC].[C_CHATLUONG],
+[dbo].[T_XNTC].[C_MRB],
+[dbo].[T_XNTC].[C_SLKIEMTRA],
+[dbo].[T_XNTC].[FK_LDHH],
+[dbo].[T_XNTC].[FK_KHACHHANGCO],
+[dbo].[T_XNTC].[FK_TSCD],
+[dbo].[T_XNTC].[C_SOPHIEUTRALAI],
+[dbo].[T_XNTC].[C_NOTE],
+[dbo].[T_XNTC].[FK_NVKD],
+[dbo].[T_XNTC].[FK_KMPC],
+[dbo].[T_XNTC].[C_KHUNO],
+[dbo].[T_XNTC].[C_KHUCO],
+[dbo].[T_XNTC].[C_TIENTHUE],
+[dbo].[T_XNTC].[C_SOHDGTGT],
+[dbo].[T_XNTC].[C_NGUOILH],
+[dbo].[T_XNTC].[FK_MODIFYUSER],
+[dbo].[T_XNTC].[C_THANHTOAN],
+[dbo].[T_XNTC].[FK_LDTG],
+[dbo].[T_XNTC].[FK_NGUONVON],
+[dbo].[T_XNTC].[C_LAPHD],
+[dbo].[T_XNTC].[C_THEOBO],
+[dbo].[T_XNTC].[C_MATHANG],
+[dbo].[T_XNTC].[FK_LOAIDL],
+[dbo].[T_XNTC].[C_CHIETKHAU],
+[dbo].[T_XNTC].[FK_DONDATHANG],
+[dbo].[T_XNTC].[C_SLTHUNG],
+[dbo].[T_XNTC].[FK_QUICACH],
+[dbo].[T_XNTC].[C_TIENHANG],
+[dbo].[T_XNTC].[C_CPBANHANG],
+[dbo].[T_XNTC].[C_PSNO2],
+[dbo].[T_XNTC].[C_PSCO2],
+[dbo].[T_XNTC].[C_DIENGIAI2],
+[dbo].[T_XNTC].[FK_CUOCVANCHUYEN],
+[dbo].[T_XNTC].[FK_SOXE],
+[dbo].[T_XNTC].[C_DONGIATC],
+[dbo].[T_XNTC].[FK_CHUCNANG],
+[dbo].[T_XNTC].[FK_CA],
+[dbo].[T_XNTC].[FK_TOTRUONG],
+[dbo].[T_XNTC].[C_KHDIACHI],
+[dbo].[T_XNTC].[C_TIENTHUE2],
+[dbo].[T_XNTC].[FK_SOCHUYEN],
+[dbo].[T_XNTC].[FK_HANGVANCHUYEN],
+[dbo].[T_XNTC].[C_NGUOIVANCHUYEN],
+[dbo].[T_XNTC].[C_FIELD1],
+[dbo].[T_XNTC].[C_FIELD2],
+[dbo].[T_XNTC].[C_EXTRAENTRY],
+[dbo].[T_XNTC].[C_MAUSO],
+[dbo].[T_XNTC].[C_TK],
+[dbo].[T_XNTC].[FK_TOUR],
+[dbo].[T_XNTC].[C_STT],
+[dbo].[T_XNTC].[C_SOLUONGXUAT],
+[dbo].[T_XNTC].[C_TMPDICHDANH],
+[dbo].[T_XNTC].[FK_THUTRUONG02],
+[dbo].[T_XNTC].[FK_KTTRUONG02],
+[dbo].[T_XNTC].[FK_KETOAN02],
+[dbo].[T_XNTC].[FK_THUQUY02],
+[dbo].[T_XNTC].[FK_NGUOILAP02],
+[dbo].[T_XNTC].[FK_THUKHO02],
+[dbo].[T_XNTC].[FK_NGUOIGIAO02],
+[dbo].[T_XNTC].[C_BUTTOANTHEM],
+[dbo].[T_XNTC].[C_SOPHIEUCU],
+[dbo].[T_XNTC].[C_FOB],
+[dbo].[T_XNTC].[C_F],
+[dbo].[T_XNTC].[C_I],
+[dbo].[T_XNTC].[C_CIF],
+[dbo].[T_XNTC].[C_CIF2],
+[dbo].[T_XNTC].[C_THUENK],
+[dbo].[T_XNTC].[C_GTTRUOCTHUE],
+[dbo].[T_XNTC].[C_GTTRUOCTHUE2],
+[dbo].[T_XNTC].[FK_CostCenter],
+[dbo].[T_XNTC].[C_ImportData],
+[dbo].[T_XNTC].[C_TIENHANGVANCHUYEN],
+[dbo].[T_XNTC].[C_SOTKNH],
+[dbo].[T_XNTC].[FK_VOYAGE],
+[dbo].[T_XNTC].[C_BIllOFLADING],
+[dbo].[T_XNTC].[C_VOYAGE],
+[dbo].[T_XNTC].[C_VESSEL],
+[dbo].[T_XNTC].[C_ETA],
+[dbo].[T_XNTC].[C_POL],
+[dbo].[T_XNTC].[C_POD],
+[dbo].[T_XNTC].[C_POReceive],
+[dbo].[T_XNTC].[C_PODelivery],
+[dbo].[T_XNTC].[FK_BIllOFLADING],
+[dbo].[T_XNTC].[C_DAIN],
+[dbo].[T_XNTC].[C_LASTEXPORT],
+[dbo].[T_XNTC].[FK_VTHH_LUU],
+[dbo].[T_XNTC].[FK_NHOM_KC],
+[dbo].[T_XNTC].[C_BOOKINGNOTE],
+[dbo].[T_XNTC].[FK_BOOKINGNOTE],
+[dbo].[T_XNTC].[FK_DTCP_LUU],
+[dbo].[T_XNTC].[C_IMPORT_XUAT],
+[dbo].[T_XNTC].[C_CK_TIENMAT],
+[dbo].[T_XNTC].[FK_QLX_DENGHIXUAT],
+[dbo].[T_XNTC].[FK_DTCPCO],
+[dbo].[T_XNTC].[C_UPDATE],
+[dbo].[T_XNTC].[C_KYHIEUMAU],
+[dbo].[T_XNTC].[C_MAHOADON],
+[dbo].[T_XNTC].[C_NGUYENGIA],
+[dbo].[T_XNTC].[FK_VITRI],
+[dbo].[T_XNTC].[C_SOLO],
+[dbo].[T_XNTC].[C_HANSUDUNG],
+[dbo].[T_XNTC].[C_HET_SL] FROM [dbo].[T_DM_VTHH] LEFT OUTER JOIN [dbo].[T_DM_DVT] ON [dbo].[T_DM_VTHH].[FK_DVBAN]=[dbo].[T_DM_DVT].[PK_ID] INNER JOIN [dbo].[T_XNTC] ON [dbo].[T_XNTC].[FK_VTHH]=[dbo].[T_DM_VTHH].[PK_ID] WHERE  (([dbo].[T_XNTC].[C_LOAIBT] = @C_LOAIBT) AND ([dbo].[T_XNTC].[FK_CHUNGTU] = @FK_CHUNGTU))</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@C_LOAIBT">
+            <Value>=Parameters!C_LOAIBT.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@FK_CHUNGTU">
+            <Value>=Parameters!FK_CHUNGTU.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <QueryDesignerState xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational">
+          <Tables>
+            <Table Name="T_DM_VTHH" Schema="dbo">
+              <Columns>
+                <Column Name="PK_ID" AliasName="T_DM_VTHH_PK_ID" AggregateType="" IsDuplicate="true" IsSelected="true" />
+                <Column Name="FK_DVCS" AliasName="T_DM_VTHH_FK_DVCS" AggregateType="" IsDuplicate="true" IsSelected="true" />
+                <Column Name="C_MA" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_MAPHU" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_TEN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_DVMUA" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_DVTONKHO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_DVBAN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_TDTK" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_CTG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_TKKHO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_NHOMVT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_NHOMVT2" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_NHOMVT3" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_THUEVAT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_KTTSX" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_ANH" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_NGAYTL" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_XOA" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SANXUAT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SOGIA" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_GHICHU" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SLTTT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SLTTD" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_TSKT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_QCDG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_HSX" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_TGBH" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_GIACHUAN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_GIATRAN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_GIASAN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_USER" AliasName="T_DM_VTHH_FK_USER" AggregateType="" IsDuplicate="true" IsSelected="true" />
+                <Column Name="C_DATETIME" AliasName="T_DM_VTHH_C_DATETIME" AggregateType="" IsDuplicate="true" IsSelected="true" />
+                <Column Name="C_CONVERT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_TILEHONGVC" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_TELEHONGSX" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_KHOHANG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_DTCP" AliasName="T_DM_VTHH_FK_DTCP" AggregateType="" IsDuplicate="true" IsSelected="true" />
+                <Column Name="FK_MODIFYUSER" AliasName="T_DM_VTHH_FK_MODIFYUSER" AggregateType="" IsDuplicate="true" IsSelected="true" />
+                <Column Name="FK_VTHH" AliasName="T_DM_VTHH_FK_VTHH" AggregateType="" IsDuplicate="true" IsSelected="true" />
+                <Column Name="C_THUENK" AliasName="T_DM_VTHH_C_THUENK" AggregateType="" IsDuplicate="true" IsSelected="true" />
+                <Column Name="FK_QUICACH" AliasName="T_DM_VTHH_FK_QUICACH" AggregateType="" IsDuplicate="true" IsSelected="true" />
+                <Column Name="FK_TKGVON" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_POLastPrice" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_POMultiple" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_POMinOrder" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_POMaxOrder" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_POPrimaryVendor" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_POLeadTime" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_PROMultiple" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_PROMinOrder" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_PROMaxOrder" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_PROLeadTime" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_BANPHAMVI" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_BANTUNGAY" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_BANDENNGAY" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_BANBOISO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_BANDONGGOI" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_HOTROVC" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_NETWEIGHT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_GROSSWEIGHT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_CHIEUDAI" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_CHIEUCAO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_CHIEURONG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_PHICHUAN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_SPTieuChuan" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_MAVACH" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_VITRI" AliasName="T_DM_VTHH_FK_VITRI" AggregateType="" IsDuplicate="true" IsSelected="true" />
+                <Column Name="C_SEQ" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SELECT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SIZE" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_NOISX" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_POPrice" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_DODANGDT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_TRONGCONGDOAN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SP_PHU" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_HS_THUHOI" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_LASTEXPORT" AliasName="T_DM_VTHH_C_LASTEXPORT" AggregateType="" IsDuplicate="true" IsSelected="true" />
+                <Column Name="C_CHOXOA" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_UPDATEDATE" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+              </Columns>
+              <SchemaLevels>
+                <SchemaInfo Name="dbo" SchemaType="Schema" />
+                <SchemaInfo Name="Tables" SchemaType="Category" />
+                <SchemaInfo Name="T_DM_VTHH" SchemaType="Table" />
+              </SchemaLevels>
+            </Table>
+            <Table Name="T_DM_DVT" Schema="dbo">
+              <Columns>
+                <Column Name="PK_ID" AliasName="T_DM_DVT_PK_ID" AggregateType="" IsDuplicate="true" IsSelected="true" />
+                <Column Name="FK_DVCS" AliasName="T_DM_DVT_FK_DVCS" AggregateType="" IsDuplicate="true" IsSelected="true" />
+                <Column Name="C_MA" AliasName="T_DM_DVT_C_MA" AggregateType="" IsDuplicate="true" IsSelected="true" />
+                <Column Name="C_MOTA" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_LASTEXPORT" AliasName="T_DM_DVT_C_LASTEXPORT" AggregateType="" IsDuplicate="true" IsSelected="true" />
+                <Column Name="C_SMS_UNIT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_CHOXOA" AliasName="T_DM_DVT_C_CHOXOA" AggregateType="" IsDuplicate="true" IsSelected="true" />
+              </Columns>
+              <SchemaLevels>
+                <SchemaInfo Name="dbo" SchemaType="Schema" />
+                <SchemaInfo Name="Tables" SchemaType="Category" />
+                <SchemaInfo Name="T_DM_DVT" SchemaType="Table" />
+              </SchemaLevels>
+            </Table>
+            <Table Name="T_XNTC" Schema="dbo">
+              <Columns>
+                <Column Name="PK_ID" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_CHUNGTU" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SOPHIEU" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_DVCS" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_TRUSO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_NGAYLAP" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_NGAYCT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SOCT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_KHACHHANG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_NGUOILH" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_LOAITIEN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_TIGIA" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_PHONGBAN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_TKNO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_TKCO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_PSNO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_PSCO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_DIENGIAI" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_DGDONG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_THUTRUONG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_THUQUY" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_KETOAN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_KTTRUONG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_NGUOILAP" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_THUKHO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_KHOXUAT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_KHONHAP" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_KEXUAT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_KENHAP" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_NGUOIGIAO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_VTHH" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_DVT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SOLUONG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_DONGIA" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_VAT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_VUVIEC" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_PTTT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_HANTT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_HANTT2" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_LOAIBT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_COPY" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_POSTED" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_POSTER" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_USER" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_DATETIME" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SOXE" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_KM" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_PROMO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_ORDER" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_TRONG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_LOAIXN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_LOAICT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_KMP" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_DTCP" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_PHANXUONG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_HOADON" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_LSX" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_LSXCT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_CPSX" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_MST" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_KHTHUE" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_CHATLUONG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_MRB" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SLKIEMTRA" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_LDHH" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_KHACHHANGCO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_TSCD" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SOPHIEUTRALAI" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_NOTE" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_NVKD" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_KMPC" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_KHUNO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_KHUCO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_TIENTHUE" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SOHDGTGT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_NGUOILH" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_MODIFYUSER" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_THANHTOAN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_LDTG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_NGUONVON" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_LAPHD" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_THEOBO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_MATHANG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_LOAIDL" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_CHIETKHAU" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_DONDATHANG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SLTHUNG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_QUICACH" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_TIENHANG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_CPBANHANG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_PSNO2" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_PSCO2" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_DIENGIAI2" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_CUOCVANCHUYEN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_SOXE" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_DONGIATC" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_CHUCNANG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_CA" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_TOTRUONG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_KHDIACHI" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_TIENTHUE2" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_SOCHUYEN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_HANGVANCHUYEN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_NGUOIVANCHUYEN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_FIELD1" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_FIELD2" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_EXTRAENTRY" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_MAUSO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_TK" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_TOUR" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_STT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SOLUONGXUAT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_TMPDICHDANH" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_THUTRUONG02" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_KTTRUONG02" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_KETOAN02" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_THUQUY02" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_NGUOILAP02" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_THUKHO02" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_NGUOIGIAO02" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_BUTTOANTHEM" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SOPHIEUCU" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_FOB" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_F" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_I" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_CIF" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_CIF2" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_THUENK" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_GTTRUOCTHUE" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_GTTRUOCTHUE2" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_CostCenter" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_ImportData" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_TIENHANGVANCHUYEN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SOTKNH" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_VOYAGE" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_BIllOFLADING" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_VOYAGE" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_VESSEL" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_ETA" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_POL" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_POD" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_POReceive" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_PODelivery" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_BIllOFLADING" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_DAIN" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_LASTEXPORT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_VTHH_LUU" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_NHOM_KC" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_BOOKINGNOTE" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_BOOKINGNOTE" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_DTCP_LUU" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_IMPORT_XUAT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_CK_TIENMAT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_QLX_DENGHIXUAT" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_DTCPCO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_UPDATE" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_KYHIEUMAU" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_MAHOADON" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_NGUYENGIA" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="FK_VITRI" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_SOLO" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_HANSUDUNG" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+                <Column Name="C_HET_SL" AliasName="" AggregateType="" IsDuplicate="false" IsSelected="true" />
+              </Columns>
+              <SchemaLevels>
+                <SchemaInfo Name="dbo" SchemaType="Schema" />
+                <SchemaInfo Name="Tables" SchemaType="Category" />
+                <SchemaInfo Name="T_XNTC" SchemaType="Table" />
+              </SchemaLevels>
+            </Table>
+          </Tables>
+          <Joins>
+            <Join LeftTable="T_DM_VTHH" RightTable="T_DM_DVT" JoinType="Left Outer" PrimaryKeyOwner="">
+              <JoinFields>
+                <JoinField LeftField="FK_DVBAN" RightField="PK_ID" OperatorType="=" />
+              </JoinFields>
+            </Join>
+            <Join LeftTable="T_XNTC" RightTable="T_DM_VTHH" JoinType="Inner" PrimaryKeyOwner="">
+              <JoinFields>
+                <JoinField LeftField="FK_VTHH" RightField="PK_ID" OperatorType="=" />
+              </JoinFields>
+            </Join>
+          </Joins>
+          <Filters>
+            <QueryFilter Name="C_LOAIBT" DataType="System.Byte" Operator="=" TableName="T_XNTC" Schema="dbo" IsQueryParameter="true">
+              <Value>
+                <Value1 xmlns:xt="http://www.w3.org/2001/XMLSchema" xi:type="xt:string" xmlns:xi="http://www.w3.org/2001/XMLSchema-instance">1</Value1>
+              </Value>
+              <ParameterName>
+                <Parameter1>@C_LOAIBT</Parameter1>
+              </ParameterName>
+            </QueryFilter>
+            <QueryFilter Name="FK_CHUNGTU" DataType="System.Int32" Operator="=" TableName="T_XNTC" Schema="dbo" IsQueryParameter="true">
+              <Value>
+                <Value1 xmlns:xt="http://www.w3.org/2001/XMLSchema" xi:type="xt:string" xmlns:xi="http://www.w3.org/2001/XMLSchema-instance">172</Value1>
+              </Value>
+              <ParameterName>
+                <Parameter1>@FK_CHUNGTU</Parameter1>
+              </ParameterName>
+            </QueryFilter>
+          </Filters>
+        </QueryDesignerState>
+      </Query>
+      <Fields>
+        <Field Name="T_DM_VTHH_PK_ID">
+          <DataField>T_DM_VTHH_PK_ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="T_DM_VTHH_FK_DVCS">
+          <DataField>T_DM_VTHH_FK_DVCS</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_MA">
+          <DataField>C_MA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_MAPHU">
+          <DataField>C_MAPHU</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_TEN">
+          <DataField>C_TEN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_DVMUA">
+          <DataField>FK_DVMUA</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_DVTONKHO">
+          <DataField>FK_DVTONKHO</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_DVBAN">
+          <DataField>FK_DVBAN</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_TDTK">
+          <DataField>C_TDTK</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="FK_CTG">
+          <DataField>FK_CTG</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="FK_TKKHO">
+          <DataField>FK_TKKHO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_NHOMVT">
+          <DataField>FK_NHOMVT</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_NHOMVT2">
+          <DataField>FK_NHOMVT2</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_NHOMVT3">
+          <DataField>FK_NHOMVT3</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_THUEVAT">
+          <DataField>C_THUEVAT</DataField>
+          <rd:TypeName>System.Single</rd:TypeName>
+        </Field>
+        <Field Name="C_KTTSX">
+          <DataField>C_KTTSX</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_ANH">
+          <DataField>C_ANH</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="C_NGAYTL">
+          <DataField>C_NGAYTL</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="C_XOA">
+          <DataField>C_XOA</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_SANXUAT">
+          <DataField>C_SANXUAT</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_SOGIA">
+          <DataField>C_SOGIA</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="C_GHICHU">
+          <DataField>C_GHICHU</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_SLTTT">
+          <DataField>C_SLTTT</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_SLTTD">
+          <DataField>C_SLTTD</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_TSKT">
+          <DataField>C_TSKT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_QCDG">
+          <DataField>C_QCDG</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_HSX">
+          <DataField>FK_HSX</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_TGBH">
+          <DataField>C_TGBH</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="C_GIACHUAN">
+          <DataField>C_GIACHUAN</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_GIATRAN">
+          <DataField>C_GIATRAN</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_GIASAN">
+          <DataField>C_GIASAN</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="T_DM_VTHH_FK_USER">
+          <DataField>T_DM_VTHH_FK_USER</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="T_DM_VTHH_C_DATETIME">
+          <DataField>T_DM_VTHH_C_DATETIME</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="C_CONVERT">
+          <DataField>C_CONVERT</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_TILEHONGVC">
+          <DataField>C_TILEHONGVC</DataField>
+          <rd:TypeName>System.Single</rd:TypeName>
+        </Field>
+        <Field Name="C_TELEHONGSX">
+          <DataField>C_TELEHONGSX</DataField>
+          <rd:TypeName>System.Single</rd:TypeName>
+        </Field>
+        <Field Name="FK_KHOHANG">
+          <DataField>FK_KHOHANG</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="T_DM_VTHH_FK_DTCP">
+          <DataField>T_DM_VTHH_FK_DTCP</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="T_DM_VTHH_FK_MODIFYUSER">
+          <DataField>T_DM_VTHH_FK_MODIFYUSER</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="T_DM_VTHH_FK_VTHH">
+          <DataField>T_DM_VTHH_FK_VTHH</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="T_DM_VTHH_C_THUENK">
+          <DataField>T_DM_VTHH_C_THUENK</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="T_DM_VTHH_FK_QUICACH">
+          <DataField>T_DM_VTHH_FK_QUICACH</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FK_TKGVON">
+          <DataField>FK_TKGVON</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_POLastPrice">
+          <DataField>C_POLastPrice</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_POMultiple">
+          <DataField>C_POMultiple</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_POMinOrder">
+          <DataField>C_POMinOrder</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_POMaxOrder">
+          <DataField>C_POMaxOrder</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FK_POPrimaryVendor">
+          <DataField>FK_POPrimaryVendor</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_POLeadTime">
+          <DataField>C_POLeadTime</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_PROMultiple">
+          <DataField>C_PROMultiple</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_PROMinOrder">
+          <DataField>C_PROMinOrder</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_PROMaxOrder">
+          <DataField>C_PROMaxOrder</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_PROLeadTime">
+          <DataField>C_PROLeadTime</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_BANPHAMVI">
+          <DataField>C_BANPHAMVI</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="C_BANTUNGAY">
+          <DataField>C_BANTUNGAY</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="C_BANDENNGAY">
+          <DataField>C_BANDENNGAY</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="C_BANBOISO">
+          <DataField>C_BANBOISO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_BANDONGGOI">
+          <DataField>C_BANDONGGOI</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="C_HOTROVC">
+          <DataField>C_HOTROVC</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_NETWEIGHT">
+          <DataField>C_NETWEIGHT</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="C_GROSSWEIGHT">
+          <DataField>C_GROSSWEIGHT</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="C_CHIEUDAI">
+          <DataField>C_CHIEUDAI</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="C_CHIEUCAO">
+          <DataField>C_CHIEUCAO</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="C_CHIEURONG">
+          <DataField>C_CHIEURONG</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="C_PHICHUAN">
+          <DataField>C_PHICHUAN</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="FK_SPTieuChuan">
+          <DataField>FK_SPTieuChuan</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_MAVACH">
+          <DataField>C_MAVACH</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="T_DM_VTHH_FK_VITRI">
+          <DataField>T_DM_VTHH_FK_VITRI</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_SEQ">
+          <DataField>C_SEQ</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_SELECT">
+          <DataField>C_SELECT</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_SIZE">
+          <DataField>C_SIZE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_NOISX">
+          <DataField>FK_NOISX</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_POPrice">
+          <DataField>C_POPrice</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_DODANGDT">
+          <DataField>C_DODANGDT</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_TRONGCONGDOAN">
+          <DataField>C_TRONGCONGDOAN</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_SP_PHU">
+          <DataField>C_SP_PHU</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="C_HS_THUHOI">
+          <DataField>C_HS_THUHOI</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="T_DM_VTHH_C_LASTEXPORT">
+          <DataField>T_DM_VTHH_C_LASTEXPORT</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="C_CHOXOA">
+          <DataField>C_CHOXOA</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="C_UPDATEDATE">
+          <DataField>C_UPDATEDATE</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="T_DM_DVT_PK_ID">
+          <DataField>T_DM_DVT_PK_ID</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="T_DM_DVT_FK_DVCS">
+          <DataField>T_DM_DVT_FK_DVCS</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="T_DM_DVT_C_MA">
+          <DataField>T_DM_DVT_C_MA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_MOTA">
+          <DataField>C_MOTA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="T_DM_DVT_C_LASTEXPORT">
+          <DataField>T_DM_DVT_C_LASTEXPORT</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="C_SMS_UNIT">
+          <DataField>C_SMS_UNIT</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="T_DM_DVT_C_CHOXOA">
+          <DataField>T_DM_DVT_C_CHOXOA</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="PK_ID">
+          <DataField>PK_ID</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FK_CHUNGTU">
+          <DataField>FK_CHUNGTU</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_SOPHIEU">
+          <DataField>C_SOPHIEU</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_DVCS">
+          <DataField>FK_DVCS</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="FK_TRUSO">
+          <DataField>FK_TRUSO</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="C_NGAYLAP">
+          <DataField>C_NGAYLAP</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="C_NGAYCT">
+          <DataField>C_NGAYCT</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="C_SOCT">
+          <DataField>C_SOCT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_KHACHHANG">
+          <DataField>FK_KHACHHANG</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FK_NGUOILH">
+          <DataField>FK_NGUOILH</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FK_LOAITIEN">
+          <DataField>FK_LOAITIEN</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_TIGIA">
+          <DataField>C_TIGIA</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FK_PHONGBAN">
+          <DataField>FK_PHONGBAN</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_TKNO">
+          <DataField>FK_TKNO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_TKCO">
+          <DataField>FK_TKCO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_PSNO">
+          <DataField>C_PSNO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_PSCO">
+          <DataField>C_PSCO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_DIENGIAI">
+          <DataField>C_DIENGIAI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_DGDONG">
+          <DataField>C_DGDONG</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_THUTRUONG">
+          <DataField>FK_THUTRUONG</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_THUQUY">
+          <DataField>FK_THUQUY</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_KETOAN">
+          <DataField>FK_KETOAN</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_KTTRUONG">
+          <DataField>FK_KTTRUONG</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_NGUOILAP">
+          <DataField>FK_NGUOILAP</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_THUKHO">
+          <DataField>FK_THUKHO</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_KHOXUAT">
+          <DataField>FK_KHOXUAT</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_KHONHAP">
+          <DataField>FK_KHONHAP</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_KEXUAT">
+          <DataField>FK_KEXUAT</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_KENHAP">
+          <DataField>FK_KENHAP</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_NGUOIGIAO">
+          <DataField>FK_NGUOIGIAO</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_VTHH">
+          <DataField>FK_VTHH</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_DVT">
+          <DataField>FK_DVT</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_SOLUONG">
+          <DataField>C_SOLUONG</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="C_DONGIA">
+          <DataField>C_DONGIA</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_VAT">
+          <DataField>C_VAT</DataField>
+          <rd:TypeName>System.Single</rd:TypeName>
+        </Field>
+        <Field Name="FK_VUVIEC">
+          <DataField>FK_VUVIEC</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_PTTT">
+          <DataField>FK_PTTT</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_HANTT">
+          <DataField>C_HANTT</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_HANTT2">
+          <DataField>C_HANTT2</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="C_LOAIBT">
+          <DataField>C_LOAIBT</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="C_COPY">
+          <DataField>C_COPY</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_POSTED">
+          <DataField>C_POSTED</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_POSTER">
+          <DataField>C_POSTER</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_USER">
+          <DataField>FK_USER</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_DATETIME">
+          <DataField>C_DATETIME</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="C_SOXE">
+          <DataField>C_SOXE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_KM">
+          <DataField>C_KM</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_PROMO">
+          <DataField>C_PROMO</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="FK_ORDER">
+          <DataField>FK_ORDER</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_TRONG">
+          <DataField>C_TRONG</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_LOAIXN">
+          <DataField>C_LOAIXN</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="C_LOAICT">
+          <DataField>C_LOAICT</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="FK_KMP">
+          <DataField>FK_KMP</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_DTCP">
+          <DataField>FK_DTCP</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_PHANXUONG">
+          <DataField>FK_PHANXUONG</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_HOADON">
+          <DataField>C_HOADON</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FK_LSX">
+          <DataField>FK_LSX</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FK_LSXCT">
+          <DataField>FK_LSXCT</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_CPSX">
+          <DataField>C_CPSX</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_MST">
+          <DataField>C_MST</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_KHTHUE">
+          <DataField>C_KHTHUE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_CHATLUONG">
+          <DataField>C_CHATLUONG</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="C_MRB">
+          <DataField>C_MRB</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="C_SLKIEMTRA">
+          <DataField>C_SLKIEMTRA</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FK_LDHH">
+          <DataField>FK_LDHH</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_KHACHHANGCO">
+          <DataField>FK_KHACHHANGCO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FK_TSCD">
+          <DataField>FK_TSCD</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_SOPHIEUTRALAI">
+          <DataField>C_SOPHIEUTRALAI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_NOTE">
+          <DataField>C_NOTE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_NVKD">
+          <DataField>FK_NVKD</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FK_KMPC">
+          <DataField>FK_KMPC</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_KHUNO">
+          <DataField>C_KHUNO</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_KHUCO">
+          <DataField>C_KHUCO</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_TIENTHUE">
+          <DataField>C_TIENTHUE</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_SOHDGTGT">
+          <DataField>C_SOHDGTGT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_NGUOILH">
+          <DataField>C_NGUOILH</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_MODIFYUSER">
+          <DataField>FK_MODIFYUSER</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_THANHTOAN">
+          <DataField>C_THANHTOAN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_LDTG">
+          <DataField>FK_LDTG</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_NGUONVON">
+          <DataField>FK_NGUONVON</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_LAPHD">
+          <DataField>C_LAPHD</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_THEOBO">
+          <DataField>C_THEOBO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_MATHANG">
+          <DataField>C_MATHANG</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_LOAIDL">
+          <DataField>FK_LOAIDL</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="C_CHIETKHAU">
+          <DataField>C_CHIETKHAU</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FK_DONDATHANG">
+          <DataField>FK_DONDATHANG</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_SLTHUNG">
+          <DataField>C_SLTHUNG</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FK_QUICACH">
+          <DataField>FK_QUICACH</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_TIENHANG">
+          <DataField>C_TIENHANG</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_CPBANHANG">
+          <DataField>C_CPBANHANG</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_PSNO2">
+          <DataField>C_PSNO2</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_PSCO2">
+          <DataField>C_PSCO2</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_DIENGIAI2">
+          <DataField>C_DIENGIAI2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_CUOCVANCHUYEN">
+          <DataField>FK_CUOCVANCHUYEN</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_SOXE">
+          <DataField>FK_SOXE</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_DONGIATC">
+          <DataField>C_DONGIATC</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FK_CHUCNANG">
+          <DataField>FK_CHUCNANG</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_CA">
+          <DataField>FK_CA</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_TOTRUONG">
+          <DataField>FK_TOTRUONG</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_KHDIACHI">
+          <DataField>C_KHDIACHI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_TIENTHUE2">
+          <DataField>C_TIENTHUE2</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FK_SOCHUYEN">
+          <DataField>FK_SOCHUYEN</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="FK_HANGVANCHUYEN">
+          <DataField>FK_HANGVANCHUYEN</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_NGUOIVANCHUYEN">
+          <DataField>C_NGUOIVANCHUYEN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_FIELD1">
+          <DataField>C_FIELD1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_FIELD2">
+          <DataField>C_FIELD2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_EXTRAENTRY">
+          <DataField>C_EXTRAENTRY</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_MAUSO">
+          <DataField>C_MAUSO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_TK">
+          <DataField>C_TK</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_TOUR">
+          <DataField>FK_TOUR</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_STT">
+          <DataField>C_STT</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_SOLUONGXUAT">
+          <DataField>C_SOLUONGXUAT</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_TMPDICHDANH">
+          <DataField>C_TMPDICHDANH</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_THUTRUONG02">
+          <DataField>FK_THUTRUONG02</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="FK_KTTRUONG02">
+          <DataField>FK_KTTRUONG02</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="FK_KETOAN02">
+          <DataField>FK_KETOAN02</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="FK_THUQUY02">
+          <DataField>FK_THUQUY02</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="FK_NGUOILAP02">
+          <DataField>FK_NGUOILAP02</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="FK_THUKHO02">
+          <DataField>FK_THUKHO02</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="FK_NGUOIGIAO02">
+          <DataField>FK_NGUOIGIAO02</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="C_BUTTOANTHEM">
+          <DataField>C_BUTTOANTHEM</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_SOPHIEUCU">
+          <DataField>C_SOPHIEUCU</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_FOB">
+          <DataField>C_FOB</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_F">
+          <DataField>C_F</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_I">
+          <DataField>C_I</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_CIF">
+          <DataField>C_CIF</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_CIF2">
+          <DataField>C_CIF2</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_THUENK">
+          <DataField>C_THUENK</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_GTTRUOCTHUE">
+          <DataField>C_GTTRUOCTHUE</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_GTTRUOCTHUE2">
+          <DataField>C_GTTRUOCTHUE2</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FK_CostCenter">
+          <DataField>FK_CostCenter</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="C_ImportData">
+          <DataField>C_ImportData</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_TIENHANGVANCHUYEN">
+          <DataField>C_TIENHANGVANCHUYEN</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="C_SOTKNH">
+          <DataField>C_SOTKNH</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_VOYAGE">
+          <DataField>FK_VOYAGE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_BIllOFLADING">
+          <DataField>C_BIllOFLADING</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_VOYAGE">
+          <DataField>C_VOYAGE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_VESSEL">
+          <DataField>C_VESSEL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_ETA">
+          <DataField>C_ETA</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="C_POL">
+          <DataField>C_POL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_POD">
+          <DataField>C_POD</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_POReceive">
+          <DataField>C_POReceive</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_PODelivery">
+          <DataField>C_PODelivery</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_BIllOFLADING">
+          <DataField>FK_BIllOFLADING</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_DAIN">
+          <DataField>C_DAIN</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="C_LASTEXPORT">
+          <DataField>C_LASTEXPORT</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="FK_VTHH_LUU">
+          <DataField>FK_VTHH_LUU</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FK_NHOM_KC">
+          <DataField>FK_NHOM_KC</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_BOOKINGNOTE">
+          <DataField>C_BOOKINGNOTE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FK_BOOKINGNOTE">
+          <DataField>FK_BOOKINGNOTE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FK_DTCP_LUU">
+          <DataField>FK_DTCP_LUU</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_IMPORT_XUAT">
+          <DataField>C_IMPORT_XUAT</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="C_CK_TIENMAT">
+          <DataField>C_CK_TIENMAT</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FK_QLX_DENGHIXUAT">
+          <DataField>FK_QLX_DENGHIXUAT</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FK_DTCPCO">
+          <DataField>FK_DTCPCO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_UPDATE">
+          <DataField>C_UPDATE</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="C_KYHIEUMAU">
+          <DataField>C_KYHIEUMAU</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_MAHOADON">
+          <DataField>C_MAHOADON</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_NGUYENGIA">
+          <DataField>C_NGUYENGIA</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FK_VITRI">
+          <DataField>FK_VITRI</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C_SOLO">
+          <DataField>C_SOLO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C_HANSUDUNG">
+          <DataField>C_HANSUDUNG</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="C_HET_SL">
+          <DataField>C_HET_SL</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="FK_CHUNGTU">
+      <DataType>Integer</DataType>
+      <Prompt>FK_CHUNGTU</Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>172</Value>
+        </Values>
+      </DefaultValue>
+    </ReportParameter>
+    <ReportParameter Name="C_LOAIBT">
+      <DataType>Integer</DataType>
+      <Prompt>C_LOAIBT</Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>FK_CHUNGTU</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>C_LOAIBT</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:PageUnit>Px</rd:PageUnit>
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+</Report>

@@ -16,7 +16,6 @@
 <form method="post">
     <div class="row">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <input asp-for="TXntc.PkId" type="hidden" />
         <input asp-for="TXntc.FkOrder" type="hidden" />
         <div class="form-group col-3">
             <label asp-for="TXntc.FkDvcs" class="control-label"></label>
@@ -44,7 +43,7 @@
         </div>
         <div class="form-group col-3">
             <label asp-for="TXntc.CSophieu" class="control-label"></label>
-            <input asp-for="TXntc.CSophieu" id="SoPhieu" class="form-control" disabled />
+            <input asp-for="TXntc.CSophieu" id="SoPhieu" class="form-control" readonly />
             <span asp-validation-for="TXntc.CSophieu" class="text-danger"></span>
         </div>
         <div class="form-group col-3">
@@ -226,16 +225,15 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Xntc.CPsno)
                                 </td>
-                                @*<td>
-                                        <form method="post" asp-page-handler="DeleteVthh">
-                                            <input name="id" value="@item.Xntc.PkId" type="hidden" />
-                                            <input name="orderId" value="@Model.Id" type="hidden" />
-                                            <div class="d-flex" style="gap:16px">
-                                                <a class="btn btn-success btn-circle" asp-page="./Edit" asp-route-id="@item.Vthh.PkId"><i class="fas fa-edit"></i></a>
-                                                <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash-alt"></i></button>
-                                            </div>
-                                        </form>
-                                    </td>*@
+                                <td>
+                                    <form method="post" asp-page-handler="DeleteVthh">
+                                        <input name="id" value="@item.Xntc.PkId" type="hidden" />
+                                        <div class="d-flex" style="gap:16px">
+                                            <a class="btn btn-success btn-circle" asp-page="./Edit" asp-route-id="@item.Xntc.PkId"><i class="fas fa-edit"></i></a>
+                                            <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash-alt"></i></button>
+                                        </div>
+                                    </form>
+                                </td>
                             </tr>
                         }
                     }
@@ -332,12 +330,12 @@
                 success: function (result) {
                     console.log(result);
 
-                    dvcs.val(result.fkDvcs);
-                    loaitien.val(result.fkTiente);
-                    fktkco.val(result.fkTkc);
-                    fktkno.val(result.fkTkn);
-                    fkkhonhap.val(result.fkKhonhap);
-                    fkkhoxuat.val(result.fkKhoxuat);
+                    dvcs.val() || dvcs.val(result.fkDvcs);
+                    loaitien.val() || loaitien.val(result.fkTiente);
+                    fktkco.val() || fktkco.val(result.fkTkc);
+                    fktkno.val() || fktkno.val(result.fkTkn);
+                    fkkhonhap.val() || fkkhonhap.val(result.fkKhonhap);
+                    fkkhoxuat.val() || fkkhoxuat.val(result.fkKhoxuat);
 
                     const transformedControls = TransformControls(result.cControls);
                     Object.keys(transformedControls).forEach(key => {
