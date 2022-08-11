@@ -53,6 +53,8 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
         public List<SelectListItem> DkbgSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> DieukhoanbaogiaSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> DMXeSelectList { get; set; } = new List<SelectListItem>();
+        public List<SelectListItem> DMTrangthaiSelectList { get; set; } = new List<SelectListItem>();
+        public List<SelectListItem> DMNguonccSelectList { get; set; } = new List<SelectListItem>();
 
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -120,6 +122,9 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
             //IList<TDmLoaibg> TDmLoaibg;
             IList<TDmPttt> TDmPttt;
             IList<TDmDkbg> TDmDkbg;
+            IList<TDmTrangthai> TDmTrangthai;
+            IList<TSysNguoncc> TSysNguoncc;
+
             TDvcs = _context.TDmDvcs.ToList();
             TDmKh = _context.TDmKh.ToList();
             TDmTiente = _context.TDmTiente.ToList();
@@ -134,6 +139,8 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
             TDmVthh = _context.TDmVthh.ToList();
             TDmdkbg = _context.TDmDkbg.ToList();
             TDmXe = _context.TDmXe.ToList();
+            TDmTrangthai = _context.TDmTrangthai.ToList();
+            TSysNguoncc = _context.TSysNguoncc.ToList();
 
             await Task.WhenAll();
             foreach (var item in TDmVthh)
@@ -187,6 +194,14 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
             foreach (var item in TDmDkbg)
             {
                 DkbgSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMota });
+            }
+            foreach (var item in TDmTrangthai)
+            {
+                DMTrangthaiSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa + " - " + item.CMota });
+            }
+            foreach (var item in TSysNguoncc)
+            {
+                DMNguonccSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMota });
             }
             return Page();
         }

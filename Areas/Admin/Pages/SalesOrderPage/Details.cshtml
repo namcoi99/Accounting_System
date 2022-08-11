@@ -83,7 +83,7 @@
                 </div>
                 <div class="form-group col-3">
                     <label asp-for="TDondathang.CTigia" class="control-label"></label>
-                    <input asp-for="TDondathang.CTigia" class="form-control" />
+                    <input asp-for="TDondathang.CTigia" id="Tigia" class="form-control" />
                     <span asp-validation-for="TDondathang.CTigia" class="text-danger"></span>
                 </div>
                 <div class="form-group col-3">
@@ -495,43 +495,51 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="TDondathangct.CSoluong" class="control-label"></label>
-                        <input asp-for="TDondathangct.CSoluong" id="Soluong" value="0" onchange="UpdateTotalPrice()" class="form-control" />
+                        <input asp-for="TDondathangct.CSoluong" id="Soluong" value="0" onchange="UpdateDongiatc()" class="form-control" />
                         <span asp-validation-for="TDondathangct.CSoluong" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="TDondathangct.CDongia" class="control-label"></label>
-                        <input asp-for="TDondathangct.CDongia" id="Dongia" onchange="UpdateTotalPrice()" class="form-control" />
+                        <input asp-for="TDondathangct.CDongia" id="Dongia" onchange="HandleDongiaChange(this)" class="form-control" />
                         <span asp-validation-for="TDondathangct.CDongia" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="TDondathangct.CDongia2" class="control-label"></label>
-                        <input asp-for="TDondathangct.CDongia2" class="form-control" />
+                        <input asp-for="TDondathangct.CDongia2" id="Dongia2" onchange="HandleDongia2Change(this)" class="form-control" />
                         <span asp-validation-for="TDondathangct.CDongia2" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="TDondathangct.CDongiatc" class="control-label"></label>
-                        <input asp-for="TDondathangct.CDongiatc" id="Dongiatc" class="form-control" />
+                        <input asp-for="TDondathangct.CDongiatc" id="Dongiatc" readonly class="form-control" />
                         <span asp-validation-for="TDondathangct.CDongiatc" class="text-danger"></span>
                     </div>
                     <div class="form-group">
+                        <label for="Dongiatc2" class="control-label">Thành tiền(USD)</label>
+                        <input id="Dongiatc2" disabled class="form-control" />
+                    </div>
+                    <div class="form-group">
                         <label asp-for="TDondathangct.FkTrangthai" class="control-label"></label>
-                        <input asp-for="TDondathangct.FkTrangthai" class="form-control" />
+                        <select asp-for="TDondathangct.FkTrangthai" asp-items="Model.DMTrangthaiSelectList" class="form-control">
+                            <option value="" selected disabled>Chọn</option>
+                        </select>
                         <span asp-validation-for="TDondathangct.FkTrangthai" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="TDondathangct.FkNguoncc" class="control-label"></label>
-                        <input asp-for="TDondathangct.FkNguoncc" class="form-control" />
+                        <select asp-for="TDondathangct.FkNguoncc" asp-items="Model.DMNguonccSelectList" class="form-control">
+                            <option value="" selected disabled>Chọn</option>
+                        </select>
                         <span asp-validation-for="TDondathangct.FkNguoncc" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="TDondathangct.CKhuyenmai" class="control-label"></label>
                         <input type="checkbox" name="TDondathangct.CKhuyenmai" value="false" />
+                        <label asp-for="TDondathangct.CKhuyenmai" class="control-label"></label>
                         <span asp-validation-for="TDondathangct.CKhuyenmai" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="TDondathangct.CTinhthue" class="control-label"></label>
                         <input type="checkbox" name="TDondathangct.CTinhthue" value="false" />
+                        <label asp-for="TDondathangct.CTinhthue" class="control-label"></label>
                         <span asp-validation-for="TDondathangct.CTinhthue" class="text-danger"></span>
                     </div>
                     <button type="submit" class="btn btn-primary float-right">Thêm mới</button>
@@ -573,10 +581,13 @@
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script>
         const dongia = $("#Dongia");
+        const dongia2 = $("#Dongia2");
         const soluong = $("#Soluong");
         const dongiatc = $("#Dongiatc");
+        const dongiatc2 = $("#Dongiatc2");
         const customer = $("#KhachHang");
         const customerAddress = $("#KhachHangDiaChi");
+        const tigia = $("#Tigia");
         function HandleProductSelect(e) {
             $.ajax({
                 type: "POST",
@@ -586,15 +597,25 @@
                 dataType: "json",
                 success: function (result) {
                     dongia.val(result.cGiachuan);
-                    dongiatc.val(dongia.val() * soluong.val());
+                    dongia2.val((result.cGiachuan / tigia.val()).toFixed(2));
+                    UpdateDongiatc();
                 },
                 error: function (data) {
                     alert(data);
                 }
             })
         }
-        function UpdateTotalPrice() {
+        function HandleDongiaChange(e) {
+            dongia2.val((e.value / tigia.val()).toFixed(2));
+            UpdateDongiatc();
+        }
+        function HandleDongia2Change(e) {
+            dongia.val(e.value * tigia.val());
+            UpdateDongiatc();
+        }
+        function UpdateDongiatc() {
             dongiatc.val(dongia.val() * soluong.val());
+            dongiatc2.val((dongiatc.val() / tigia.val()).toFixed(2));
         }
         function HandleCustomerSelect(e) {
             $.ajax({
