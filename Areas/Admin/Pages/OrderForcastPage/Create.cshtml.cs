@@ -55,7 +55,6 @@ namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
             {
                 KhachhangSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CTen });
             }
-
             return Page();
         }
 
@@ -70,6 +69,17 @@ namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
             await _context.SaveChangesAsync();
             _notyf.Success("Thêm mới dữ liệu thành công.");
             return RedirectToPage("./Details", new { id = TDubao.PkId });
+        }
+        public JsonResult OnPostGetSelectedProduct(int id)
+        {
+            var result = _context.TDmVthh.Where(vthh => vthh.PkId == id)
+                .Join(_context.TDmDvt, vthh => vthh.FkDvban, dvt => dvt.PkId,
+                (vthh, dvt) => new {
+                    Vthh = vthh,
+                    Dvt = dvt
+                })
+                .First();
+            return new JsonResult(result);
         }
     }
 }

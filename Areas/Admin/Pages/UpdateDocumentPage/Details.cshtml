@@ -20,14 +20,14 @@
         <div class="form-group col-3">
             <label asp-for="TXntc.FkDvcs" class="control-label"></label>
             <select asp-for="TXntc.FkDvcs" asp-items="Model.TDmDvcsSelectList" disabled class="form-control">
-                <option value="" selected disabled>Chọn</option>
+                <option value="" selected>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkDvcs" class="text-danger"></span>
         </div>
         <div class="form-group col-3">
             <label asp-for="TXntc.FkChungtu" class="control-label"></label>
             <select asp-for="TXntc.FkChungtu" id="ChungTu" asp-items="Model.TDmChungtuSelectList" disabled class="form-control">
-                <option value="" selected disabled>Chọn</option>
+                <option value="" selected>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkChungtu" class="text-danger"></span>
         </div>
@@ -49,7 +49,7 @@
         <div class="form-group col-3">
             <label asp-for="TXntc.FkKhachhang" class="control-label"></label>
             <select asp-for="TXntc.FkKhachhang" id="MaKH" asp-items="Model.TDmKhSelectList" onchange="HandleSelectKh(this.value)" class="form-control">
-                <option value="" selected disabled>Chọn</option>
+                <option value="" selected>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkKhachhang" class="text-danger"></span>
         </div>
@@ -61,7 +61,7 @@
         <div class="form-group col-3">
             <label asp-for="TXntc.FkNguoilh" class="control-label"></label>
             <select asp-for="TXntc.FkNguoilh" id="NguoiLH" asp-items="Model.TDmNguoilhSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
+                <option value="" selected>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkNguoilh" class="text-danger"></span>
         </div>
@@ -73,28 +73,28 @@
         <div class="form-group col-3">
             <label asp-for="TXntc.FkTkno" class="control-label"></label>
             <select asp-for="TXntc.FkTkno" id="TKNo" asp-items="Model.TDmTaikhoanSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
+                <option value="" selected>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkTkno" class="text-danger"></span>
         </div>
         <div class="form-group col-3">
             <label asp-for="TXntc.FkTkco" class="control-label"></label>
             <select asp-for="TXntc.FkTkco" id="TKCo" asp-items="Model.TDmTaikhoanSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
+                <option value="" selected>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkTkco" class="text-danger"></span>
         </div>
         <div class="form-group col-3">
             <label asp-for="TXntc.FkKhoxuat" class="control-label"></label>
             <select asp-for="TXntc.FkKhoxuat" id="KhoXuat" asp-items="Model.TDmKhohangSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
+                <option value="" selected>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkKhoxuat" class="text-danger"></span>
         </div>
         <div class="form-group col-3">
             <label asp-for="TXntc.FkKhonhap" class="control-label"></label>
             <select asp-for="TXntc.FkKhonhap" id="KhoNhap" asp-items="Model.TDmKhohangSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
+                <option value="" selected>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkKhonhap" class="text-danger"></span>
         </div>
@@ -121,21 +121,21 @@
         <div class="form-group col-3">
             <label asp-for="TXntc.FkPhongban" class="control-label"></label>
             <select asp-for="TXntc.FkPhongban" id="PhongBan" asp-items="Model.TDmPhongbanSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
+                <option value="" selected>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkPhongban" class="text-danger"></span>
         </div>
         <div class="form-group col-3">
             <label asp-for="TXntc.FkPhanxuong" class="control-label"></label>
             <select asp-for="TXntc.FkPhanxuong" id="PhanXuong" asp-items="Model.TDmPhanxuongSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
+                <option value="" selected>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkPhanxuong" class="text-danger"></span>
         </div>
         <div class="form-group col-3">
             <label asp-for="TXntc.FkLoaitien" class="control-label"></label>
             <select asp-for="TXntc.FkLoaitien" id="LoaiTien" asp-items="Model.TDmLoaitienSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
+                <option value="" selected>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkLoaitien" class="text-danger"></span>
         </div>
@@ -147,7 +147,7 @@
         <div class="form-group col-3">
             <label asp-for="TXntc.FkPttt" class="control-label"></label>
             <select asp-for="TXntc.FkPttt" id="PTTT" asp-items="Model.TDmPtttSelectList" class="form-control">
-                <option value="" selected disabled>Chọn</option>
+                <option value="" selected>Chọn</option>
             </select>
             <span asp-validation-for="TXntc.FkPttt" class="text-danger"></span>
         </div>
@@ -164,51 +164,100 @@
 
 <div class="card shadow mb-4 w-100">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Danh sách vật tư, hàng hóa</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Thông tin chi tiết</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
-
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>
-                            STT
+                        <th id="TH_FK_TKNO">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.FkTkno)
                         </th>
-                        <th>
+                        <th id="TH_FK_TKCO">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.FkTkco)
+                        </th>
+                        <th id="TH_FK_TSCD">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.FkTscd)
+                        </th>
+                        <th id="TH_C_VTHH_TEN">
                             @Html.DisplayNameFor(model => model.TXntcList[0].Vthh.CTen)
                         </th>
-                        <th>
+                        <th id="TH_C_DVT_MA">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.FkDvt)
+                        </th>
+                        <th id="TH_C_SOLUONG">
                             @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CSoluong)
                         </th>
-                        <th>
+                        <th id="TH_C_NGUYENGIA">
                             @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CNguyengia)
                         </th>
-                        <th>
+                        <th id="TH_C_CHIETKHAU">
                             @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CChietkhau)
                         </th>
-                        <th>
+                        <th id="TH_C_DONGIA">
                             @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CDongia)
                         </th>
-                        <th>
-                            T/Tiền
+                        <th id="TH_C_PSNO">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CPsno)
                         </th>
-                        <th></th>
+                        <th id="TH_C_PSNO2">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CPsno2)
+                        </th>
+                        <th id="TH_C_PSCO">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CPsco)
+                        </th>
+                        <th id="TH_C_PSCO2">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CPsco2)
+                        </th>
+                        <th id="TH_C_TIENTHUE">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CTienthue)
+                        </th>
+                        <th id="TH_C_TIENTHUE2">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CTienthue2)
+                        </th>
+                        <th id="TH_C_CONG"></th>
+                        <th id="TH_FK_LDHH">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.FkLdhh)
+                        </th>
+                        <th id="TH_FK_NGUONVON">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.FkNguonvon)
+                        </th>
+                        <th id="TH_FK_LDTG">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.FkLdtg)
+                        </th>
+                        <th id="TH_FK_DTCP">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.FkDtcp)
+                        </th>
+                        <th id="TH_FK_DONDATHANG">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.FkDondathang)
+                        </th>
+                        <th id="TH_C_DGDONG">
+                            @Html.DisplayNameFor(model => model.TXntcList[0].Xntc.CDgdong)
+                        </th>
+                        <th class="action-group"></th>
                     </tr>
                 </thead>
                 <tbody>
                     @if (Model.TXntcList != null)
                     {
-                        var index = 0;
                         @foreach (var item in Model.TXntcList)
                         {
-                            index++;
                             <tr>
                                 <td>
-                                    @Html.DisplayFor(modelItem => index)
+                                    @Html.DisplayFor(modelItem => item.Xntc.FkTkno)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.FkTkco)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.FkTscd)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Vthh.CTen)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.FkDvt)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Xntc.CSoluong)
@@ -226,10 +275,43 @@
                                     @Html.DisplayFor(modelItem => item.Xntc.CPsno)
                                 </td>
                                 <td>
-                                    <form method="post" asp-page-handler="DeleteVthh">
+                                    @Html.DisplayFor(modelItem => item.Xntc.CPsno2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.CPsco)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.CPsco2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.CTienthue)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.CTienthue2)
+                                </td>
+                                <td></td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.FkLdhh)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.FkNguonvon)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.FkLdtg)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.FkDtcp)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.FkDondathang)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.CDgdong)
+                                </td>
+                                <td class="action-group">
+                                    <form method="post" asp-page-handler="DeleteDetail">
                                         <input name="id" value="@item.Xntc.PkId" type="hidden" />
                                         <div class="d-flex" style="gap:16px">
-                                            <a class="btn btn-success btn-circle" asp-page="./Edit" asp-route-id="@item.Xntc.PkId"><i class="fas fa-edit"></i></a>
                                             <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash-alt"></i></button>
                                         </div>
                                     </form>
@@ -239,68 +321,174 @@
                     }
                 </tbody>
             </table>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createVthhModal">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createDetailModal">
                 Thêm mới
             </button>
         </div>
     </div>
 </div>
 
-<!-- CreateVthhModal -->
-<div class="modal fade" id="createVthhModal" tabindex="-1" role="dialog" aria-labelledby="createVthhModalLabel" aria-hidden="true">
+<!-- CreateDetailModal -->
+<div class="modal fade" id="createDetailModal" tabindex="-1" role="dialog" aria-labelledby="createDetailModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="createVthhModalLabel">Thêm mới Vật tư, hàng hóa</h5>
+                <h5 class="modal-title" id="createDetailModalLabel">Thêm mới Vật tư, hàng hóa</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form asp-page-handler="CreateVthh" method="post">
+                <form asp-page-handler="CreateDetail" id="FormCreateDetail" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input asp-for="TXntcItem.FkOrder" type="hidden" />
-                    <div class="form-group">
-                        <label asp-for="TXntcItem.FkVthh" class="control-label"></label>
-                        <select asp-for="TXntcItem.FkVthh" asp-items="Model.VattuhanghoaSelectList" onchange="HandleProductSelect(this)" class="form-control">
+                    <input asp-for="TXntc.FkOrder" type="hidden" />
+                    <input asp-for="TXntc.CLoaibt" value="@((int)Constants.LoaiBT.BTTT)" type="hidden" />
+                    <input asp-for="TXntc.FkDvcs" type="hidden" />
+                    <input asp-for="TXntc.FkChungtu" type="hidden" />
+                    <input asp-for="TXntc.CNgaylap" type="hidden" />
+                    <input asp-for="TXntc.CDiengiai" type="hidden" />
+                    <input asp-for="TXntc.CSophieu" type="hidden" />
+                    <input asp-for="TXntc.FkKhachhang" type="hidden" />
+                    <input asp-for="TXntc.CKhdiachi" type="hidden" />
+                    <input asp-for="TXntc.FkNguoilh" type="hidden" />
+                    <input asp-for="TXntc.CNguoilh" type="hidden" />
+                    <input asp-for="TXntc.FkTkno" type="hidden" />
+                    <input asp-for="TXntc.FkTkco" type="hidden" />
+                    <input asp-for="TXntc.FkKhoxuat" type="hidden" />
+                    <input asp-for="TXntc.FkKhonhap" type="hidden" />
+                    <input asp-for="TXntc.CNgayct" type="hidden" />
+                    <input asp-for="TXntc.CMahoadon" type="hidden" />
+                    <input asp-for="TXntc.CKyhieumau" type="hidden" />
+                    <input asp-for="TXntc.CVat" type="hidden" />
+                    <input asp-for="TXntc.FkPhongban" type="hidden" />
+                    <input asp-for="TXntc.FkPhanxuong" type="hidden" />
+                    <input asp-for="TXntc.FkLoaitien" type="hidden" />
+                    <input asp-for="TXntc.CTigia" type="hidden" />
+                    <input asp-for="TXntc.FkPttt" type="hidden" />
+                    <input asp-for="TXntc.CSotknh" type="hidden" />
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.FkTkno" class="control-label font-weight-bold"></label>
+                        <select asp-for="TXntc.FkTkno" id="FK_TKNO" asp-items="Model.TDmTaikhoanSelectList" class="form-control">
                             <option value="" selected disabled>Chọn</option>
                         </select>
-                        <span asp-validation-for="TXntcItem.FkVthh" class="text-danger"></span>
+                        <span asp-validation-for="TXntc.FkTkno" class="text-danger"></span>
                     </div>
-                    <div class="form-group">
-                        <label asp-for="TXntcItem.CSoluong" class="control-label"></label>
-                        <input asp-for="TXntcItem.CSoluong" class="form-control" />
-                        <span asp-validation-for="TXntcItem.CSoluong" class="text-danger"></span>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.FkTkco" class="control-label font-weight-bold"></label>
+                        <select asp-for="TXntc.FkTkco" id="FK_TKCO" asp-items="Model.TDmTaikhoanSelectList" class="form-control">
+                            <option value="" selected disabled>Chọn</option>
+                        </select>
+                        <span asp-validation-for="TXntc.FkTkco" class="text-danger"></span>
                     </div>
-                    <div class="form-group">
-                        <label asp-for="TXntcItem.CDongia" class="control-label"></label>
-                        <input asp-for="TXntcItem.CDongia" class="form-control" />
-                        <span asp-validation-for="TXntcItem.CDongia" class="text-danger"></span>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.FkTscd" class="control-label font-weight-bold"></label>
+                        <select asp-for="TXntc.FkTscd" id="FK_TSCD" asp-items="Model.TDmTscdSelectList" class="form-control">
+                            <option value="" selected disabled>Chọn</option>
+                        </select>
+                        <span asp-validation-for="TXntc.FkTscd" class="text-danger"></span>
                     </div>
-                    <div class="form-group">
-                        <label asp-for="TXntcItem.CTienhang" class="control-label"></label>
-                        <input asp-for="TXntcItem.CTienhang" class="form-control" />
-                        <span asp-validation-for="TXntcItem.CTienhang" class="text-danger"></span>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.FkVthh" class="control-label font-weight-bold"></label>
+                        <select asp-for="TXntc.FkVthh" id="C_VTHH_TEN" asp-items="Model.VattuhanghoaSelectList" onchange="HandleProductSelect(this)" class="form-control">
+                            <option value="" selected disabled>Chọn</option>
+                        </select>
+                        <span asp-validation-for="TXntc.FkVthh" class="text-danger"></span>
                     </div>
-                    <div class="form-group">
-                        <label asp-for="TXntcItem.CTienhang" class="control-label"></label>
-                        <input asp-for="TXntcItem.CTienhang" class="form-control" />
-                        <span asp-validation-for="TXntcItem.CTienhang" class="text-danger"></span>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.FkDvt" class="control-label font-weight-bold"></label>
+                        <select asp-for="TXntc.FkDvt" id="C_DVT_MA" asp-items="Model.TDmDvtSelectList" class="form-control">
+                            <option value="" selected disabled>Chọn</option>
+                        </select>
+                        <span asp-validation-for="TXntc.FkDvt" class="text-danger"></span>
                     </div>
-                    <div class="form-group">
-                        <label asp-for="TXntcItem.CPsco2" class="control-label"></label>
-                        <input asp-for="TXntcItem.CPsno2" class="form-control" />
-                        <span asp-validation-for="TXntcItem.CPsno2" class="text-danger"></span>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.CSoluong" class="control-label font-weight-bold"></label>
+                        <input type="number" asp-for="TXntc.CSoluong" min="0" value="0" id="C_SOLUONG" onchange="CalculateTotalPrice()" class="form-control" />
+                        <span asp-validation-for="TXntc.CSoluong" class="text-danger"></span>
                     </div>
-                    <div class="form-group">
-                        <label asp-for="TXntcItem.CTienthue" class="control-label"></label>
-                        <input asp-for="TXntcItem.CTienthue" class="form-control" />
-                        <span asp-validation-for="TXntcItem.CTienthue" class="text-danger"></span>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.CNguyengia" class="control-label font-weight-bold"></label>
+                        <input asp-for="TXntc.CNguyengia" id="C_NGUYENGIA" onchange="HandleOriginalPriceChange(this)" class="form-control" />
+                        <span asp-validation-for="TXntc.CNguyengia" class="text-danger"></span>
                     </div>
-                    <div class="form-group">
-                        <label asp-for="TXntcItem.CPsno" class="control-label"></label>
-                        <input asp-for="TXntcItem.CPsno" class="form-control" />
-                        <span asp-validation-for="TXntcItem.CPsno" class="text-danger"></span>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.CChietkhau" class="control-label font-weight-bold"></label>
+                        <input type="number" asp-for="TXntc.CChietkhau" id="C_CHIETKHAU" min="0" value="0" max="100" onchange="HandleDiscountChange(this)" class="form-control" />
+                        <span asp-validation-for="TXntc.CChietkhau" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.CDongia" class="control-label font-weight-bold"></label>
+                        <input asp-for="TXntc.CDongia" id="C_DONGIA" onchange="HandleUnitPriceChange(this)" class="form-control" />
+                        <span asp-validation-for="TXntc.CDongia" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.CPsno" class="control-label font-weight-bold"></label>
+                        <input asp-for="TXntc.CPsno" id="C_PSNO" class="form-control" />
+                        <span asp-validation-for="TXntc.CPsno" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.CPsno2" class="control-label font-weight-bold"></label>
+                        <input asp-for="TXntc.CPsno2" id="C_PSNO2" class="form-control" />
+                        <span asp-validation-for="TXntc.CPsno2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.CPsco" class="control-label font-weight-bold"></label>
+                        <input asp-for="TXntc.CPsco" id="C_PSCO" class="form-control" />
+                        <span asp-validation-for="TXntc.CPsco" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.CPsco2" class="control-label font-weight-bold"></label>
+                        <input asp-for="TXntc.CPsco2" id="C_PSCO2" class="form-control" />
+                        <span asp-validation-for="TXntc.CPsco2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.CTienthue" class="control-label font-weight-bold"></label>
+                        <input asp-for="TXntc.CTienthue" id="C_TIENTHUE" class="form-control" />
+                        <span asp-validation-for="TXntc.CTienthue" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <label for="CCong" class="control-label font-weight-bold"></label>
+                        <input type="number" name="CCong" id="C_CONG" class="form-control" />
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.FkLdhh" class="control-label font-weight-bold"></label>
+                        <select asp-for="TXntc.FkLdhh" id="FK_LDHH" asp-items="Model.TDmLdhhSelectList" class="form-control">
+                            <option value="" selected disabled>Chọn</option>
+                        </select>
+                        <span asp-validation-for="TXntc.FkLdhh" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.FkNguonvon" class="control-label font-weight-bold"></label>
+                        <select asp-for="TXntc.FkNguonvon" id="FK_NGUONVON" asp-items="Model.TDmNguonvonSelectList" class="form-control">
+                            <option value="" selected disabled>Chọn</option>
+                        </select>
+                        <span asp-validation-for="TXntc.FkNguonvon" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.FkLdtg" class="control-label font-weight-bold"></label>
+                        <select asp-for="TXntc.FkLdtg" id="FK_LDTG" asp-items="Model.TDmLdtgSelectList" class="form-control">
+                            <option value="" selected disabled>Chọn</option>
+                        </select>
+                        <span asp-validation-for="TXntc.FkLdtg" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.FkDtcp" class="control-label font-weight-bold"></label>
+                        <select asp-for="TXntc.FkDtcp" id="FK_DTCP" asp-items="Model.TDmDtcpSelectList" class="form-control">
+                            <option value="" selected disabled>Chọn</option>
+                        </select>
+                        <span asp-validation-for="TXntc.FkDtcp" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.FkDondathang" class="control-label font-weight-bold"></label>
+                        <select asp-for="TXntc.FkDondathang" id="FK_DONDATHANG" asp-items="Model.TDondathangSelectList" class="form-control">
+                            <option value="" selected disabled>Chọn</option>
+                        </select>
+                        <span asp-validation-for="TXntc.FkDondathang" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <label asp-for="TXntc.CDgdong" class="control-label font-weight-bold"></label>
+                        <input asp-for="TXntc.CDgdong" id="C_DGDONG" class="form-control" />
+                        <span asp-validation-for="TXntc.CDgdong" class="text-danger"></span>
                     </div>
                     <button type="submit" class="btn btn-primary float-right">Thêm mới</button>
                 </form>
@@ -316,18 +504,36 @@
         const loaitien = $(`#LoaiTien`);
         const fktkco = $('#TKCo');
         const fktkno = $('#TKNo');
+        const diengiai = $('#DienGiai');
         const fkkhonhap = $('#KhoNhap');
         const fkkhoxuat = $('#KhoXuat');
         const sophieu = $('#SoPhieu');
+        const vat = $('#VAT');
+
+        const amount = $(`#C_PSNO`);
+        const amountUSD = $(`#C_PSNO2`);
+        const discount = $(`#C_CHIETKHAU`);
+        const exchangeRate = $(`#TiGia`);
+        const quantity = $(`#C_SOLUONG`);
+        const originalPrice = $(`#C_NGUYENGIA`);
+        const unitPrice = $(`#C_DONGIA`);
+        const unit = $(`#C_DVT_MA`);
+        const total = $('#C_CONG');
+        const tax = $('#C_TIENTHUE');
 
         function InitData() {
+            HideAllTableData();
             $.ajax({
                 type: "POST",
-                headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+                headers: {
+                    "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val()
+                },
                 url: "/Admin/UpdateDocumentPage/Details?handler=GetSelectedDocument",
-                data: { "id": $("#ChungTu").val() },
+                data: {
+                    "id": $("#ChungTu").val()
+                },
                 dataType: "json",
-                success: function (result) {
+                success: function(result) {
                     console.log(result);
 
                     dvcs.val() || dvcs.val(result.fkDvcs);
@@ -336,22 +542,41 @@
                     fktkno.val() || fktkno.val(result.fkTkn);
                     fkkhonhap.val() || fkkhonhap.val(result.fkKhonhap);
                     fkkhoxuat.val() || fkkhoxuat.val(result.fkKhoxuat);
+                    diengiai.val() || diengiai.val(result.cTen);
 
                     const transformedControls = TransformControls(result.cControls);
-                    Object.keys(transformedControls).forEach(key => {
-                        const enable = !!transformedControls[key].controls[0];
-                        const notOption = !!transformedControls[key].controls[1];
-                        const keep = !!transformedControls[key].controls[2];
-                        const save = !!transformedControls[key].controls[3];
+                    console.log(transformedControls);
+                    transformedControls.forEach(control => {
+                        const enable = !!control.enable;
+                        const notOption = !!control.notOption;
+                        const keep = !!control.keep;
+                        const save = !!control.save;
                         if (!enable && !notOption) {
-                            $(`#${key}`).val("");
+                            $(`#${control.name}`).val("");
                         }
-                        $(`#${key}`).attr('disabled', !enable);
-                        $(`#${key}`).attr('required', notOption);
+                        $(`#${control.name}`).attr('readonly', !enable);
+                        $(`#${control.name}`).attr('required', notOption);
                     })
 
+                    const transformedGridColumns = TransformGridColumns(result.cGridcolumns);
+                    console.log(transformedGridColumns);
+                    transformedGridColumns.forEach(gridCol => {
+                        const tableHeadEle = $(`#TH_${gridCol.name}`);
+                        const gridColEle = $(`#${gridCol.name}`);
+                        if (!gridCol.hidden) {
+                            tableHeadEle.show();
+                            $(`#dataTable td:nth-child(${+tableHeadEle.index()+1})`).show();
+                            gridColEle.parent().show();
+                        }
+                        tableHeadEle.text(gridCol.captionVn);
+
+                        gridColEle.val("");
+                        gridColEle.attr("required", gridCol.mandatory);
+                        gridColEle.attr("readonly", gridCol.read);
+                        gridColEle.parent().children("label").text(gridCol.captionVn);
+                    })
                 },
-                error: function (data) {
+                error: function(data) {
                     console.log(data);
                 }
             })
@@ -362,13 +587,17 @@
             $.ajax({
                 type: "POST",
                 url: "/Admin/UpdateDocumentPage/Details?handler=GetSelectedCustomer",
-                headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
-                data: { "id": id },
+                headers: {
+                    "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val()
+                },
+                data: {
+                    "id": id
+                },
                 dataType: "json",
-                success: function (result) {
+                success: function(result) {
                     $("#KHDiaChi").val(result.cDiachi);
                 },
-                error: function (data) {
+                error: function(data) {
                     console.log(data);
                 }
             })
@@ -376,25 +605,101 @@
 
         function TransformControls(controls) {
             const controlsArray = controls.split("#");
-            const controlsObj = {};
+            const transformedArray = [];
             controlsArray.forEach(control => {
                 const props = control.split(",");
-                const data = props.shift();
-                const dataType = data.slice(0, 3);
-                const name = data.slice(3);
-                const index = props.shift();
-                //four digits at last is enable, notOption, keep, save
-                Object.assign(controlsObj, {
-                    [name]: {
-                        index: +index,
-                        type: dataType,
-                        controls: props.map(p => +p)
-                    }
-                });
+                transformedArray.push({
+                    name: props[0].slice(3),
+                    dataType: props[0].slice(0, 3),
+                    seq: +props[1],
+                    enable: !!+props[2],
+                    notOption: !!+props[3],
+                    keep: !!+props[4],
+                    save: !!+props[5]
+                })
             })
-            return controlsObj;
+            return transformedArray;
         }
 
+        function TransformGridColumns(gridcolumns) {
+            const gridColsArray = gridcolumns.split("#");
+            const transformedArray = [];
+            gridColsArray.forEach(col => {
+                let props = col.split("@("@")");
+                transformedArray.push({
+                    seq: +props[0],
+                    name: props[1],
+                    captionVn: props[2],
+                    captionEn: props[3],
+                    hidden: !!+props[4],
+                    width: +props[5],
+                    align: +props[6],
+                    dataType: props[7],
+                    view: !!+props[8],
+                    save: !!+props[9],
+                    read: !!+props[10],
+                    mandatory: !!+props[11],
+                    floatingPoint: +props[12]
+                })
+            })
+            return transformedArray;
+        }
+
+        function HandleProductSelect(e) {
+            $.ajax({
+                type: "POST",
+                url: "/Admin/UpdateDocumentPage/Details?handler=GetSelectedProduct",
+                headers: {
+                    "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val()
+                },
+                data: {
+                    "id": e.value
+                },
+                dataType: "json",
+                success: function(result) {
+                    console.log(result);
+                    originalPrice.val(result.cGiachuan);
+                    unitPrice.val(originalPrice.val() * (1 - discount.val() / 100));
+                    unit.val(result.fkDvban);
+                    CalculateTotalPrice();
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            })
+        }
+
+        function HideAllTableData() {
+            $("#dataTable thead th").each(function() {
+                $(this).hide();
+            })
+            $("#dataTable tbody td").each(function () {
+                $(this).hide();
+            })
+            $(".action-group").show();
+        }
+
+        function CalculateTotalPrice() {
+            amount.val((unitPrice.val() * quantity.val()).toFixed(2));
+            amountUSD.val((total.val() / exchangeRate.val()).toFixed(2));
+            tax.val(amount.val() * vat.val() / 100);
+            total.val(+amount.val() + +tax.val());
+        }
+
+        function HandleOriginalPriceChange(e) {
+            unitPrice.val((e.value * (1 - discount.val() / 100)).toFixed(2));
+            CalculateTotalPrice();
+        }
+
+        function HandleUnitPriceChange(e) {
+            originalPrice.val((e.value / (1 - discount.val() / 100)).toFixed(2));
+            CalculateTotalPrice();
+        }
+
+        function HandleDiscountChange(e) {
+            unitPrice.val((originalPrice.val() * (1 - e.value / 100)).toFixed(2));
+            CalculateTotalPrice();
+        }
         InitData();
     </script>
 }

@@ -18,6 +18,7 @@
 <h1>Thông tin chi tiết</h1>
 <div>
     <h4>Đơn đặt hàng (Sales Order)</h4>
+    <hr />
     <form asp-page-handler="UpdateCommonInfo" method="post" id="UpdateCommonInfo">
         <div class="row">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -112,103 +113,11 @@
                     </select>
                     <span asp-validation-for="TDondathang.FkPhanxuong" class="text-danger"></span>
                 </div>
-                @*<div class="form-group col-3">
-                        <label asp-for="TDondathang.FkDtcp" class="control-label"></label>
-                        <input asp-for="TDondathang.FkDtcp" class="form-control" />
-                        <span asp-validation-for="TDondathang.FkDtcp" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-3">
-                        <label asp-for="TDondathang.FkKmp" class="control-label"></label>
-                        <input asp-for="TDondathang.FkKmp" class="form-control" />
-                        <span asp-validation-for="TDondathang.FkKmp" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-3">
-                        <label asp-for="TDondathang.CKhdk" class="control-label"></label>
-                        <input asp-for="TDondathang.CKhdk" class="form-control" />
-                        <span asp-validation-for="TDondathang.CKhdk" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-3">
-                        <label asp-for="TDondathang.CKhdkdc" class="control-label"></label>
-                        <input asp-for="TDondathang.CKhdkdc" class="form-control" />
-                        <span asp-validation-for="TDondathang.CKhdkdc" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-3">
-                        <label asp-for="TDondathang.CKhdkdt" class="control-label"></label>
-                        <input asp-for="TDondathang.CKhdkdt" class="form-control" />
-                        <span asp-validation-for="TDondathang.CKhdkdt" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-3">
-                        <label asp-for="TDondathang.CKhdkemail" class="control-label"></label>
-                        <input asp-for="TDondathang.CKhdkemail" class="form-control" />
-                        <span asp-validation-for="TDondathang.CKhdkemail" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-3">
-                        <label asp-for="TDondathang.CKhdknlh" class="control-label"></label>
-                        <input asp-for="TDondathang.CKhdknlh" class="form-control" />
-                        <span asp-validation-for="TDondathang.CKhdknlh" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-3">
-                        <label asp-for="TDondathang.CKhdkfax" class="control-label"></label>
-                        <input asp-for="TDondathang.CKhdkfax" class="form-control" />
-                        <span asp-validation-for="TDondathang.CKhdkfax" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-3">
-                        <label asp-for="TDondathang.FkUser" class="control-label"></label>
-                        <input asp-for="TDondathang.FkUser" class="form-control" />
-                        <span asp-validation-for="TDondathang.FkUser" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-3">
-                        <label asp-for="TDondathang.CDatetime" class="control-label"></label>
-                        <input asp-for="TDondathang.CDatetime" class="form-control" />
-                        <span asp-validation-for="TDondathang.CDatetime" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-3">
-                        <label asp-for="TDondathang.FkDdct" class="control-label"></label>
-                        <input asp-for="TDondathang.FkDdct" class="form-control" />
-                        <span asp-validation-for="TDondathang.FkDdct" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-3">
-                        <label asp-for="TDondathang.CDaban" class="control-label"></label>
-                        <input asp-for="TDondathang.CDaban" class="form-control" />
-                        <span asp-validation-for="TDondathang.CDaban" class="text-danger"></span>
-                    </div>*@
                 <div class="form-group col-3">
                     <label asp-for="TDondathang.CVat" class="control-label"></label>
                     <input asp-for="TDondathang.CVat" class="form-control" />
                     <span asp-validation-for="TDondathang.CVat" class="text-danger"></span>
                 </div>
-                @*<div class="form-group col-3">
-                        <label asp-for="TDondathang.FkLoaibg" class="control-label"></label>
-                        <select asp-for="TDondathang.FkLoaibg" asp-items="Model.LoaiBgSelectList" class="form-control">
-                            <option value="" selected disabled>Chọn</option>
-                        </select>
-                        <span asp-validation-for="TDondathang.FkLoaibg" class="text-danger"></span>
-                    </div>*@
-                @*<div class="form-group col-3">
-                        <label asp-for="TDondathang.FkPpvc" class="control-label"></label>
-                        <input asp-for="TDondathang.FkPpvc" class="form-control" />
-                        <span asp-validation-for="TDondathang.FkPpvc" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-3">
-                        <label asp-for="TDondathang.FkDondathang" class="control-label"></label>
-                        <input asp-for="TDondathang.FkDondathang" class="form-control" />
-                        <span asp-validation-for="TDondathang.FkDondathang" class="text-danger"></span>
-                    </div>*@
-                @*<div class="form-group col-3">
-                        <label asp-for="TDondathang.CField1" class="control-label"></label>
-                        <input asp-for="TDondathang.CField1" class="form-control" />
-                        <span asp-validation-for="TDondathang.CField1" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-3">
-                        <label asp-for="TDondathang.CField2" class="control-label"></label>
-                        <input asp-for="TDondathang.CField2" class="form-control" />
-                        <span asp-validation-for="TDondathang.CField2" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-3">
-                        <label asp-for="TDondathang.FkModifyuser" class="control-label"></label>
-                        <input asp-for="TDondathang.FkModifyuser" class="form-control" />
-                        <span asp-validation-for="TDondathang.FkModifyuser" class="text-danger"></span>
-                    </div>*@
                 <div class="form-group col-3">
                     <label asp-for="TDondathang.FkPttt" class="control-label"></label>
                     <select asp-for="TDondathang.FkPttt" asp-items="Model.PtttSelectList" class="form-control">
@@ -222,7 +131,6 @@
             </div>
         </div>
     </form>
-    <hr />
 </div>
 <div class="card shadow mb-4 w-100">
     <div class="card-header py-3">
@@ -235,13 +143,16 @@
                 <thead>
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.CStt)
+                            STT
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.FkVthh)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.CNgaynhan)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.CNgaydukien)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.CSoluong)
@@ -252,12 +163,6 @@
                         <th>
                             @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.CDongia)
                         </th>
-                        @*<th>
-                                @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.CPheduyet)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.FkNguoipd)
-                            </th>*@
                         <th>
                             @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.FkTrangthai)
                         </th>
@@ -265,22 +170,10 @@
                             @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.CDongia2)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.CKhuyenmai)
-                        </th>
-                        <th>
                             @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.FkNguoncc)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.CNgaydukien)
-                        </th>
-                        <th>
                             @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.CDongiatc)
-                        </th>
-                        @*<th>
-                                @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.CDaban)
-                            </th>*@
-                        <th>
-                            @Html.DisplayNameFor(model => model.TDondathangctList[0].Dondathangct.CTinhthue)
                         </th>
                         <th></th>
                     </tr>
@@ -293,9 +186,6 @@
                         {
                             index++;
                             <tr>
-                                @*<td>
-                                        @Html.DisplayFor(modelItem => item.FkDondathang)
-                                    </td>*@
                                 <td>
                                     @Html.DisplayFor(modelItem => index)
                                 </td>
@@ -306,6 +196,9 @@
                                     @Html.DisplayFor(modelItem => item.Dondathangct.CNgaynhan)
                                 </td>
                                 <td>
+                                    @Html.DisplayFor(modelItem => item.Dondathangct.CNgaydukien)
+                                </td>
+                                <td>
                                     @Html.DisplayFor(modelItem => item.Dondathangct.CSoluong)
                                 </td>
                                 <td>
@@ -314,46 +207,27 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Dondathangct.CDongia)
                                 </td>
-                                @*<td>
-                                        @Html.DisplayFor(modelItem => item.Dondathangct.CPheduyet)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Dondathangct.FkNguoipd)
-                                    </td>*@
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Dondathangct.FkTrangthai)
+                                    @Html.DisplayFor(modelItem => item.Trangthai.CMota)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Dondathangct.CDongia2)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Dondathangct.CKhuyenmai)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Dondathangct.FkNguoncc)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Dondathangct.CNgaydukien)
+                                    @Html.DisplayFor(modelItem => item.Nguoncc.CMota)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Dondathangct.CDongiatc)
-                                </td>
-                                @*<td>
-                                        @Html.DisplayFor(modelItem => item.Dondathangct.CDaban)
-                                    </td>*@
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Dondathangct.CTinhthue)
                                 </td>
                                 <td>
                                     <form method="post" asp-page-handler="DeleteVthh">
                                         <input name="id" value="@item.Dondathangct.PkId" type="hidden" />
                                         <input name="orderId" value="@Model.Id" type="hidden" />
                                         <div class="d-flex" style="gap:16px">
-                                            <a class="btn btn-success btn-circle" asp-page="./Edit" asp-route-id="@item.Vthh.PkId"><i class="fas fa-edit"></i></a>
+                                            @*<a class="btn btn-success btn-circle" asp-page="./Edit" asp-route-id="@item.Vthh.PkId"><i class="fas fa-edit"></i></a>*@
                                             <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash-alt"></i></button>
                                         </div>
                                     </form>
-
                                 </td>
                             </tr>
                         }
@@ -367,47 +241,6 @@
     </div>
 </div>
 
-@* Thông tin vận chuyển *@
-<div class="card shadow mb-4 w-100">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Thông tin vận chuyển</h6>
-    </div>
-    <div class="card-body">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="row">
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.FkSoxe" class="control-label"></label>
-                <select asp-for="TDondathang.FkSoxe" asp-items="Model.DMXeSelectList" class="form-control" form="UpdateCommonInfo">
-                    <option value="" selected disabled>Chọn</option>
-                </select>
-                <span asp-validation-for="TDondathang.FkSoxe" class="text-danger"></span>
-            </div>
-            @*<div class="form-group col-3">
-                    <label asp-for="TDondathang.FkCuocvanchuyen" class="control-label"></label>
-                    <input asp-for="TDondathang.FkCuocvanchuyen" class="form-control" />
-                    <span asp-validation-for="TDondathang.FkCuocvanchuyen" class="text-danger"></span>
-                </div>*@
-            @*<div class="form-group col-3">
-                    <label asp-for="TDondathang.FkSochuyen" class="control-label"></label>
-                    <input asp-for="TDondathang.FkSochuyen" class="form-control" />
-                    <span asp-validation-for="TDondathang.FkSochuyen" class="text-danger"></span>
-                </div>*@
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.FkHangvanchuyen" class="control-label"></label>
-                <input asp-for="TDondathang.FkHangvanchuyen" class="form-control" form="UpdateCommonInfo" />
-                <span asp-validation-for="TDondathang.FkHangvanchuyen" class="text-danger"></span>
-            </div>
-            <div class="form-group col-3">
-                <label asp-for="TDondathang.CNguoivanchuyen" class="control-label"></label>
-                <input asp-for="TDondathang.CNguoivanchuyen" class="form-control" form="UpdateCommonInfo" />
-                <span asp-validation-for="TDondathang.CNguoivanchuyen" class="text-danger"></span>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary" form="UpdateCommonInfo">
-            Cập nhật
-        </button>
-    </div>
-</div>
 @*  Danh sách điều khoản*@
 <div class="card shadow w-100">
     <div class="card-header py-3">
@@ -445,7 +278,6 @@
                                     <form method="post" asp-page-handler="DeleteDkbg">
                                         <input name="id" value="@item.Dondathangdk.PkId" type="hidden" />
                                         <input name="orderId" value="@Model.Id" type="hidden" />
-                                        @*<a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.PkId">Sửa</a>*@
                                         <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash-alt"></i></button>
                                     </form>
                                 </td>
@@ -475,13 +307,19 @@
                 <form asp-page-handler="CreateVthh" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <input asp-for="TDondathangct.FkDondathang" value="@Model.Id" type="hidden" />
-                    @*<input asp-for="TDondathang.CSophieu"/>*@
                     <div class="form-group">
                         <label asp-for="TDondathangct.FkVthh" class="control-label"></label>
                         <select asp-for="TDondathangct.FkVthh" asp-items="Model.VattuhanghoaSelectList" onchange="HandleProductSelect(this)" class="form-control">
                             <option value="" selected disabled>Chọn</option>
                         </select>
                         <span asp-validation-for="TDondathangct.FkVthh" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TDondathangct.FkDvban" class="control-label"></label>
+                        <select asp-for="TDondathangct.FkDvban" id="Dvban" asp-items="Model.DvtSelectList" class="form-control">
+                            <option value="" selected disabled>Chọn</option>
+                        </select>
+                        <span asp-validation-for="TDondathangct.FkDvban" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="TDondathangct.CNgaynhan" class="control-label"></label>
@@ -531,17 +369,6 @@
                         </select>
                         <span asp-validation-for="TDondathangct.FkNguoncc" class="text-danger"></span>
                     </div>
-
-                    <div class="form-group">
-                        <input type="checkbox" name="TDondathangct.CKhuyenmai" value="false" />
-                        <label asp-for="TDondathangct.CKhuyenmai" class="control-label"></label>
-                        <span asp-validation-for="TDondathangct.CKhuyenmai" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" name="TDondathangct.CTinhthue" value="false" />
-                        <label asp-for="TDondathangct.CTinhthue" class="control-label"></label>
-                        <span asp-validation-for="TDondathangct.CTinhthue" class="text-danger"></span>
-                    </div>
                     <button type="submit" class="btn btn-primary float-right">Thêm mới</button>
                 </form>
             </div>
@@ -565,7 +392,7 @@
                     <input asp-for="TDondathangdk.FkDondathang" value="@Model.Id" type="hidden" />
                     <div class="form-group">
                         <label asp-for="TDondathangdk.FkDkbg" class="control-label"></label>
-                        <select asp-for="TDondathangdk.FkDkbg" asp-items="Model.DieukhoanbaogiaSelectList" class="form-control">
+                        <select asp-for="TDondathangdk.FkDkbg" asp-items="Model.DkbgSelectList" class="form-control">
                             <option value="" selected disabled>Chọn</option>
                         </select>
                         <span asp-validation-for="TDondathangdk.FkDkbg" class="text-danger"></span>
@@ -587,6 +414,7 @@
         const dongiatc2 = $("#Dongiatc2");
         const customer = $("#KhachHang");
         const customerAddress = $("#KhachHangDiaChi");
+        const dvban = $("#Dvban");
         const tigia = $("#Tigia");
         function HandleProductSelect(e) {
             $.ajax({
@@ -598,6 +426,7 @@
                 success: function (result) {
                     dongia.val(result.cGiachuan);
                     dongia2.val((result.cGiachuan / tigia.val()).toFixed(2));
+                    dvban.val(result.fkDvban);
                     UpdateDongiatc();
                 },
                 error: function (data) {

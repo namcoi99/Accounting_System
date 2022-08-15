@@ -27,6 +27,7 @@ namespace Accounting_System.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-ddTHH:mm}")]
         public DateTime? CNgaylap { get; set; }
         [DisplayName("Ngày CT")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-ddTHH:mm}")]
         public DateTime? CNgayct { get; set; }
         public string CSoct { get; set; }
         [DisplayName("Mã KH")]
@@ -122,6 +123,7 @@ namespace Accounting_System.Models
         public short? FkKmpc { get; set; }
         public bool? CKhuno { get; set; }
         public bool? CKhuco { get; set; }
+        [DisplayName("Tiền thuế")]
         public decimal? CTienthue { get; set; }
         [DisplayName("Hóa đơn GTGT")]
         public string CSohdgtgt { get; set; }
@@ -155,13 +157,14 @@ namespace Accounting_System.Models
         public short? FkCuocvanchuyen { get; set; }
         [DisplayName("Số xe")]
         public short? FkSoxe { get; set; }
-        [DisplayName("ĐVT")]
+        [DisplayName("Đơn giá tc")]
         public decimal? CDongiatc { get; set; }
         public short? FkChucnang { get; set; }
         public short? FkCa { get; set; }
         public short? FkTotruong { get; set; }
         [DisplayName("Địa chỉ")]
         public string CKhdiachi { get; set; }
+        [DisplayName("Tiền thuế (USD)")]
         public decimal? CTienthue2 { get; set; }
         [DisplayName("Số chuyến")]
         public short? FkSochuyen { get; set; }

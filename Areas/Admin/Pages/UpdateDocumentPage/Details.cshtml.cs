@@ -46,6 +46,11 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
         public List<SelectListItem> TDmPhanxuongSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> TDmKmpSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> TDondathangSelectList { get; set; } = new List<SelectListItem>();
+        public List<SelectListItem> TDmDvtSelectList { get; set; } = new List<SelectListItem>();
+        public List<SelectListItem> TDmLdhhSelectList { get; set; } = new List<SelectListItem>();
+        public List<SelectListItem> TDmTscdSelectList { get; set; } = new List<SelectListItem>();
+        public List<SelectListItem> TDmNguonvonSelectList { get; set; } = new List<SelectListItem>();
+        public List<SelectListItem> TDmLdtgSelectList { get; set; } = new List<SelectListItem>();
         [BindProperty]
         public byte SelectedDvcs { get; set; }
         public short FkDvcs { get; set; }
@@ -86,7 +91,6 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             else
             {
                 TXntc = new TXntc();
-                TXntc.FkChungtu = TXntcorder.FkOrder;
                 TXntc.FkDvcs = (byte)TXntcorder.FkDvcs;
                 TXntc.CSophieu = TXntcorder.CSophieu;
                 TXntc.FkOrder = (int)id;
@@ -111,6 +115,11 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             IList<TDmKmp> TDmKmp;
             IList<TDondathang> TDondathang;
             IList<TDmVthh> TDmVthh;
+            IList<TDmDvt> TDmDvt;
+            IList<TDmLdhh> TDmLdhh;
+            IList<TDmTscd> TDmTscd;
+            IList<TDmNguonvon> TDmNguonvon;
+            IList<TDmLdtg> TDmLdtg;
 
             TDmChungtu = _context.TDmChungtu.OrderBy(ct => ct.CMa).ToList();
             TDmDvcs = _context.TDmDvcs.ToList();
@@ -127,6 +136,11 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             TDmPhanxuong = _context.TDmPhanxuong.ToList();
             TDmKmp = _context.TDmKmp.ToList();
             TDondathang = _context.TDondathang.ToList();
+            TDmDvt = _context.TDmDvt.ToList();
+            TDmLdhh = _context.TDmLdhh.ToList();
+            TDmTscd = _context.TDmTscd.ToList();
+            TDmNguonvon = _context.TDmNguonvon.ToList();
+            TDmLdtg = _context.TDmLdtg.ToList();
             await Task.WhenAll();
 
             foreach (var item in TDmChungtu)
@@ -189,6 +203,26 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             {
                 VattuhanghoaSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa });
             }
+            foreach (var item in TDmDvt)
+            {
+                TDmDvtSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa + " - " + item.CMota });
+            }
+            foreach (var item in TDmLdhh)
+            {
+                TDmLdhhSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa + " - " + item.CMota });
+            }
+            foreach (var item in TDmTscd)
+            {
+                TDmTscdSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa + " - " + item.CTen });
+            }
+            foreach (var item in TDmNguonvon)
+            {
+                TDmNguonvonSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa + " - " + item.CTen });
+            }
+            foreach (var item in TDmLdtg)
+            {
+                TDmLdtgSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa + " - " + item.CMota });
+            }
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
@@ -226,18 +260,31 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             return RedirectToPage("./Index");
         }
 
-        public async Task<IActionResult> OnPostCreateVthhAsync()
+        public async Task<IActionResult> OnPostCreateDetailAsync()
         {
-            var included = new[] { "FkOrder", "CNgaylap", "CDiengiai", "CSophieu", "FkKhachhang", "CKhdiachi", "FkNguoilh", "CNguoilh", "FkTkno", "FkTkco", "FkKhoxuat", "FkKhonhap", "CNgayct", "CMahoadon", "CKyhieumau", "CVat", "FkPhongban", "FkPhanxuong", "FkLoaitien", "CTigia", "FkPttt", "CSotknh" };
-            foreach (var name in included)
-            {
-                TXntcItem.GetType().GetProperty(name).SetValue(new TXntc(), _context.Entry(TXntc).Property(name).CurrentValue, null);
-            }
-            _context.TXntc.Add(TXntcItem);
+            _context.TXntc.Add(TXntc);
             await _context.SaveChangesAsync();
             _notyf.Success("Tạo mới thành công.");
-            return RedirectToPage("./Details", new { id = TXntcItem.FkOrder });
+            return RedirectToPage("./Details", new { id = TXntc.FkOrder });
         }
+
+        public async Task<IActionResult> OnPostDeleteDetailAsync(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            TXntc txntc = await _context.TXntc.FindAsync((decimal)id);
+
+            if (txntc != null)
+            {
+                _context.TXntc.Remove(txntc);
+                await _context.SaveChangesAsync();
+                _notyf.Success("Xóa bản ghi thành công.");
+            }
+            return RedirectToPage("./Details", new { id = txntc.FkOrder }); ;
+        }
+
         private bool TXntcExists(decimal id)
         {
             return _context.TXntc.Any(e => e.PkId == id);
@@ -251,6 +298,11 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
         public JsonResult OnPostGetSelectedCustomer(int id)
         {
             var result = _context.TDmKh.Where(kh => kh.PkId == id).First();
+            return new JsonResult(result);
+        }
+        public JsonResult OnPostGetSelectedProduct(int id)
+        {
+            var result = _context.TDmVthh.Where(vthh => vthh.PkId == id).First();
             return new JsonResult(result);
         }
     }

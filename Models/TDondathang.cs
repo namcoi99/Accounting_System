@@ -25,10 +25,13 @@ namespace Accounting_System.Models
         public string CSophieu { get; set; }
         [DisplayName("Ngày lập")]
         [Required(ErrorMessage = "{0} là trường bắt buộc")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-ddTHH:mm}")]
         public DateTime CNgaylap { get; set; }
         [DisplayName("Ngày nhận")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-ddTHH:mm}")]
         public DateTime? CNgaynhan { get; set; }
         [DisplayName("Ngày hết hạn")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-ddTHH:mm}")]
         public DateTime? CNgayhethan { get; set; }
         [DisplayName("Mã khách hàng")]
         public int? FkKhachhang { get; set; }

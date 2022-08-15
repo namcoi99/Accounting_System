@@ -97,5 +97,23 @@ namespace Accounting_System.Areas.Admin.Pages.OrderForcastPage
                    })
                 .ToListAsync();
         }
+
+        public async Task<IActionResult> OnPostDeleteDubaoAsync(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            TDubao dubao = await _context.TDubao.FindAsync(id);
+
+            if (dubao != null)
+            {
+                _context.TDubao.Remove(dubao);
+                await _context.SaveChangesAsync();
+                _context.TDubaoct.RemoveRange(_context.TDubaoct.Where(m => m.FkDubao == id));
+            }
+            return RedirectToPage("./Index");
+        }
     }
 }

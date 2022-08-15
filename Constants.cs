@@ -25,5 +25,11 @@ namespace Accounting_System
             BTGV = 6,           // Bút toán giá vốn
             BTKH = 7,           // Bút toán khấu hao TSCĐ tự động
         }
+        public enum LoaiBG
+        {
+            Q = 1,           // Giấy báo giá (Quotation)
+            SO = 2,           // Đơn đặt hàng (Sales Order)
+            PL = 3,           // Yêu cầu xuất kho (Pick List)
+        }
     }
 }

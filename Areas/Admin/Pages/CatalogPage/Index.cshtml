@@ -82,7 +82,7 @@
                                                            form="@(Model.CurrentCatalog.CTable + "_" + i)"
                                                            name="@columnName"
                                                            value="@Model.TableData[columnName][i]"
-                                                           readonly="@isReadOnly"
+                                                           readonly="@(isReadOnly || columnName == "PK_ID")"
                                                            required="@isRequired">
                                                 </td>
                                             }
@@ -153,7 +153,7 @@
                                     <input class="form-control"
                                            name="@columnName"
                                            value=""
-                                           readonly="@isReadOnly"
+                                           readonly="@(isReadOnly || columnName == "PK_ID")"
                                            required="@isRequired"
                                            type="@(isVisible ? "" : "hidden")">
                                 </div>

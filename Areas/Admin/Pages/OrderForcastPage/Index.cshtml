@@ -48,35 +48,38 @@
                 <tbody>
                     @foreach (var item in Model.TDubao)
                     {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Dubao.CNam)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Dubao.CThang)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Pb.CMa)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Kh.CMa)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Kh.CTen)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Nguoilap)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Dvcs.CMa)
-                        </td>
-                        <td>
-                            <div class="d-flex" style="gap: 16px">
-                                <a class="btn btn-success btn-circle" asp-page="./Details" asp-route-id="@item.Dubao.PkId"><i class="fas fa-edit"></i></a>
-                                <a class="btn btn-danger btn-circle" asp-page="./Delete" asp-route-id="@item.Dubao.PkId"><i class="fas fa-trash-alt"></i></a>
-                            </div>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dubao.CNam)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dubao.CThang)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Pb.CMa)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Kh.CMa)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Kh.CTen)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nguoilap)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dvcs.CMa)
+                            </td>
+                            <td>
+                                <form method="post" asp-page-handler="DeleteDubao">
+                                    <input name="id" value="@item.Dubao.PkId" type="hidden" />
+                                    <div class="d-flex" style="gap:16px">
+                                        <a class="btn btn-success btn-circle" asp-page="./Details" asp-route-id="@item.Dubao.PkId"><i class="fas fa-edit"></i></a>
+                                        <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash-alt"></i></button>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
                     }
                 </tbody>
             </table>

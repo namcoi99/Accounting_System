@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Accounting_System.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
 {
@@ -13,10 +15,11 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
     public class CreateModel : PageModel
     {
         private readonly Cafe1Context _context;
-
-        public CreateModel(Cafe1Context context)
+        private readonly INotyfService _notyf;
+        public CreateModel(Cafe1Context context, INotyfService notyf)
         {
             _context = context;
+            _notyf = notyf;
         }
         public List<SelectListItem> DvcsSelectList { get; set; } = new List<SelectListItem>();
         //public List<SelectListItem> LoaiBgSelectList { get; set; } = new List<SelectListItem>();
@@ -94,6 +97,8 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
                 DkbgSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMota });
             }
             TDondathang.CNgaylap = System.DateTime.Now;
+            TDmTigia tigia = await _context.TDmTigia.Where(m => m.CNgay.Year == System.DateTime.Now.Year).FirstOrDefaultAsync();
+            TDondathang.CTigia = tigia != null ? tigia.CTigia : 0;
             return Page();
         }
 
@@ -104,13 +109,26 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostCreateSalesOrderAsync()
         {
+            var dondathang = await _context.TDondathang.Where(m => string.Equals(m.CSophieu, TDondathang.CSophieu)).FirstOrDefaultAsync();
+            if (dondathang != null)
+            {
+                _notyf.Error("Đơn đặt hàng với số phiếu " + TDondathang.CSophieu + " đã tồn tại.");
+                return RedirectToPage("./Create");
+            }
             _context.TDondathang.Add(TDondathang);
             await _context.SaveChangesAsync();
+            _notyf.Success("Tạo mới đơn đặt hàng thành công.");
             return RedirectToPage("./Details", new { id = TDondathang.PkId });
         }
-        public JsonResult OnPostGetSelectedCustomer(int Id)
+        public JsonResult OnPostGetSelectedCustomer(int id)
         {
-            var result = _context.TDmKh.Where(kh => kh.PkId == Id).First();
+            var result = _context.TDmKh.Where(kh => kh.PkId == id).FirstOrDefault();
+            return new JsonResult(result);
+        }
+
+        public JsonResult OnPostGetLoaiBg(int id)
+        {
+            var result = _context.TDmLoaibg.Where(m => m.CMa == id).FirstOrDefault();
             return new JsonResult(result);
         }
     }

@@ -53,4 +53,15 @@ $(document).ready(function () {
         fixedHeader: true,
         scrollX: true
     });
+    $('#reportTable').DataTable({
+        language: tableLanguage,
+        dom: 'Bflrtip',
+        buttons: [
+            'excel',
+            'pdf',
+            'print'
+        ],
+        fixedHeader: true,
+        scrollX: true
+    });
 });

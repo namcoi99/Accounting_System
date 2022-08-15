@@ -19,8 +19,6 @@ namespace Accounting_System.Models
         [Required(ErrorMessage = "{0} là trường bắt buộc")]
         public short FkDvcs { get; set; }
         public string CTtkhuyenmai { get; set; }
-        [DisplayName("C.từ")]
-        [Required(ErrorMessage = "{0} là trường bắt buộc")]
         public int? FkOrder { get; set; }
     }
 }

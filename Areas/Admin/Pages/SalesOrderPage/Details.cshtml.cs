@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Accounting_System.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Authorization;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
 {
@@ -14,16 +15,19 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
     public class DetailsModel : PageModel
     {
         private readonly Cafe1Context _context;
-
-        public DetailsModel(Cafe1Context context)
+        private readonly INotyfService _notyf;
+        public DetailsModel(Cafe1Context context, INotyfService notyf)
         {
             _context = context;
+            _notyf = notyf;
         }
         public class TDondathangctRecord
         {
             public TDondathangct Dondathangct { get; set; }
             public TDmVthh Vthh { get; set; }
             public TDmDvt Dvt { get; set; }
+            public TDmTrangthai Trangthai { get; set; }
+            public TSysNguoncc Nguoncc { get; set; }
         }
         public class TDondathangdkRecord
         {
@@ -41,7 +45,6 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
         [BindProperty]
         public TDondathangdk TDondathangdk { get; set; }
         public List<SelectListItem> DvcsSelectList { get; set; } = new List<SelectListItem>();
-        //public List<SelectListItem> LoaiBgSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> KhSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> TienteSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> NlhSelectList { get; set; } = new List<SelectListItem>();
@@ -55,6 +58,7 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
         public List<SelectListItem> DMXeSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> DMTrangthaiSelectList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> DMNguonccSelectList { get; set; } = new List<SelectListItem>();
+        public List<SelectListItem> DvtSelectList { get; set; } = new List<SelectListItem>();
 
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -95,6 +99,42 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
                        Vthh = x.Vthh,
                        Dvt = y
                    })
+                .GroupJoin(_context.TDmTrangthai, ddhct => ddhct.Dondathangct.FkTrangthai, tt => tt.PkId,
+                (ddhct, ttList) => new
+                {
+                    Dondathangct = ddhct.Dondathangct,
+                    Vthh = ddhct.Vthh,
+                    Dvt = ddhct.Dvt,
+                    TrangthaiList = ttList
+                })
+                .SelectMany(
+                   x => x.TrangthaiList.DefaultIfEmpty(),
+                   (x, y) => new TDondathangctRecord
+                   {
+                       Dondathangct = x.Dondathangct,
+                       Vthh = x.Vthh,
+                       Dvt = x.Dvt,
+                       Trangthai = y
+                   })
+                .GroupJoin(_context.TSysNguoncc, ddhct => ddhct.Dondathangct.FkNguoncc, nguoncc => nguoncc.PkId,
+                (ddhct, nguonccList) => new
+                {
+                    Dondathangct = ddhct.Dondathangct,
+                    Vthh = ddhct.Vthh,
+                    Dvt = ddhct.Dvt,
+                    Trangthai = ddhct.Trangthai,
+                    NguonccList = nguonccList
+                })
+                .SelectMany(
+                   x => x.NguonccList.DefaultIfEmpty(),
+                   (x, y) => new TDondathangctRecord
+                   {
+                       Dondathangct = x.Dondathangct,
+                       Vthh = x.Vthh,
+                       Dvt = x.Dvt,
+                       Trangthai = x.Trangthai,
+                       Nguoncc = y
+                   })
                 .ToList();
             TDondathangdkList = _context.TDondathangdk
                 .Where(item => item.FkDondathang == id)
@@ -110,7 +150,6 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
                 return NotFound();
             }
             IList<TDmVthh> TDmVthh;
-            IList<TDmDkbg> TDmdkbg;
             IList<TDmXe> TDmXe;
             IList<TDmDvcs> TDvcs;
             IList<TDmKh> TDmKh;
@@ -119,11 +158,11 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
             IList<TDmVuviec> TDmVuviec;
             IList<TDmPhongban> TDmPhongban;
             IList<TDmPhanxuong> TDmPhanxuong;
-            //IList<TDmLoaibg> TDmLoaibg;
             IList<TDmPttt> TDmPttt;
             IList<TDmDkbg> TDmDkbg;
             IList<TDmTrangthai> TDmTrangthai;
             IList<TSysNguoncc> TSysNguoncc;
+            IList<TDmDvt> TDmDvt;
 
             TDvcs = _context.TDmDvcs.ToList();
             TDmKh = _context.TDmKh.ToList();
@@ -133,23 +172,18 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
             TDmPhongban = _context.TDmPhongban.ToList();
             TDmPhanxuong = _context.TDmPhanxuong.ToList();
             TDmVthh = _context.TDmVthh.ToList();
-            //TDmLoaibg = _context.TDmLoaibg.ToList();
             TDmPttt = _context.TDmPttt.ToList();
             TDmDkbg = _context.TDmDkbg.ToList();
             TDmVthh = _context.TDmVthh.ToList();
-            TDmdkbg = _context.TDmDkbg.ToList();
             TDmXe = _context.TDmXe.ToList();
             TDmTrangthai = _context.TDmTrangthai.ToList();
             TSysNguoncc = _context.TSysNguoncc.ToList();
+            TDmDvt = _context.TDmDvt.ToList();
 
             await Task.WhenAll();
             foreach (var item in TDmVthh)
             {
                 VattuhanghoaSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa });
-            }
-            foreach (var item in TDmdkbg)
-            {
-                DieukhoanbaogiaSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMota });
             }
             foreach (var item in TDmXe)
             {
@@ -183,10 +217,6 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
             {
                 PhanxuongSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa });
             }
-            //foreach (var item in TDmLoaibg)
-            //{
-            //    LoaiBgSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMota });
-            //}
             foreach (var item in TDmPttt)
             {
                 PtttSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMota });
@@ -203,6 +233,10 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
             {
                 DMNguonccSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMota });
             }
+            foreach (var item in TDmDvt)
+            {
+                DvtSelectList.Add(new SelectListItem { Value = item.PkId.ToString(), Text = item.CMa });
+            }
             return Page();
         }
 
@@ -212,27 +246,7 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
             try
             {
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TDondathangExists(TDondathang.PkId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-            return RedirectToPage("./Details", new { id = TDondathang.PkId });
-        }
-
-        public async Task<IActionResult> OnPostUpdateTtvcAsync()
-        {
-            _context.Attach(TDondathang).State = EntityState.Modified;
-            try
-            {
-                await _context.SaveChangesAsync();
+                _notyf.Success("Cập nhật đơn đặt hàng thành công.");
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -252,6 +266,7 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
         {
             _context.TDondathangct.Add(TDondathangct);
             await _context.SaveChangesAsync();
+            _notyf.Success("Thêm mới vật tư, hàng hóa vào đơn đặt hàng thành công.");
             return RedirectToPage("./Details", new { id = TDondathangct.FkDondathang });
         }
 
@@ -268,6 +283,7 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
             {
                 _context.TDondathangct.Remove(TDondathangct);
                 await _context.SaveChangesAsync();
+            _notyf.Success("Xóa vật tư, hàng hóa khỏi đơn đặt hàng thành công.");
             }
             return RedirectToPage("./Details", new { id = orderId }); ;
         }
@@ -276,6 +292,7 @@ namespace Accounting_System.Areas.Admin.Pages.SalesOrderPage
         {
             _context.TDondathangdk.Add(TDondathangdk);
             await _context.SaveChangesAsync();
+            _notyf.Success("Thêm mới điều khoản thành công.");
             return RedirectToPage("./Details", new { id = TDondathangdk.FkDondathang });
         }
 
