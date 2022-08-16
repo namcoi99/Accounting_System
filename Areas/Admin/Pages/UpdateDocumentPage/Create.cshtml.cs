@@ -89,7 +89,7 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             TDmTiente = _context.TDmTiente.ToList();
             TDmKhnlh = _context.TDmKhnlh.ToList();
             TDmPhongban = _context.TDmPhongban.ToList();
-            TDmTaikhoan = _context.TDmTaikhoan.ToList();
+            TDmTaikhoan = _context.TDmTaikhoan.OrderBy(tk => tk.CMa).ToList();
             TDmKho = _context.TDmKho.ToList();
             TDmKehang = _context.TDmKehang.ToList();
             TDmPttt = _context.TDmPttt.ToList();

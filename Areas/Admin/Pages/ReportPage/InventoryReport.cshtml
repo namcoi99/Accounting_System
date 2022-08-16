@@ -1,0 +1,70 @@
+﻿@page
+@model Accounting_System.Areas.Admin.Pages.ReportPage.InventoryReportModel
+@{
+    ViewData["Title"] = "Báo cáo Nhập kho";
+}
+<h1>@ViewData["Title"]</h1>
+<div class="card shadow mb-4 w-100">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách vật tư, hàng hóa</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+
+            <table class="table table-bordered" id="reportTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            STT
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PhieuNhapHangHoaList[0].Vthh.CMa)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PhieuNhapHangHoaList[0].Vthh.CTen)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PhieuNhapHangHoaList[0].Dvt.CMota)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PhieuNhapHangHoaList[0].Xntc.CSoluong)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PhieuNhapHangHoaList[0].Xntc.CPsno)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.PhieuNhapHangHoaList != null)
+                    {
+                        var index = 0;
+                        @foreach (var item in Model.PhieuNhapHangHoaList)
+                        {
+                            index++;
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => index)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Vthh.CMa)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Vthh.CTen)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Dvt.CMota)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.CSoluong)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Xntc.CPsno)
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -46,10 +46,7 @@ $(document).ready(function () {
 
     $('#dataTable').DataTable({
         language: tableLanguage,
-        dom: 'Bflrtip',
-        buttons: [
-            'excel'
-        ],
+        dom: 'flrtip',
         fixedHeader: true,
         scrollX: true
     });

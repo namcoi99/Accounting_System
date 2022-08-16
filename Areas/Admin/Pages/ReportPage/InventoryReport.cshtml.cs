@@ -11,11 +11,11 @@ using Microsoft.EntityFrameworkCore;
 namespace Accounting_System.Areas.Admin.Pages.ReportPage
 {
     [Authorize]
-    public class SalesReportModel : PageModel
+    public class InventoryReportModel : PageModel
     {
         private readonly Cafe1Context _context;
 
-        public SalesReportModel(Cafe1Context context)
+        public InventoryReportModel(Cafe1Context context)
         {
             _context = context;
         }
@@ -25,11 +25,11 @@ namespace Accounting_System.Areas.Admin.Pages.ReportPage
             public TDmVthh Vthh { get; set; }
             public TDmDvt Dvt { get; set; }
         }
-        public IList<TXntcRecord> PhieuXuatBanHangList { get; set; }
+        public IList<TXntcRecord> PhieuNhapHangHoaList { get; set; }
         public async Task<IActionResult> OnGetAsync()
         {
-            PhieuXuatBanHangList = await _context.TXntc
-                .Where(m => m.FkChungtu == Constants.PHIEU_XUAT_BAN_HANG_ID && m.CLoaibt == (int)Constants.LoaiBT.BTTT)
+            PhieuNhapHangHoaList = await _context.TXntc
+                .Where(m => m.FkChungtu == Constants.PHIEU_NHAP_HANG_HOA_ID && m.CLoaibt == (int)Constants.LoaiBT.BTTT)
                 .GroupJoin(_context.TDmVthh, xntc => (int)xntc.FkVthh, vthh => vthh.PkId,
                 (xntc, vthhList) => new
                 {

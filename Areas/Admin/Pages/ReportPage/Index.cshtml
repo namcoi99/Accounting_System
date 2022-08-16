@@ -7,9 +7,10 @@
 <div>
     @*<a asp-page="./ReportView" asp-route-id="@item.PkId">Xuất báo cáo</a>
         <a asp-page="./ReportDesign" asp-route-id="@item.PkId">Xem báo cáo</a>*@
-    <a asp-page="./ReportView" class="btn btn-primary">Xuất báo cáo</a>
-    <a asp-page="./ReportDesign" class="btn btn-primary">Xem báo cáo</a>
+    @*<a asp-page="./ReportView" class="btn btn-primary">Xuất báo cáo</a>
+    <a asp-page="./ReportDesign" class="btn btn-primary">Xem báo cáo</a>*@
     <a asp-page="./SalesReport" class="btn btn-primary">Xem báo cáo bán hàng</a>
+    <a asp-page="./InventoryReport" class="btn btn-primary">Xem báo cáo tồn kho</a>
 </div>
 @*<form method="post">
         <button class="btn btn-primary">Xuất báo cáo doanh thu</button>

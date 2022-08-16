@@ -14,6 +14,7 @@ namespace Accounting_System.Models
         public byte? FkDvcs { get; set; }
         [DisplayName("ĐVB")]
         public string CMa { get; set; }
+        [DisplayName("Đơn vị tính")]
         public string CMota { get; set; }
         public DateTime? CLastexport { get; set; }
         public int? CSmsUnit { get; set; }
