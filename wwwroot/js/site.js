@@ -48,7 +48,7 @@ $(document).ready(function () {
         language: tableLanguage,
         dom: 'flrtip',
         fixedHeader: true,
-        scrollX: true
+        scrollX: true,
     });
     $('#reportTable').DataTable({
         language: tableLanguage,

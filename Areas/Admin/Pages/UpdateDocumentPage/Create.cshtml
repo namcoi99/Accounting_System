@@ -34,7 +34,7 @@
         </div>
         <div class="form-group col-3">
             <label asp-for="TXntc.CNgaylap" class="control-label font-weight-bold"></label>
-            <input asp-for="TXntc.CNgaylap" id="NgayLap" class="form-control" />
+            <input asp-for="TXntc.CNgaylap" id="NgayLap" onchange="HandleDateChange(this)" class="form-control" />
             <span asp-validation-for="TXntc.CNgaylap" class="text-danger"></span>
         </div>
         <div class="form-group col-3">
@@ -344,7 +344,6 @@
                 data: { "id": e.value },
                 dataType: "json",
                 success: function (result) {
-                    console.log(result);
                     dvcs.val(result.fkDvcs);
                     loaitien.val(result.fkTiente);
                     fktkco.val(result.fkTkc);
@@ -362,7 +361,6 @@
                     sophieu.val(GenerateSoPhieu());
 
                     const transformedControls = TransformControls(result.cControls);
-                    console.log(transformedControls);
                     transformedControls.forEach(control => {
                         const enable = !!control.enable;
                         const notOption = !!control.notOption;
@@ -376,7 +374,6 @@
                     })
 
                     const transformedGridColumns = TransformGridColumns(result.cGridcolumns);
-                    console.log(transformedGridColumns);
                     transformedGridColumns.forEach(gridCol => {
                         const gridColEle = $(`#${gridCol.name}`);
                         if (!gridCol.hidden) {
@@ -459,7 +456,6 @@
                 data: { "id": e.value },
                 dataType: "json",
                 success: function (result) {
-                    console.log(result);
                     originalPrice.val(result.cGiachuan);
                     unitPrice.val(originalPrice.val() * (1 - discount.val() / 100));
                     unit.val(result.fkDvban);

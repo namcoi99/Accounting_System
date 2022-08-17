@@ -24,6 +24,7 @@ namespace Accounting_System.Areas.Admin.Pages.ReportPage
             public TXntc Xntc { get; set; }
             public TDmVthh Vthh { get; set; }
             public TDmDvt Dvt { get; set; }
+            public double Soluong { get; set; }
         }
         public IList<TXntcRecord> PhieuXuatBanHangList { get; set; }
         public double Total { get; set; }

@@ -534,8 +534,6 @@
                 },
                 dataType: "json",
                 success: function(result) {
-                    console.log(result);
-
                     dvcs.val() || dvcs.val(result.fkDvcs);
                     loaitien.val() || loaitien.val(result.fkTiente);
                     fktkco.val() || fktkco.val(result.fkTkc);
@@ -545,7 +543,6 @@
                     diengiai.val() || diengiai.val(result.cTen);
 
                     const transformedControls = TransformControls(result.cControls);
-                    console.log(transformedControls);
                     transformedControls.forEach(control => {
                         const enable = !!control.enable;
                         const notOption = !!control.notOption;
@@ -559,7 +556,6 @@
                     })
 
                     const transformedGridColumns = TransformGridColumns(result.cGridcolumns);
-                    console.log(transformedGridColumns);
                     transformedGridColumns.forEach(gridCol => {
                         const tableHeadEle = $(`#TH_${gridCol.name}`);
                         const gridColEle = $(`#${gridCol.name}`);
@@ -657,7 +653,6 @@
                 },
                 dataType: "json",
                 success: function(result) {
-                    console.log(result);
                     originalPrice.val(result.cGiachuan);
                     unitPrice.val(originalPrice.val() * (1 - discount.val() / 100));
                     unit.val(result.fkDvban);
@@ -670,13 +665,16 @@
         }
 
         function HideAllTableData() {
-            $("#dataTable thead th").each(function() {
-                $(this).hide();
+            $("#dataTable thead th").each(function () {
+                if (!this.classList.contains("action-group")) {
+                    $(this).hide();
+                }
             })
             $("#dataTable tbody td").each(function () {
-                $(this).hide();
+                if (!this.classList.contains("action-group")) {
+                    $(this).hide();
+                }
             })
-            $(".action-group").show();
         }
 
         function CalculateTotalPrice() {

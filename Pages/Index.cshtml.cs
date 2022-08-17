@@ -23,9 +23,9 @@ namespace Accounting_System.Pages
         }
         public IList<TXntc> PhieuNhapHangHoaList { get; set; }
         public IList<TXntc> PhieuXuatBanHangList { get; set; }
-        public int Sales { get; set; }
+        public int SalesPerYear { get; set; }
         public int SalesPerMonth { get; set; }
-        public int Imports { get; set; }
+        public int ImportsPerYear { get; set; }
         public int ImportsPerMonth { get; set; }
         public async Task<IActionResult> OnGetAsync()
         {
@@ -36,8 +36,8 @@ namespace Accounting_System.Pages
             }
             PhieuNhapHangHoaList = await _context.TXntc.Where(m => m.FkChungtu == Constants.PHIEU_NHAP_HANG_HOA_ID).ToListAsync();
             PhieuXuatBanHangList = await _context.TXntc.Where(m => m.FkChungtu == Constants.PHIEU_XUAT_BAN_HANG_ID).ToListAsync();
-            Sales = PhieuXuatBanHangList.Sum(m => Convert.ToInt32(m.CDongia) * Convert.ToInt32(m.CSoluong));
-            Imports = PhieuNhapHangHoaList.Sum(m => Convert.ToInt32(m.CDongia) * Convert.ToInt32(m.CSoluong));
+            SalesPerYear = PhieuXuatBanHangList.Where(m => m.CNgaylap.Value.Year == DateTime.Now.Year).Sum(m => Convert.ToInt32(m.CDongia) * Convert.ToInt32(m.CSoluong));
+            ImportsPerYear = PhieuNhapHangHoaList.Where(m => m.CNgaylap.Value.Year == DateTime.Now.Year).Sum(m => Convert.ToInt32(m.CDongia) * Convert.ToInt32(m.CSoluong));
             SalesPerMonth = PhieuXuatBanHangList.Where(m => m.CNgaylap.Value.Month == DateTime.Now.Month).Sum(m => Convert.ToInt32(m.CDongia) * Convert.ToInt32(m.CSoluong));
             ImportsPerMonth = PhieuNhapHangHoaList.Where(m => m.CNgaylap.Value.Month == DateTime.Now.Month).Sum(m => Convert.ToInt32(m.CDongia) * Convert.ToInt32(m.CSoluong));
             return Page();

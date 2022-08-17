@@ -90,10 +90,9 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
             }
             else
             {
-                TXntc = new TXntc();
-                TXntc.FkDvcs = (byte)TXntcorder.FkDvcs;
-                TXntc.CSophieu = TXntcorder.CSophieu;
-                TXntc.FkOrder = (int)id;
+                _context.TXntcorder.Remove(TXntcorder);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
             }
             return Page();
         }
@@ -282,7 +281,7 @@ namespace Accounting_System.Areas.Admin.Pages.UpdateDocumentPage
                 await _context.SaveChangesAsync();
                 _notyf.Success("Xóa bản ghi thành công.");
             }
-            return RedirectToPage("./Details", new { id = txntc.FkOrder }); ;
+            return RedirectToPage("./Details", new { id = txntc.FkOrder });
         }
 
         private bool TXntcExists(decimal id)
