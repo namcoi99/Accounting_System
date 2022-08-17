@@ -26,6 +26,7 @@ namespace Accounting_System.Areas.Admin.Pages.ReportPage
             public TDmDvt Dvt { get; set; }
         }
         public IList<TXntcRecord> PhieuNhapHangHoaList { get; set; }
+        public double Total { get; set; }
         public async Task<IActionResult> OnGetAsync()
         {
             PhieuNhapHangHoaList = await _context.TXntc
@@ -59,6 +60,7 @@ namespace Accounting_System.Areas.Admin.Pages.ReportPage
                        Dvt = y
                    })
                 .ToListAsync();
+            Total = PhieuNhapHangHoaList.Sum(x => Convert.ToDouble(x.Xntc.CPsno));
             return Page();
         }
     }

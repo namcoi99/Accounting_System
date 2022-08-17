@@ -13,7 +13,7 @@ namespace Accounting_System
         public const string FREP = "ReportPage";
         public const string FDUBAO = "OrderForcastPage";
         public const int T_SYS_LIST_ID = 30;
-        public const int PHIEU_NHAP_HANG_HOA_ID = 167;
+        public const int PHIEU_NHAP_HANG_HOA_ID = 172;
         public const int PHIEU_XUAT_BAN_HANG_ID = 425;
         public enum LoaiBT
         {

@@ -54,9 +54,16 @@ $(document).ready(function () {
         language: tableLanguage,
         dom: 'Bflrtip',
         buttons: [
-            'excel',
-            'pdf',
-            'print'
+            { extend: 'excelHtml5', footer: true },
+            {
+                extend: 'pdfHtml5',
+                download: 'open',
+                footer: true
+            },
+            {
+                extend: 'print',
+                footer: true
+            }
         ],
         fixedHeader: true,
         scrollX: true
